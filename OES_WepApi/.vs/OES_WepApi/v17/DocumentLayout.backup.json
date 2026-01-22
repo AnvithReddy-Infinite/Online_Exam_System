@@ -3,7 +3,31 @@
   "WorkspaceRootPath": "C:\\Online_Exam_System_Project\\OES_WepApi\\",
   "Documents": [
     {
+<<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{B8AB8DB2-1A5B-4296-899A-A94FF7ABF146}|OES_WepApi.csproj|C:\\Online_Exam_System_Project\\OES_WepApi\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+=======
+      "AbsoluteMoniker": "D:0:0:{B8AB8DB2-1A5B-4296-899A-A94FF7ABF146}|OES_WepApi.csproj|c:\\users\\humeras\\project\\online_exam_system\\oes_wepapi\\repository\\examrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B8AB8DB2-1A5B-4296-899A-A94FF7ABF146}|OES_WepApi.csproj|solutionrelative:repository\\examrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8AB8DB2-1A5B-4296-899A-A94FF7ABF146}|OES_WepApi.csproj|c:\\users\\humeras\\project\\online_exam_system\\oes_wepapi\\repository\\iexamrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B8AB8DB2-1A5B-4296-899A-A94FF7ABF146}|OES_WepApi.csproj|solutionrelative:repository\\iexamrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8AB8DB2-1A5B-4296-899A-A94FF7ABF146}|OES_WepApi.csproj|c:\\users\\humeras\\project\\online_exam_system\\oes_wepapi\\controllers\\examcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B8AB8DB2-1A5B-4296-899A-A94FF7ABF146}|OES_WepApi.csproj|solutionrelative:controllers\\examcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8AB8DB2-1A5B-4296-899A-A94FF7ABF146}|OES_WepApi.csproj|c:\\users\\humeras\\project\\online_exam_system\\oes_wepapi\\repository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B8AB8DB2-1A5B-4296-899A-A94FF7ABF146}|OES_WepApi.csproj|solutionrelative:repository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8AB8DB2-1A5B-4296-899A-A94FF7ABF146}|OES_WepApi.csproj|c:\\users\\humeras\\project\\online_exam_system\\oes_wepapi\\repository\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B8AB8DB2-1A5B-4296-899A-A94FF7ABF146}|OES_WepApi.csproj|solutionrelative:repository\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8AB8DB2-1A5B-4296-899A-A94FF7ABF146}|OES_WepApi.csproj|c:\\users\\humeras\\project\\online_exam_system\\oes_wepapi\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+>>>>>>> d07be9166145adb2df7b850b379a4698183fd560
       "RelativeMoniker": "D:0:0:{B8AB8DB2-1A5B-4296-899A-A94FF7ABF146}|OES_WepApi.csproj|solutionrelative:controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -46,11 +70,19 @@
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 6,
               "Title": "ExamRepository.cs",
               "DocumentMoniker": "C:\\Online_Exam_System_Project\\OES_WepApi\\Repository\\ExamRepository.cs",
               "RelativeDocumentMoniker": "Repository\\ExamRepository.cs",
               "ToolTip": "C:\\Online_Exam_System_Project\\OES_WepApi\\Repository\\ExamRepository.cs",
+=======
+              "DocumentIndex": 0,
+              "Title": "ExamRepository.cs",
+              "DocumentMoniker": "C:\\Users\\humeras\\Project\\Online_Exam_System\\OES_WepApi\\Repository\\ExamRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\ExamRepository.cs",
+              "ToolTip": "C:\\Users\\humeras\\Project\\Online_Exam_System\\OES_WepApi\\Repository\\ExamRepository.cs",
+>>>>>>> d07be9166145adb2df7b850b379a4698183fd560
               "RelativeToolTip": "Repository\\ExamRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -59,11 +91,19 @@
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 5,
               "Title": "IExamRepository.cs",
               "DocumentMoniker": "C:\\Online_Exam_System_Project\\OES_WepApi\\Repository\\IExamRepository.cs",
               "RelativeDocumentMoniker": "Repository\\IExamRepository.cs",
               "ToolTip": "C:\\Online_Exam_System_Project\\OES_WepApi\\Repository\\IExamRepository.cs",
+=======
+              "DocumentIndex": 1,
+              "Title": "IExamRepository.cs",
+              "DocumentMoniker": "C:\\Users\\humeras\\Project\\Online_Exam_System\\OES_WepApi\\Repository\\IExamRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\IExamRepository.cs",
+              "ToolTip": "C:\\Users\\humeras\\Project\\Online_Exam_System\\OES_WepApi\\Repository\\IExamRepository.cs",
+>>>>>>> d07be9166145adb2df7b850b379a4698183fd560
               "RelativeToolTip": "Repository\\IExamRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -72,7 +112,11 @@
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 4,
+=======
+              "DocumentIndex": 2,
+>>>>>>> d07be9166145adb2df7b850b379a4698183fd560
               "Title": "ExamController.cs",
               "DocumentMoniker": "C:\\Online_Exam_System_Project\\OES_WepApi\\Controllers\\ExamController.cs",
               "RelativeDocumentMoniker": "Controllers\\ExamController.cs",
@@ -98,7 +142,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "IUserRepository.cs",
               "DocumentMoniker": "C:\\Online_Exam_System_Project\\OES_WepApi\\Repository\\IUserRepository.cs",
               "RelativeDocumentMoniker": "Repository\\IUserRepository.cs",
@@ -111,7 +155,11 @@
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 0,
+=======
+              "DocumentIndex": 5,
+>>>>>>> d07be9166145adb2df7b850b379a4698183fd560
               "Title": "AdminController.cs",
               "DocumentMoniker": "C:\\Online_Exam_System_Project\\OES_WepApi\\Controllers\\AdminController.cs",
               "RelativeDocumentMoniker": "Controllers\\AdminController.cs",
@@ -124,7 +172,11 @@
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 1,
+=======
+              "DocumentIndex": 6,
+>>>>>>> d07be9166145adb2df7b850b379a4698183fd560
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\Online_Exam_System_Project\\OES_WepApi\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
