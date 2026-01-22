@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "Questions";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Questions</h2>
+
+<div style="margin-bottom:20px;">
+    <a href="/AdminQuestion/Create">
+        <button>Add Question</button>
+    </a>
+</div>
+
+<table border="1" cellpadding="10" cellspacing="0">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Technology</th>
+            <th>Level</th>
+            <th>Question</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>Java</td>
+            <td>Easy</td>
+            <td>What is JVM?</td>
+            <td>
+                <button>Edit</button>
+                <button>Delete</button>
+            </td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Python</td>
+            <td>Medium</td>
+            <td>What is list comprehension?</td>
+            <td>
+                <button>Edit</button>
+                <button>Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

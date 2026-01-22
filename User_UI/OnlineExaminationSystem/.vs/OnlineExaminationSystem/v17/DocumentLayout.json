@@ -1,28 +1,7 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\poojati\\FinalProject\\User_UI\\OnlineExaminationSystem\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{3B2A8AEF-CE60-4EF7-9E01-57DC9B9BB166}|OnlineExaminationSystem.csproj|c:\\users\\poojati\\finalproject\\user_ui\\onlineexaminationsystem\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{3B2A8AEF-CE60-4EF7-9E01-57DC9B9BB166}|OnlineExaminationSystem.csproj|solutionrelative:views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B2A8AEF-CE60-4EF7-9E01-57DC9B9BB166}|OnlineExaminationSystem.csproj|c:\\users\\poojati\\finalproject\\user_ui\\onlineexaminationsystem\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B2A8AEF-CE60-4EF7-9E01-57DC9B9BB166}|OnlineExaminationSystem.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B2A8AEF-CE60-4EF7-9E01-57DC9B9BB166}|OnlineExaminationSystem.csproj|c:\\users\\poojati\\finalproject\\user_ui\\onlineexaminationsystem\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B2A8AEF-CE60-4EF7-9E01-57DC9B9BB166}|OnlineExaminationSystem.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B2A8AEF-CE60-4EF7-9E01-57DC9B9BB166}|OnlineExaminationSystem.csproj|c:\\users\\poojati\\finalproject\\user_ui\\onlineexaminationsystem\\models\\usermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B2A8AEF-CE60-4EF7-9E01-57DC9B9BB166}|OnlineExaminationSystem.csproj|solutionrelative:models\\usermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B2A8AEF-CE60-4EF7-9E01-57DC9B9BB166}|OnlineExaminationSystem.csproj|c:\\users\\poojati\\finalproject\\user_ui\\onlineexaminationsystem\\models\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B2A8AEF-CE60-4EF7-9E01-57DC9B9BB166}|OnlineExaminationSystem.csproj|solutionrelative:models\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "WorkspaceRootPath": "C:\\Online_Exam_System_Project\\User_UI\\OnlineExaminationSystem\\",
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -30,80 +9,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": -1,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\poojati\\FinalProject\\User_UI\\OnlineExaminationSystem\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\poojati\\FinalProject\\User_UI\\OnlineExaminationSystem\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-22T06:00:30.148Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "_ViewStart.cshtml",
-              "DocumentMoniker": "C:\\Users\\poojati\\FinalProject\\User_UI\\OnlineExaminationSystem\\Views\\_ViewStart.cshtml",
-              "RelativeDocumentMoniker": "Views\\_ViewStart.cshtml",
-              "ToolTip": "C:\\Users\\poojati\\FinalProject\\User_UI\\OnlineExaminationSystem\\Views\\_ViewStart.cshtml",
-              "RelativeToolTip": "Views\\_ViewStart.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-01-22T05:51:21.867Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "LoginModel.cs",
-              "DocumentMoniker": "C:\\Users\\poojati\\FinalProject\\User_UI\\OnlineExaminationSystem\\Models\\LoginModel.cs",
-              "RelativeDocumentMoniker": "Models\\LoginModel.cs",
-              "ToolTip": "C:\\Users\\poojati\\FinalProject\\User_UI\\OnlineExaminationSystem\\Models\\LoginModel.cs",
-              "RelativeToolTip": "Models\\LoginModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-22T05:49:09.164Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "UserModel.cs",
-              "DocumentMoniker": "C:\\Users\\poojati\\FinalProject\\User_UI\\OnlineExaminationSystem\\Models\\UserModel.cs",
-              "RelativeDocumentMoniker": "Models\\UserModel.cs",
-              "ToolTip": "C:\\Users\\poojati\\FinalProject\\User_UI\\OnlineExaminationSystem\\Models\\UserModel.cs",
-              "RelativeToolTip": "Models\\UserModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-22T05:48:51.443Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\Users\\poojati\\FinalProject\\User_UI\\OnlineExaminationSystem\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "Controllers\\UserController.cs",
-              "ToolTip": "C:\\Users\\poojati\\FinalProject\\User_UI\\OnlineExaminationSystem\\Controllers\\UserController.cs",
-              "RelativeToolTip": "Controllers\\UserController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-22T05:36:49.028Z",
-              "EditorCaption": ""
             }
           ]
         }

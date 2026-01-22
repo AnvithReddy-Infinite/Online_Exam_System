@@ -1,0 +1,52 @@
+﻿@{
+    ViewBag.Title = "Exams";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Exams</h2>
+
+<div style="margin-bottom:20px;">
+    <a href="/AdminExam/Create">
+        <button>Add Exam</button>
+    </a>
+</div>
+
+<table border="1" cellpadding="10" cellspacing="0">
+    <thead>
+        <tr>
+            <th>Exam ID</th>
+            <th>Exam Name</th>
+            <th>Technology</th>
+            <th>Level</th>
+            <th>Questions</th>
+            <th>Duration (mins)</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>Java Basics Test</td>
+            <td>Java</td>
+            <td>Easy</td>
+            <td>10</td>
+            <td>30</td>
+            <td>
+                <button>Edit</button>
+                <button>Delete</button>
+            </td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Python Advanced Test</td>
+            <td>Python</td>
+            <td>Hard</td>
+            <td>20</td>
+            <td>45</td>
+            <td>
+                <button>Edit</button>
+                <button>Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

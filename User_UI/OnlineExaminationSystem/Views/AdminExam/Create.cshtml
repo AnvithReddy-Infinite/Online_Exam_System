@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "Add Exam";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Add Exam</h2>
+
+<form>
+
+    <div style="margin-bottom:15px;">
+        <label>Exam Name</label><br />
+        <input type="text" placeholder="Enter exam name" />
+    </div>
+
+    <div style="margin-bottom:15px;">
+        <label>Technology</label><br />
+        <select>
+            <option>-- Select Technology --</option>
+            <option>Java</option>
+            <option>Python</option>
+            <option>C#</option>
+        </select>
+    </div>
+
+    <div style="margin-bottom:15px;">
+        <label>Level</label><br />
+        <select>
+            <option>-- Select Level --</option>
+            <option>Easy</option>
+            <option>Medium</option>
+            <option>Hard</option>
+        </select>
+    </div>
+
+    <div style="margin-bottom:15px;">
+        <label>Number of Questions</label><br />
+        <input type="number" />
+    </div>
+
+    <div style="margin-bottom:15px;">
+        <label>Duration (minutes)</label><br />
+        <input type="number" />
+    </div>
+
+    <button type="submit">Create Exam</button>
+    <a href="/AdminExam/Index">Cancel</a>
+
+</form>
