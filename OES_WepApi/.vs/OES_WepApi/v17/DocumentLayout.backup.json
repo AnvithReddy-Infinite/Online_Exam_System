@@ -1,58 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Online_Exam_System_Project\\OES_WepApi\\",
+  "WorkspaceRootPath": "C:\\Users\\humeras\\Project\\Online_Exam_System\\OES_WepApi\\",
   "Documents": [
     {
-<<<<<<< HEAD
-      "AbsoluteMoniker": "D:0:0:{B8AB8DB2-1A5B-4296-899A-A94FF7ABF146}|OES_WepApi.csproj|C:\\Online_Exam_System_Project\\OES_WepApi\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-=======
-      "AbsoluteMoniker": "D:0:0:{B8AB8DB2-1A5B-4296-899A-A94FF7ABF146}|OES_WepApi.csproj|c:\\users\\humeras\\project\\online_exam_system\\oes_wepapi\\repository\\examrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B8AB8DB2-1A5B-4296-899A-A94FF7ABF146}|OES_WepApi.csproj|solutionrelative:repository\\examrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B8AB8DB2-1A5B-4296-899A-A94FF7ABF146}|OES_WepApi.csproj|c:\\users\\humeras\\project\\online_exam_system\\oes_wepapi\\repository\\iexamrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B8AB8DB2-1A5B-4296-899A-A94FF7ABF146}|OES_WepApi.csproj|solutionrelative:repository\\iexamrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B8AB8DB2-1A5B-4296-899A-A94FF7ABF146}|OES_WepApi.csproj|c:\\users\\humeras\\project\\online_exam_system\\oes_wepapi\\controllers\\examcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B8AB8DB2-1A5B-4296-899A-A94FF7ABF146}|OES_WepApi.csproj|solutionrelative:controllers\\examcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B8AB8DB2-1A5B-4296-899A-A94FF7ABF146}|OES_WepApi.csproj|c:\\users\\humeras\\project\\online_exam_system\\oes_wepapi\\repository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B8AB8DB2-1A5B-4296-899A-A94FF7ABF146}|OES_WepApi.csproj|solutionrelative:repository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B8AB8DB2-1A5B-4296-899A-A94FF7ABF146}|OES_WepApi.csproj|c:\\users\\humeras\\project\\online_exam_system\\oes_wepapi\\repository\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B8AB8DB2-1A5B-4296-899A-A94FF7ABF146}|OES_WepApi.csproj|solutionrelative:repository\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B8AB8DB2-1A5B-4296-899A-A94FF7ABF146}|OES_WepApi.csproj|c:\\users\\humeras\\project\\online_exam_system\\oes_wepapi\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{B8AB8DB2-1A5B-4296-899A-A94FF7ABF146}|OES_WepApi.csproj|solutionrelative:web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B8AB8DB2-1A5B-4296-899A-A94FF7ABF146}|OES_WepApi.csproj|c:\\users\\humeras\\project\\online_exam_system\\oes_wepapi\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
->>>>>>> d07be9166145adb2df7b850b379a4698183fd560
       "RelativeMoniker": "D:0:0:{B8AB8DB2-1A5B-4296-899A-A94FF7ABF146}|OES_WepApi.csproj|solutionrelative:controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B8AB8DB2-1A5B-4296-899A-A94FF7ABF146}|OES_WepApi.csproj|C:\\Online_Exam_System_Project\\OES_WepApi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B8AB8DB2-1A5B-4296-899A-A94FF7ABF146}|OES_WepApi.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B8AB8DB2-1A5B-4296-899A-A94FF7ABF146}|OES_WepApi.csproj|c:\\users\\humeras\\project\\online_exam_system\\oes_wepapi\\repository\\iadminrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B8AB8DB2-1A5B-4296-899A-A94FF7ABF146}|OES_WepApi.csproj|solutionrelative:repository\\iadminrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B8AB8DB2-1A5B-4296-899A-A94FF7ABF146}|OES_WepApi.csproj|C:\\Online_Exam_System_Project\\OES_WepApi\\repository\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B8AB8DB2-1A5B-4296-899A-A94FF7ABF146}|OES_WepApi.csproj|solutionrelative:repository\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B8AB8DB2-1A5B-4296-899A-A94FF7ABF146}|OES_WepApi.csproj|C:\\Online_Exam_System_Project\\OES_WepApi\\repository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B8AB8DB2-1A5B-4296-899A-A94FF7ABF146}|OES_WepApi.csproj|solutionrelative:repository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B8AB8DB2-1A5B-4296-899A-A94FF7ABF146}|OES_WepApi.csproj|C:\\Online_Exam_System_Project\\OES_WepApi\\controllers\\examcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B8AB8DB2-1A5B-4296-899A-A94FF7ABF146}|OES_WepApi.csproj|solutionrelative:controllers\\examcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B8AB8DB2-1A5B-4296-899A-A94FF7ABF146}|OES_WepApi.csproj|C:\\Online_Exam_System_Project\\OES_WepApi\\repository\\iexamrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B8AB8DB2-1A5B-4296-899A-A94FF7ABF146}|OES_WepApi.csproj|solutionrelative:repository\\iexamrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B8AB8DB2-1A5B-4296-899A-A94FF7ABF146}|OES_WepApi.csproj|c:\\online_exam_system_project\\oes_wepapi\\repository\\examrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B8AB8DB2-1A5B-4296-899A-A94FF7ABF146}|OES_WepApi.csproj|solutionrelative:repository\\examrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B8AB8DB2-1A5B-4296-899A-A94FF7ABF146}|OES_WepApi.csproj|c:\\users\\humeras\\project\\online_exam_system\\oes_wepapi\\repository\\adminrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B8AB8DB2-1A5B-4296-899A-A94FF7ABF146}|OES_WepApi.csproj|solutionrelative:repository\\adminrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -62,129 +26,66 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
               "$type": "Document",
-<<<<<<< HEAD
-              "DocumentIndex": 6,
-              "Title": "ExamRepository.cs",
-              "DocumentMoniker": "C:\\Online_Exam_System_Project\\OES_WepApi\\Repository\\ExamRepository.cs",
-              "RelativeDocumentMoniker": "Repository\\ExamRepository.cs",
-              "ToolTip": "C:\\Online_Exam_System_Project\\OES_WepApi\\Repository\\ExamRepository.cs",
-=======
               "DocumentIndex": 0,
-              "Title": "ExamRepository.cs",
-              "DocumentMoniker": "C:\\Users\\humeras\\Project\\Online_Exam_System\\OES_WepApi\\Repository\\ExamRepository.cs",
-              "RelativeDocumentMoniker": "Repository\\ExamRepository.cs",
-              "ToolTip": "C:\\Users\\humeras\\Project\\Online_Exam_System\\OES_WepApi\\Repository\\ExamRepository.cs",
->>>>>>> d07be9166145adb2df7b850b379a4698183fd560
-              "RelativeToolTip": "Repository\\ExamRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-22T05:47:50.692Z",
+              "Title": "Web.config",
+              "DocumentMoniker": "C:\\Users\\humeras\\Project\\Online_Exam_System\\OES_WepApi\\Web.config",
+              "RelativeDocumentMoniker": "Web.config",
+              "ToolTip": "C:\\Users\\humeras\\Project\\Online_Exam_System\\OES_WepApi\\Web.config*",
+              "RelativeToolTip": "Web.config*",
+              "ViewState": "AgIAADMAAAAAAAAAAAAkwEYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2026-01-22T16:52:57.57Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-<<<<<<< HEAD
-              "DocumentIndex": 5,
-              "Title": "IExamRepository.cs",
-              "DocumentMoniker": "C:\\Online_Exam_System_Project\\OES_WepApi\\Repository\\IExamRepository.cs",
-              "RelativeDocumentMoniker": "Repository\\IExamRepository.cs",
-              "ToolTip": "C:\\Online_Exam_System_Project\\OES_WepApi\\Repository\\IExamRepository.cs",
-=======
-              "DocumentIndex": 1,
-              "Title": "IExamRepository.cs",
-              "DocumentMoniker": "C:\\Users\\humeras\\Project\\Online_Exam_System\\OES_WepApi\\Repository\\IExamRepository.cs",
-              "RelativeDocumentMoniker": "Repository\\IExamRepository.cs",
-              "ToolTip": "C:\\Users\\humeras\\Project\\Online_Exam_System\\OES_WepApi\\Repository\\IExamRepository.cs",
->>>>>>> d07be9166145adb2df7b850b379a4698183fd560
-              "RelativeToolTip": "Repository\\IExamRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-22T05:47:34.236Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-<<<<<<< HEAD
-              "DocumentIndex": 4,
-=======
               "DocumentIndex": 2,
->>>>>>> d07be9166145adb2df7b850b379a4698183fd560
-              "Title": "ExamController.cs",
-              "DocumentMoniker": "C:\\Online_Exam_System_Project\\OES_WepApi\\Controllers\\ExamController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ExamController.cs",
-              "ToolTip": "C:\\Online_Exam_System_Project\\OES_WepApi\\Controllers\\ExamController.cs",
-              "RelativeToolTip": "Controllers\\ExamController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "IAdminRepository.cs",
+              "DocumentMoniker": "C:\\Users\\humeras\\Project\\Online_Exam_System\\OES_WepApi\\Repository\\IAdminRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\IAdminRepository.cs",
+              "ToolTip": "C:\\Users\\humeras\\Project\\Online_Exam_System\\OES_WepApi\\Repository\\IAdminRepository.cs",
+              "RelativeToolTip": "Repository\\IAdminRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAABnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-22T05:47:04.033Z",
+              "WhenOpened": "2026-01-22T16:24:34.926Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "UserRepository.cs",
-              "DocumentMoniker": "C:\\Online_Exam_System_Project\\OES_WepApi\\Repository\\UserRepository.cs",
-              "RelativeDocumentMoniker": "Repository\\UserRepository.cs",
-              "ToolTip": "C:\\Online_Exam_System_Project\\OES_WepApi\\Repository\\UserRepository.cs",
-              "RelativeToolTip": "Repository\\UserRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "AdminRepository.cs",
+              "DocumentMoniker": "C:\\Users\\humeras\\Project\\Online_Exam_System\\OES_WepApi\\Repository\\AdminRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\AdminRepository.cs",
+              "ToolTip": "C:\\Users\\humeras\\Project\\Online_Exam_System\\OES_WepApi\\Repository\\AdminRepository.cs",
+              "RelativeToolTip": "Repository\\AdminRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAE4AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-22T05:46:23.236Z",
+              "WhenOpened": "2026-01-22T16:24:12.941Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "IUserRepository.cs",
-              "DocumentMoniker": "C:\\Online_Exam_System_Project\\OES_WepApi\\Repository\\IUserRepository.cs",
-              "RelativeDocumentMoniker": "Repository\\IUserRepository.cs",
-              "ToolTip": "C:\\Online_Exam_System_Project\\OES_WepApi\\Repository\\IUserRepository.cs",
-              "RelativeToolTip": "Repository\\IUserRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-22T05:46:00.623Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-<<<<<<< HEAD
-              "DocumentIndex": 0,
-=======
-              "DocumentIndex": 5,
->>>>>>> d07be9166145adb2df7b850b379a4698183fd560
-              "Title": "AdminController.cs",
-              "DocumentMoniker": "C:\\Online_Exam_System_Project\\OES_WepApi\\Controllers\\AdminController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AdminController.cs",
-              "ToolTip": "C:\\Online_Exam_System_Project\\OES_WepApi\\Controllers\\AdminController.cs",
-              "RelativeToolTip": "Controllers\\AdminController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-22T05:40:55.021Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-<<<<<<< HEAD
               "DocumentIndex": 1,
-=======
-              "DocumentIndex": 6,
->>>>>>> d07be9166145adb2df7b850b379a4698183fd560
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\Online_Exam_System_Project\\OES_WepApi\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
-              "ToolTip": "C:\\Online_Exam_System_Project\\OES_WepApi\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "Controllers\\AuthController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\humeras\\Project\\Online_Exam_System\\OES_WepApi\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AdminController.cs",
+              "ToolTip": "C:\\Users\\humeras\\Project\\Online_Exam_System\\OES_WepApi\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "Controllers\\AdminController.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAQwCkAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-22T05:40:38.172Z",
+              "WhenOpened": "2026-01-22T16:19:42.668Z",
               "EditorCaption": ""
             }
           ]
