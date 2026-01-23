@@ -7,15 +7,15 @@
       "RelativeMoniker": "D:0:0:{B8AB8DB2-1A5B-4296-899A-A94FF7ABF146}|OES_WepApi.csproj|solutionrelative:web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B8AB8DB2-1A5B-4296-899A-A94FF7ABF146}|OES_WepApi.csproj|c:\\users\\humeras\\project\\online_exam_system\\oes_wepapi\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B8AB8DB2-1A5B-4296-899A-A94FF7ABF146}|OES_WepApi.csproj|C:\\Users\\humeras\\Project\\Online_Exam_System\\OES_WepApi\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B8AB8DB2-1A5B-4296-899A-A94FF7ABF146}|OES_WepApi.csproj|solutionrelative:controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B8AB8DB2-1A5B-4296-899A-A94FF7ABF146}|OES_WepApi.csproj|c:\\users\\humeras\\project\\online_exam_system\\oes_wepapi\\repository\\iadminrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B8AB8DB2-1A5B-4296-899A-A94FF7ABF146}|OES_WepApi.csproj|C:\\Users\\humeras\\Project\\Online_Exam_System\\OES_WepApi\\repository\\iadminrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B8AB8DB2-1A5B-4296-899A-A94FF7ABF146}|OES_WepApi.csproj|solutionrelative:repository\\iadminrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B8AB8DB2-1A5B-4296-899A-A94FF7ABF146}|OES_WepApi.csproj|c:\\users\\humeras\\project\\online_exam_system\\oes_wepapi\\repository\\adminrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B8AB8DB2-1A5B-4296-899A-A94FF7ABF146}|OES_WepApi.csproj|C:\\Users\\humeras\\Project\\Online_Exam_System\\OES_WepApi\\repository\\adminrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B8AB8DB2-1A5B-4296-899A-A94FF7ABF146}|OES_WepApi.csproj|solutionrelative:repository\\adminrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -44,7 +44,7 @@
               "RelativeDocumentMoniker": "Web.config",
               "ToolTip": "C:\\Users\\humeras\\Project\\Online_Exam_System\\OES_WepApi\\Web.config",
               "RelativeToolTip": "Web.config",
-              "ViewState": "AgIAAD0AAAAAAAAAAAAgwEUAAAATAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAE0AAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
               "WhenOpened": "2026-01-22T16:52:57.57Z",
               "EditorCaption": ""
@@ -59,8 +59,7 @@
               "RelativeToolTip": "Repository\\IAdminRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAABnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-22T16:24:34.926Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-22T16:24:34.926Z"
             },
             {
               "$type": "Document",
@@ -72,8 +71,7 @@
               "RelativeToolTip": "Repository\\AdminRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAE4AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-22T16:24:12.941Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-22T16:24:12.941Z"
             },
             {
               "$type": "Document",
@@ -85,8 +83,7 @@
               "RelativeToolTip": "Controllers\\AdminController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-22T16:19:42.668Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-22T16:19:42.668Z"
             }
           ]
         }
