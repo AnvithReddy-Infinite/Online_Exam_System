@@ -1,9 +1,32 @@
-# Visual Studio
+# =========================
+# Visual Studio / .NET
+# =========================
 .vs/
+bin/
+obj/
 *.user
 *.suo
 *.cache
-*.vsix
 *.pdb
-bin/
-obj/
+*.dll
+*.log
+
+# IIS / ASP.NET
+applicationhost.config
+
+# NuGet
+packages/
+*.nupkg
+
+# Build results
+[Bb]uild/
+[Dd]ebug/
+[Rr]elease/
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Frontend (future-safe)
+node_modules/
+dist/
