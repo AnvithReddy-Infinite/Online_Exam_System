@@ -1,0 +1,9 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.cache
+*.vsix
+*.pdb
+bin/
+obj/

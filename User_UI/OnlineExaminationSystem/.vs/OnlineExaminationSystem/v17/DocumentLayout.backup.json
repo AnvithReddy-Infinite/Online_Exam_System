@@ -1,5 +1,6 @@
 {
   "Version": 1,
+<<<<<<< HEAD
   "WorkspaceRootPath": "C:\\Users\\poojati\\FinalProject\\Online_Exam_System\\User_UI\\OnlineExaminationSystem\\",
   "Documents": [
     {
@@ -65,6 +66,25 @@
     {
       "AbsoluteMoniker": "D:0:0:{3B2A8AEF-CE60-4EF7-9E01-57DC9B9BB166}|OnlineExaminationSystem.csproj|C:\\Users\\poojati\\FinalProject\\Online_Exam_System\\User_UI\\OnlineExaminationSystem\\Controllers\\HomeController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3B2A8AEF-CE60-4EF7-9E01-57DC9B9BB166}|OnlineExaminationSystem.csproj|solutionrelative:Controllers\\HomeController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+=======
+  "WorkspaceRootPath": "C:\\Online_Exam_System_Project\\User_UI\\OnlineExaminationSystem\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3B2A8AEF-CE60-4EF7-9E01-57DC9B9BB166}|OnlineExaminationSystem.csproj|c:\\online_exam_system_project\\user_ui\\onlineexaminationsystem\\views\\adminlogin\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3B2A8AEF-CE60-4EF7-9E01-57DC9B9BB166}|OnlineExaminationSystem.csproj|solutionrelative:views\\adminlogin\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3B2A8AEF-CE60-4EF7-9E01-57DC9B9BB166}|OnlineExaminationSystem.csproj|c:\\online_exam_system_project\\user_ui\\onlineexaminationsystem\\views\\shared\\_adminlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3B2A8AEF-CE60-4EF7-9E01-57DC9B9BB166}|OnlineExaminationSystem.csproj|solutionrelative:views\\shared\\_adminlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3B2A8AEF-CE60-4EF7-9E01-57DC9B9BB166}|OnlineExaminationSystem.csproj|c:\\online_exam_system_project\\user_ui\\onlineexaminationsystem\\content\\admin.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{3B2A8AEF-CE60-4EF7-9E01-57DC9B9BB166}|OnlineExaminationSystem.csproj|solutionrelative:content\\admin.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3B2A8AEF-CE60-4EF7-9E01-57DC9B9BB166}|OnlineExaminationSystem.csproj|c:\\online_exam_system_project\\user_ui\\onlineexaminationsystem\\views\\admindashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3B2A8AEF-CE60-4EF7-9E01-57DC9B9BB166}|OnlineExaminationSystem.csproj|solutionrelative:views\\admindashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+>>>>>>> 611d7ed316ea1e648c20cecea715906e23b09f40
     }
   ],
   "DocumentGroupContainers": [
@@ -74,18 +94,15 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
-            },
-            {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 0,
               "Title": "Home.cshtml",
               "DocumentMoniker": "C:\\Users\\poojati\\FinalProject\\Online_Exam_System\\User_UI\\OnlineExaminationSystem\\Views\\User\\Home.cshtml",
@@ -95,10 +112,22 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-01-22T11:02:58.21Z",
+=======
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Online_Exam_System_Project\\User_UI\\OnlineExaminationSystem\\Views\\AdminDashboard\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\AdminDashboard\\Index.cshtml",
+              "ToolTip": "C:\\Online_Exam_System_Project\\User_UI\\OnlineExaminationSystem\\Views\\AdminDashboard\\Index.cshtml",
+              "RelativeToolTip": "Views\\AdminDashboard\\Index.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-01-22T11:51:20.188Z",
+>>>>>>> 611d7ed316ea1e648c20cecea715906e23b09f40
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 14,
               "Title": "Instructions.cshtml",
               "DocumentMoniker": "C:\\Users\\poojati\\FinalProject\\Online_Exam_System\\User_UI\\OnlineExaminationSystem\\Views\\User\\Instructions.cshtml",
@@ -180,6 +209,43 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAFYAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-01-22T11:09:27.427Z",
+=======
+              "DocumentIndex": 1,
+              "Title": "_AdminLayout.cshtml",
+              "DocumentMoniker": "C:\\Online_Exam_System_Project\\User_UI\\OnlineExaminationSystem\\Views\\Shared\\_AdminLayout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_AdminLayout.cshtml",
+              "ToolTip": "C:\\Online_Exam_System_Project\\User_UI\\OnlineExaminationSystem\\Views\\Shared\\_AdminLayout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_AdminLayout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-01-22T11:50:33.834Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Online_Exam_System_Project\\User_UI\\OnlineExaminationSystem\\Views\\AdminLogin\\Login.cshtml",
+              "RelativeDocumentMoniker": "Views\\AdminLogin\\Login.cshtml",
+              "ToolTip": "C:\\Online_Exam_System_Project\\User_UI\\OnlineExaminationSystem\\Views\\AdminLogin\\Login.cshtml",
+              "RelativeToolTip": "Views\\AdminLogin\\Login.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-01-22T11:46:22.885Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "admin.css",
+              "DocumentMoniker": "C:\\Online_Exam_System_Project\\User_UI\\OnlineExaminationSystem\\Content\\admin.css",
+              "RelativeDocumentMoniker": "Content\\admin.css",
+              "ToolTip": "C:\\Online_Exam_System_Project\\User_UI\\OnlineExaminationSystem\\Content\\admin.css",
+              "RelativeToolTip": "Content\\admin.css",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAAAFgAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-01-22T11:45:04.831Z",
+>>>>>>> 611d7ed316ea1e648c20cecea715906e23b09f40
               "EditorCaption": ""
             },
             {

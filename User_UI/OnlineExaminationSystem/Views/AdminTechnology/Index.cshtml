@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "Technologies";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Technologies</h2>
+
+<div style="margin-bottom:20px;">
+    <a href="/AdminTechnology/Create">
+        <button>Add Technology</button>
+    </a>
+
+</div>
+
+<table border="1" cellpadding="10" cellspacing="0">
+    <thead>
+        <tr>
+            <th>Technology ID</th>
+            <th>Technology Name</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>Java</td>
+            <td>
+                <button>Edit</button>
+                <button>Delete</button>
+            </td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Python</td>
+            <td>
+                <button>Edit</button>
+                <button>Delete</button>
+            </td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>C#</td>
+            <td>
+                <button>Edit</button>
+                <button>Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

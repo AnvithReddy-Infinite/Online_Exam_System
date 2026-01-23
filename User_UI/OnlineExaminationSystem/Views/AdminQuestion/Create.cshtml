@@ -1,0 +1,68 @@
+﻿@{
+    ViewBag.Title = "Add Question";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Add Question</h2>
+
+<form>
+
+    <div style="margin-bottom:15px;">
+        <label>Technology</label><br />
+        <select>
+            <option>-- Select Technology --</option>
+            <option>Java</option>
+            <option>Python</option>
+            <option>C#</option>
+        </select>
+    </div>
+
+    <div style="margin-bottom:15px;">
+        <label>Level</label><br />
+        <select>
+            <option>-- Select Level --</option>
+            <option>Easy</option>
+            <option>Medium</option>
+            <option>Hard</option>
+        </select>
+    </div>
+
+    <div style="margin-bottom:15px;">
+        <label>Question</label><br />
+        <textarea rows="3" cols="60"></textarea>
+    </div>
+
+    <div style="margin-bottom:15px;">
+        <label>Option A</label><br />
+        <input type="text" />
+    </div>
+
+    <div style="margin-bottom:15px;">
+        <label>Option B</label><br />
+        <input type="text" />
+    </div>
+
+    <div style="margin-bottom:15px;">
+        <label>Option C</label><br />
+        <input type="text" />
+    </div>
+
+    <div style="margin-bottom:15px;">
+        <label>Option D</label><br />
+        <input type="text" />
+    </div>
+
+    <div style="margin-bottom:15px;">
+        <label>Correct Answer</label><br />
+        <select>
+            <option>A</option>
+            <option>B</option>
+            <option>C</option>
+            <option>D</option>
+        </select>
+    </div>
+
+    <button type="submit">Save Question</button>
+    <a href="/AdminQuestion/Index">Cancel</a>
+
+</form>

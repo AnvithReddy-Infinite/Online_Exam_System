@@ -1,5 +1,6 @@
 {
   "Version": 1,
+<<<<<<< HEAD
   "WorkspaceRootPath": "C:\\Users\\poojati\\FinalProject\\Online_Exam_System\\User_UI\\OnlineExaminationSystem\\",
   "Documents": [
     {
@@ -67,6 +68,10 @@
       "RelativeMoniker": "D:0:0:{3B2A8AEF-CE60-4EF7-9E01-57DC9B9BB166}|OnlineExaminationSystem.csproj|solutionrelative:Controllers\\HomeController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
+=======
+  "WorkspaceRootPath": "C:\\Online_Exam_System_Project\\User_UI\\OnlineExaminationSystem\\",
+  "Documents": [],
+>>>>>>> 611d7ed316ea1e648c20cecea715906e23b09f40
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -74,11 +79,16 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
+<<<<<<< HEAD
           "SelectedChildIndex": 10,
+=======
+          "SelectedChildIndex": -1,
+>>>>>>> 611d7ed316ea1e648c20cecea715906e23b09f40
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+<<<<<<< HEAD
             },
             {
               "$type": "Bookmark",
@@ -291,6 +301,8 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-22T06:00:30.148Z",
               "EditorCaption": ""
+=======
+>>>>>>> 611d7ed316ea1e648c20cecea715906e23b09f40
             }
           ]
         }

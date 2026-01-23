@@ -120,6 +120,14 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminDashboardController.cs" />
+    <Compile Include="Controllers\AdminExamController.cs" />
+    <Compile Include="Controllers\AdminLevelController.cs" />
+    <Compile Include="Controllers\AdminLoginController.cs" />
+    <Compile Include="Controllers\AdminQuestionController.cs" />
+    <Compile Include="Controllers\AdminResultController.cs" />
+    <Compile Include="Controllers\AdminStudentController.cs" />
+    <Compile Include="Controllers\AdminTechnologyController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
@@ -131,6 +139,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\admin.css" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -182,6 +191,7 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+<<<<<<< HEAD
     <Content Include="Views\User\Home.cshtml" />
     <Content Include="Views\User\Register.cshtml" />
     <Content Include="Views\User\Login.cshtml" />
@@ -189,6 +199,21 @@
     <Content Include="Views\User\SelectExam.cshtml" />
     <Content Include="Views\User\Report.cshtml" />
     <Content Include="Views\Shared\_UserLayout.cshtml" />
+=======
+    <Content Include="Views\AdminLogin\Login.cshtml" />
+    <Content Include="Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Views\AdminDashboard\Index.cshtml" />
+    <Content Include="Views\AdminTechnology\Index.cshtml" />
+    <Content Include="Views\AdminTechnology\Create.cshtml" />
+    <Content Include="Views\AdminLevel\Index.cshtml" />
+    <Content Include="Views\AdminLevel\Create.cshtml" />
+    <Content Include="Views\AdminQuestion\Index.cshtml" />
+    <Content Include="Views\AdminQuestion\Create.cshtml" />
+    <Content Include="Views\AdminExam\Index.cshtml" />
+    <Content Include="Views\AdminExam\Create.cshtml" />
+    <Content Include="Views\AdminStudent\Index.cshtml" />
+    <Content Include="Views\AdminResult\Index.cshtml" />
+>>>>>>> 611d7ed316ea1e648c20cecea715906e23b09f40
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
