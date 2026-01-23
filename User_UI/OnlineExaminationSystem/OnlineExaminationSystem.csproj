@@ -191,7 +191,6 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-<<<<<<< HEAD
     <Content Include="Views\User\Home.cshtml" />
     <Content Include="Views\User\Register.cshtml" />
     <Content Include="Views\User\Login.cshtml" />
@@ -199,7 +198,6 @@
     <Content Include="Views\User\SelectExam.cshtml" />
     <Content Include="Views\User\Report.cshtml" />
     <Content Include="Views\Shared\_UserLayout.cshtml" />
-=======
     <Content Include="Views\AdminLogin\Login.cshtml" />
     <Content Include="Views\Shared\_AdminLayout.cshtml" />
     <Content Include="Views\AdminDashboard\Index.cshtml" />
@@ -213,7 +211,7 @@
     <Content Include="Views\AdminExam\Create.cshtml" />
     <Content Include="Views\AdminStudent\Index.cshtml" />
     <Content Include="Views\AdminResult\Index.cshtml" />
->>>>>>> 611d7ed316ea1e648c20cecea715906e23b09f40
+    <Content Include="Views\User\Questions.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

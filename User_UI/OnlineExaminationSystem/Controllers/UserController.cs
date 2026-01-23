@@ -44,14 +44,21 @@ namespace OnlineExaminationSystem.Controllers
             }
             return View(model);
         }
-        public ActionResult Instructions()
-        {
-            return View();
-        }
         public ActionResult SelectExam()
         {
             return View();
         }
+        public ActionResult Instructions()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Questions()
+        {
+            return View();
+        }
+
+
         public ActionResult Report()
         {
             return View();

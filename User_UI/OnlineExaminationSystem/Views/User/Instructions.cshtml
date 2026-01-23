@@ -1,12 +1,13 @@
-﻿
-@{
-    ViewBag.Title = "Instructions";
+﻿@{
+   ViewBag.Title = "Instructions";
 }
-
-<h3>Instruction for Technical Test</h3>
-<p>• Exam is time bounded</p>
-<p>• No negative marking</p>
-<p>• Do not refresh page</p>
-<p>Time: 2:30</p>
-<a href="/User/SelectExam">Start Exam</a> |
-<a href="/User/Logout">Logout</a>
+<h2>Instructions</h2>
+<ul>
+<li>Total Questions: 10</li>
+<li>Each question carries 1 mark</li>
+<li>No negative marking</li>
+<li>Do not refresh the page</li>
+</ul>
+<form method="post" action="/User/Questions">
+<button type="submit">Start</button>
+</form>

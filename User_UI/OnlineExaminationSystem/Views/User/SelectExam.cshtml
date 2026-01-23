@@ -1,16 +1,65 @@
-﻿
-@{
-    ViewBag.Title = "SelectExam";
+﻿@{
+    ViewBag.Title = "Select Exam";
 }
 
-<h3>Select Exam</h3>
-<ul>
-    <li>Java</li>
-    <li>Python</li>
-    <li>SQL</li>
-    <li>C / C++</li>
-    <li>C# /.Net</li>
-</ul>
-<a href="/User/Report">Finish Exam</a> |
-<a href="/User/Logout">Logout</a>
+<style>
+    .user-container {
+        display: flex;
+        height: 100vh;
+    }
 
+    .user-sidebar {
+        width: 220px;
+        background-color: #2c3e50;
+        color: white;
+        padding: 20px;
+    }
+
+    .user-content {
+        flex: 1;
+        padding: 20px;
+        background-color: #ecf0f1;
+    }
+</style>
+<style>
+    .user-container {
+        display: flex;
+        height: 100vh;
+    }
+
+    .user-sidebar {
+        width: 220px;
+        background-color: #2c3e50;
+        color: white;
+        padding: 20px;
+    }
+
+    .user-content {
+        flex: 1;
+        padding: 20px;
+        background-color: #ecf0f1;
+    }
+</style>
+
+<h2>Select Exam</h2>
+<form method="post" action="/User/Instructions">
+    <label>Exam</label><br />
+    <select name="exam" required>
+        <option value="">-- Select Exam --</option>
+        <option>Java</option>
+        <option>Python</option>
+        <option>SQL</option>
+        <option>C / C++</option>
+        <option>C# .Net</option>
+    </select>
+    <br /><br />
+    <label>Level</label><br />
+    <select name="level" required>
+        <option value="">-- Select Level --</option>
+        <option>Level 1</option>
+        <option>Level 2</option>
+        <option>Level 3</option>
+    </select>
+    <br /><br />
+    <button type="submit">Continue</button>
+</form>

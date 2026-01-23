@@ -3,10 +3,72 @@
     ViewBag.Title = "Report";
 }
 
-<h3>Report Card</h3>
-<p>Name: Student</p>
-<p>Score: 75</p>
-<p>Level: 1</p>
-<p>Test: Java</p>
-<p><b>Thank You!!!!</b></p>
-<a href="/User/Logout">Exit</a>
+<div class="user-container">
+    
+    <div class="user-content">
+        <!-- ✅ PASTE REPORT CARD HTML HERE -->
+        <h2 style="text-align:center;">1.6 Report card</h2>
+        <div class="report-wrapper">
+            <div class="report-box">
+                <h3>Thank You!!!!</h3>
+                <p>
+                    You have cleared the level 1 <br />
+                    You can Proceed to level 2
+                </p>
+                <form action="/User/SelectExam" method="get">
+                    <button class="report-btn">Level 2</button>
+                </form>
+            </div>
+            <div class="report-box">
+                <p><b>Name:</b></p>
+                <p><b>Score:</b></p>
+                <p><b>Level:</b></p>
+                <p><b>Test:</b></p>
+                <form action="/User/Logout" method="get">
+                    <button class="report-btn">Exit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ✅ ADD CSS AT THE VERY BOTTOM -->
+<style>
+    .report-wrapper {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        margin-top: 40px;
+    }
+
+    .report-box {
+        width: 350px;
+        height: 230px;
+        border: 2px solid #2c3e50;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+        .report-box h3 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .report-box p {
+            font-size: 15px;
+            margin: 8px 0;
+        }
+
+    .report-btn {
+        margin-top: 25px;
+        padding: 8px 25px;
+        background-color: #2c3e50;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+
+        .report-btn:hover {
+            background-color: #34495e;
+        }
+</style>
+
