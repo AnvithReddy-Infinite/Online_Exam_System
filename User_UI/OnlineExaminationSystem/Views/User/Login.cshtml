@@ -1,0 +1,21 @@
+﻿@model OnlineExaminationSystem.Models.UserModel
+<h3>Login</h3>
+@using (Html.BeginForm())
+{
+    <p>
+        Email-id:
+        @Html.TextBoxFor(m => m.Email)
+        @Html.ValidationMessageFor(m => m.Email)
+    </p>
+    <p>
+        Password:
+        @Html.PasswordFor(m => m.Password)
+        @Html.ValidationMessageFor(m => m.Password)
+    </p>
+    <input type="submit" value="Login" />
+}
+<p>
+    <a href="#">Forgot Password?</a><br />
+    Don’t have an account?
+    <a href="/User/Register">Register here</a>
+</p>

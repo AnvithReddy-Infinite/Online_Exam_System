@@ -1,0 +1,89 @@
+﻿@model OnlineExaminationSystem.Models.UserModel
+<h3>Register</h3>
+
+@using (Html.BeginForm())
+
+{
+    <p>
+
+        Full Name:
+
+        @Html.TextBoxFor(m => m.FullName)
+
+        @Html.ValidationMessageFor(m => m.FullName)
+    </p>
+    <p>
+
+        Email:
+
+        @Html.TextBoxFor(m => m.Email)
+
+        @Html.ValidationMessageFor(m => m.Email)
+    </p>
+    <p>
+
+        Password:
+
+        @Html.PasswordFor(m => m.Password)
+
+        @Html.ValidationMessageFor(m => m.Password)
+    </p>
+    <p>
+
+        Mobile:
+
+        @Html.TextBoxFor(m => m.Mobile)
+
+        @Html.ValidationMessageFor(m => m.Mobile)
+    </p>
+    <p>
+
+        City:
+
+        @Html.TextBoxFor(m => m.City)
+
+        @Html.ValidationMessageFor(m => m.City)
+    </p>
+    <p>
+
+        DOB:
+
+        @Html.TextBoxFor(m => m.DOB)
+
+        @Html.ValidationMessageFor(m => m.DOB)
+    </p>
+    <p>
+
+        State:
+
+        @Html.TextBoxFor(m => m.State)
+
+        @Html.ValidationMessageFor(m => m.State)
+    </p>
+    <p>
+
+        Qualification:
+
+        @Html.TextBoxFor(m => m.Qualification)
+
+        @Html.ValidationMessageFor(m => m.Qualification)
+    </p>
+    <p>
+
+        Year of completion:
+
+        @Html.TextBoxFor(m => m.YearOfCompletion)
+
+        @Html.ValidationMessageFor(m => m.YearOfCompletion)
+    </p>
+    <p>
+        Captcha:
+        <span id="captcha"></span>
+        <button type="button" onclick="refreshCaptcha()">&#8635;</button>
+        <input type="text" />
+    </p>
+    <input type="submit" value="Register" />
+
+    
+
+}

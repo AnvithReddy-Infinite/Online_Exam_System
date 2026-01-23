@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - User Panel</title>
+    <link href="~/Content/User.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="user-container">
+        <div class="user-sidebar">
+            <h3>User Panel</h3>
+            <ul>
+                <li><a href="/User/Home">Dashboard</a></li>
+                <li><a href="/User/Instructions">Instructions</a></li>
+                <li><a href="/User/SelectExam">New Exam</a></li>
+                <li><a href="/User/Report">Report</a></li>
+                <li><a href="/User/Logout">Logout</a></li>
+            </ul>
+        </div>
+        <div class="user-content">
+            @RenderBody()
+        </div>
+    </div>
+</body>
+</html>
