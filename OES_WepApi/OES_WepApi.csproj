@@ -186,15 +186,23 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Common\ApiResponse.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\ExamController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\EmailValidatorHelper.cs" />
+    <Compile Include="Helpers\PasswordHelper.cs" />
+    <Compile Include="Helpers\PasswordValidatorHelper.cs" />
     <Compile Include="Models\Admin.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\DTOs\LoginUserDTO.cs" />
+    <Compile Include="Models\DTOs\RegisterUserDTO.cs" />
+    <Compile Include="Models\DTOs\ResetPasswordDTO.cs" />
     <Compile Include="Models\Exam.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -236,8 +244,8 @@
     <Compile Include="Repository\ExamRepository.cs" />
     <Compile Include="Repository\IAdminRepository.cs" />
     <Compile Include="Repository\IExamRepository.cs" />
-    <Compile Include="Repository\IUserRepository.cs" />
-    <Compile Include="Repository\UserRepository.cs" />
+    <Compile Include="Repository\Implementations\UserRepository.cs" />
+    <Compile Include="Repository\Interfaces\IUserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />

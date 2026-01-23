@@ -1,77 +1,165 @@
-﻿using OES_WepApi.Models;
-using OES_WepApi.Repository;
+﻿using FinalProject.Models;
+using FinalProject.Models.DTOs;
+using FinalProject.Repositories.Implementations;
+using FinalProject.Repositories.Interfaces;
+using FinalProject.Common;
+using FinalProject.Helpers;
 using System;
 using System.Linq;
 using System.Web.Http;
+using OES_WepApi.Models;
 
-namespace OES_WepApi.Controllers
+namespace FinalProject.Controllers
 {
-    [RoutePrefix("api/users")]
+    [RoutePrefix("api/user")]
     public class UserController : ApiController
     {
-        private readonly IUserRepository _userRepo;
+        private readonly IUserRepository _userRepository;
 
+        // Initialize repository directly
         public UserController()
         {
-            _userRepo = new UserRepository();
+            var context = new OnlineExamSystemEntities(); // EF DbContext
+            _userRepository = new UserRepository(context);
         }
 
-        // Register User in DB
+        // Register EndPoint
         [HttpPost]
         [Route("register")]
-        public IHttpActionResult Register([FromBody] User user)
+        public IHttpActionResult Register([FromBody] RegisterUserDTO model)
         {
-            // Condition for required fields
-            if (user == null || string.IsNullOrEmpty(user.FullName) ||
-                string.IsNullOrEmpty(user.Email) || string.IsNullOrEmpty(user.PasswordHash))
+            if (model == null)
+                return BadRequest("User data is required.");
+
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            try
             {
-                return BadRequest("FullName, Email, and Password are required");
+                // Validate Email
+                if (!EmailValidatorHelper.IsValidEmail(model.Email))
+                {
+                    return BadRequest("Invalid email format.");
+                }
+
+                // Validate Password
+                if (!PasswordValidatorHelper.IsValid(model.Password, out string passwordError))
+                    return BadRequest(passwordError);
+
+                // Check if email already exists
+                var existingUser = _userRepository.GetByEmail(model.Email);
+                if (existingUser != null)
+                    return Conflict(); // 409 Conflict
+
+                // Map DTO to User model
+                var user = new User
+                {
+                    FullName = model.FullName,
+                    Email = model.Email,
+                    Mobile = model.Mobile,
+                    City = model.City,
+                    State = model.State,
+                    DOB = model.DOB,
+                    Qualification = model.Qualification,
+                    YearOfCompletion = model.YearOfCompletion,
+                    PasswordHash = PasswordHelper.HashPassword(model.Password),
+                    CreatedAt = DateTime.Now
+                };
+
+                // Save user
+                _userRepository.AddUser(user);
+                _userRepository.SaveChanges();
+
+                // Return response
+                return Ok(new ApiResponse<object>(
+                    true,
+                    "User registered successfully.",
+                    new
+                    {
+                        user.UserId,
+                        user.FullName,
+                        user.Email
+                    }
+                ));
             }
-
-            // Check if email already exists
-            if (_userRepo.GetUserByEmail(user.Email) != null)
-                return BadRequest("Email already exists");
-
-            // Hashing password
-            user.PasswordHash = BCrypt.Net.BCrypt.HashPassword(user.PasswordHash);
-
-            user.CreatedAt = DateTime.Now;
-
-            // Add user to DB
-            _userRepo.AddUser(user);
-            return Ok("Registration successful");
+            catch (Exception ex)
+            {
+                // Handle unexpected errors
+                return InternalServerError(ex);
+            }
         }
 
+        // Login EndPoint
 
-        // Login Handler
         [HttpPost]
         [Route("login")]
-        public IHttpActionResult Login([FromBody] LoginRequest model)
+        public IHttpActionResult Login([FromBody] LoginUserDTO model)
         {
-            if (model == null || string.IsNullOrEmpty(model.Email) || string.IsNullOrEmpty(model.Password))
+            if (model == null)
+                return BadRequest("Login data is required.");
+
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            try
             {
-                return BadRequest("Email and Password are required");
+                // Get user by email
+                var user = _userRepository.GetByEmail(model.Email);
+                if (user == null)
+                    return Unauthorized(); // email doesn't exist
+
+                // Verify password
+                bool isPasswordValid = PasswordHelper.VerifyPassword(model.Password, user.PasswordHash);
+                if (!isPasswordValid)
+                    return Unauthorized(); // password is wrong
+
+                return Ok(new ApiResponse<object>(true, "Login successful", new
+                {
+                    user.UserId,
+                    user.FullName,
+                    user.Email
+                }));
             }
-
-            var user = _userRepo.GetUserByEmail(model.Email);
-
-            if (user == null || !_userRepo.ValidateUser(model.Email, model.Password))
+            catch (Exception ex)
             {
-                return Unauthorized(); // Either user not found or password mismatch
+                // Handle unexpected errors
+                return InternalServerError(ex);
             }
-
-            // Return user info (exclude password)
-            return Ok("Login Successfull");
         }
 
-        // For admin checking
+        // Reset Password EndPoint
+        [HttpPost]
+        [Route("reset-password")]
+        public IHttpActionResult ResetPassword([FromBody] ResetPasswordDTO model)
+        {
+            if (model == null)
+                return BadRequest("Data is required.");
+
+            var user = _userRepository.GetByEmail(model.Email);
+            if (user == null)
+                return NotFound();
+
+            if(!PasswordValidatorHelper.IsValid(model.NewPassword, out string passwordError))
+            return BadRequest(passwordError);
+
+            user.PasswordHash = PasswordHelper.HashPassword(model.NewPassword);
+            _userRepository.SaveChanges();
+
+            return Ok(new ApiResponse<string>(true, "Password updated successfully.", null));
+        }
+
+
+        // Users List EndPoint
         [HttpGet]
         [Route("all")]
         public IHttpActionResult GetAllUsers()
         {
             try
             {
-                var users = _userRepo.GetAllUsers();
+                var users = _userRepository.GetAllUsers();
+
+                if (users == null || !users.Any())
+                    return Ok(new ApiResponse<object>(true, "No users found", null));
 
                 var result = users.Select(u => new
                 {
@@ -85,22 +173,14 @@ namespace OES_WepApi.Controllers
                     u.Qualification,
                     u.YearOfCompletion,
                     u.CreatedAt
-                });
+                }).ToList();
 
-                return Ok(result);
+                return Ok(new ApiResponse<object>(true, "Users fetched successfully", result));
             }
             catch (Exception ex)
             {
-                return InternalServerError(ex);
+                return InternalServerError(new Exception("An unexpected error occurred while fetching users.", ex));
             }
-        }
-
-
-        // Login Model
-        public class LoginRequest
-        {
-            public string Email { get; set; }
-            public string Password { get; set; }
         }
     }
 }
