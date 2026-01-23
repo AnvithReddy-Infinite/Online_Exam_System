@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "Welcome";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Online Exam System</title>
+
+    <link href="~/Content/welcome.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="welcome-container">
+
+        <h1>Online Examination System</h1>
+
+        <p class="subtitle">
+            A simple, secure and smart platform to conduct online exams
+        </p>
+
+        <div class="role-selection">
+
+            <div class="role-card">
+                <h2>Student</h2>
+                <p>Take exams, view results and track your performance</p>
+                <a href="/User/Login" class="role-button">Continue as Student</a>
+            </div>
+
+            <div class="role-card">
+                <h2>Admin</h2>
+                <p>Manage exams, questions, users and results</p>
+                <a href="/AdminLogin/Login" class="role-button admin">Continue as Admin</a>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

@@ -3,13 +3,13 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Add Question</h2>
+<h2 style="margin-bottom:20px;">Add Question</h2>
 
 <form>
 
-    <div style="margin-bottom:15px;">
+    <div style="margin-bottom:16px;">
         <label>Technology</label><br />
-        <select>
+        <select style="width:300px; height:36px;">
             <option>-- Select Technology --</option>
             <option>Java</option>
             <option>Python</option>
@@ -17,9 +17,9 @@
         </select>
     </div>
 
-    <div style="margin-bottom:15px;">
+    <div style="margin-bottom:16px;">
         <label>Level</label><br />
-        <select>
+        <select style="width:300px; height:36px;">
             <option>-- Select Level --</option>
             <option>Easy</option>
             <option>Medium</option>
@@ -27,34 +27,34 @@
         </select>
     </div>
 
-    <div style="margin-bottom:15px;">
+    <div style="margin-bottom:16px;">
         <label>Question</label><br />
-        <textarea rows="3" cols="60"></textarea>
+        <textarea rows="3" style="width:500px; height:70px;"></textarea>
     </div>
 
-    <div style="margin-bottom:15px;">
+    <div style="margin-bottom:16px;">
         <label>Option A</label><br />
-        <input type="text" />
+        <input type="text" style="width:400px; height:36px;" />
     </div>
 
-    <div style="margin-bottom:15px;">
+    <div style="margin-bottom:16px;">
         <label>Option B</label><br />
-        <input type="text" />
+        <input type="text" style="width:400px; height:36px;" />
     </div>
 
-    <div style="margin-bottom:15px;">
+    <div style="margin-bottom:16px;">
         <label>Option C</label><br />
-        <input type="text" />
+        <input type="text" style="width:400px; height:36px;" />
     </div>
 
-    <div style="margin-bottom:15px;">
+    <div style="margin-bottom:16px;">
         <label>Option D</label><br />
-        <input type="text" />
+        <input type="text" style="width:400px; height:36px;" />
     </div>
 
-    <div style="margin-bottom:15px;">
+    <div style="margin-bottom:22px;">
         <label>Correct Answer</label><br />
-        <select>
+        <select style="width:120px; height:36px;">
             <option>A</option>
             <option>B</option>
             <option>C</option>
@@ -62,7 +62,11 @@
         </select>
     </div>
 
-    <button type="submit">Save Question</button>
-    <a href="/AdminQuestion/Index">Cancel</a>
+    <button type="submit"
+            style="padding:10px 22px; font-size:15px; background-color:#1abc9c; color:white; border:none; border-radius:5px;">
+        Save Question
+    </button>
+
+    <a href="/AdminQuestion/Index" style="margin-left:12px;">Cancel</a>
 
 </form>
