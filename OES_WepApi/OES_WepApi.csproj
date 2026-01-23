@@ -201,8 +201,12 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DTOs\LoginUserDTO.cs" />
+    <Compile Include="Models\DTOs\OptionDTO.cs" />
+    <Compile Include="Models\DTOs\QuestionDTO.cs" />
     <Compile Include="Models\DTOs\RegisterUserDTO.cs" />
     <Compile Include="Models\DTOs\ResetPasswordDTO.cs" />
+    <Compile Include="Models\DTOs\StartExamDTO.cs" />
+    <Compile Include="Models\DTOs\StartExamResponseDTO.cs" />
     <Compile Include="Models\Exam.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -244,7 +248,13 @@
     <Compile Include="Repository\ExamRepository.cs" />
     <Compile Include="Repository\IAdminRepository.cs" />
     <Compile Include="Repository\IExamRepository.cs" />
+    <Compile Include="Repository\Implementations\ExamRepository.cs" />
+    <Compile Include="Repository\Implementations\OptionRepository.cs" />
+    <Compile Include="Repository\Implementations\QuestionRepository.cs" />
     <Compile Include="Repository\Implementations\UserRepository.cs" />
+    <Compile Include="Repository\Interfaces\IExamRepository.cs" />
+    <Compile Include="Repository\Interfaces\IOptionRepository.cs" />
+    <Compile Include="Repository\Interfaces\IQuestionRepository.cs" />
     <Compile Include="Repository\Interfaces\IUserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
