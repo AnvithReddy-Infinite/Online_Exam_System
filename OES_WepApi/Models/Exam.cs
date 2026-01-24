@@ -27,7 +27,7 @@ namespace OES_WepApi.Models
         public int Score { get; set; }
         public bool Status { get; set; }
         public System.DateTime StartedAt { get; set; }
-        public System.DateTime CompletedAt { get; set; }
+        public Nullable<System.DateTime> CompletedAt { get; set; }
     
         public virtual Level Level { get; set; }
         public virtual Technology Technology { get; set; }

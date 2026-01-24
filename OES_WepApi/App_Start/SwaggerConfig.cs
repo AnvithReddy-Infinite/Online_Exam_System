@@ -2,6 +2,7 @@ using System.Web.Http;
 using WebActivatorEx;
 using OES_WepApi;
 using Swashbuckle.Application;
+using OES_WepApi.Helpers;
 
 [assembly: PreApplicationStartMethod(typeof(SwaggerConfig), "Register")]
 
@@ -61,7 +62,7 @@ namespace OES_WepApi
                         //c.BasicAuth("basic")
                         //    .Description("Basic HTTP Authentication");
                         //
-						// NOTE: You must also configure 'EnableApiKeySupport' below in the SwaggerUI section
+                        // NOTE: You must also configure 'EnableApiKeySupport' below in the SwaggerUI section
                         //c.ApiKey("apiKey")
                         //    .Description("API Key Authentication")
                         //    .Name("apiKey")
@@ -176,6 +177,7 @@ namespace OES_WepApi
                         // alternative implementation for ISwaggerProvider with the CustomProvider option.
                         //
                         //c.CustomProvider((defaultProvider) => new CachingSwaggerProvider(defaultProvider));
+                        c.OperationFilter<SwaggerFileUploadHelper>();
                     })
                 .EnableSwaggerUi(c =>
                     {

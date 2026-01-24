@@ -13,6 +13,7 @@ namespace FinalProject.Repositories.Interfaces
         void AddUser(User user);
         IEnumerable<User> GetAllUsers();
         User GetByEmail(string  email);
+        User GetById(int id);
         void UpdatePassword(User user, string newPassword);
 
         void SaveChanges();
