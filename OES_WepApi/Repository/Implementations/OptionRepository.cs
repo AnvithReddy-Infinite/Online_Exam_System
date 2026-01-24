@@ -16,6 +16,10 @@ namespace FinalProject.Repositories.Implementations
         {
             _context = context;
         }
+        public Option GetById(int optionId)
+        {
+            return _context.Options.FirstOrDefault(o => o.OptionId == optionId);
+        }
         public List<Option> GetByQuestionId(int questionId)
         {
             return _context.Options.Where(o => o.QuestionId == questionId).ToList();

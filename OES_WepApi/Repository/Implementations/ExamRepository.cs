@@ -3,6 +3,7 @@ using FinalProject.Repositories.Interfaces;
 using OES_WepApi.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Diagnostics;
 using System.Drawing.Text;
 using System.Linq;
@@ -21,6 +22,11 @@ namespace FinalProject.Repositories.Implementations
         public void AddExam(Exam exam)
         {
             _context.Exams.Add(exam);
+        }
+
+        public void Update(Exam exam)
+        {
+            _context.Entry(exam).State = EntityState.Modified;
         }
 
         public Exam GetById(int examId)

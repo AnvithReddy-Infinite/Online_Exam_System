@@ -11,7 +11,7 @@ namespace FinalProject.Repositories.Interfaces
     public interface IExamRepository
     {
         void AddExam(Exam exam);
-
+        void Update(Exam exam);
         Exam GetById(int examId);
 
         List<Exam> GetByUserTechLevel(int userId, int techId, int levelId);

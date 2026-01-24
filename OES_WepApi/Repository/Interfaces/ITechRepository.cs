@@ -8,9 +8,8 @@ using System.Threading.Tasks;
 
 namespace FinalProject.Repositories.Interfaces
 {
-    public interface IOptionRepository
+    public interface ITechRepository
     {
-        List<Option> GetByQuestionId(int questionId);
-        Option GetById(int optionId);
+        Technology GetById(int id);
     }
 }

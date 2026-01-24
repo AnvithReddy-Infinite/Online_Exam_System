@@ -20,6 +20,8 @@ namespace FinalProject.Controllers
         private readonly IQuestionRepository _questionsRepository;
         private readonly IOptionRepository _optionsRepository;
         private readonly IUserRepository _userRepository;
+        private readonly IResultRepository _resultRepository;
+        private readonly ITechRepository _techRepository;
 
         public ExamController()
         {
@@ -29,6 +31,8 @@ namespace FinalProject.Controllers
             _questionsRepository = new QuestionRepository(context);
             _optionsRepository = new OptionRepository(context);
             _userRepository = new UserRepository(context);
+            _resultRepository = new ResultRepository(context);
+            _techRepository = new TechRepository(context);
         }
 
         [HttpPost]
@@ -110,6 +114,7 @@ namespace FinalProject.Controllers
 
                 var questions = _questionsRepository.GetByTechAndLevel(exam.TechId, exam.LevelId);
 
+
                 var questionDTOs = questions.Select(q => new QuestionDTO
                 {
                     QuestionId = q.QuestionId,
@@ -135,5 +140,175 @@ namespace FinalProject.Controllers
             }
 
         }
+
+        // Submit Endpoint
+        [HttpPost]
+        [Route("submit")]
+        public IHttpActionResult SubmitExam(SubmitExamDTO dto)
+        {
+            try
+            {
+                var exam = _examRepository.GetById(dto.ExamId);
+
+                if (exam == null)
+                    return BadRequest("Exam not found");
+
+                if (exam.UserId != dto.UserId)
+                    return BadRequest("Unauthorized Exam Submission");
+
+                if (exam.CompletedAt != null)
+                    return BadRequest("Exam already submitted");
+
+                // ===== Time Limit =====
+                int allowedTimeMinutes;
+                switch (exam.LevelId)
+                {
+                    case 1:
+                        allowedTimeMinutes = 30; // Beginner
+                        break;
+                    case 2:
+                        allowedTimeMinutes = 45; // Intermediate
+                        break;
+                    case 3:
+                        allowedTimeMinutes = 60; // Advanced
+                        break;
+                    default:
+                        allowedTimeMinutes = 30;
+                        break;
+                }
+
+                TimeSpan elapsedTime = DateTime.Now - exam.StartedAt;
+                bool isTimeUp = elapsedTime.TotalMinutes > allowedTimeMinutes;
+
+                int score = 0;
+
+                // ===== Process answers only if time is not fully expired =====
+                if (!isTimeUp)
+                {
+                    foreach (var answer in dto.Answers)
+                    {
+                        var option = _optionsRepository.GetById(answer.SelectedOptionId);
+
+                        if (option == null)
+                            return BadRequest("Invalid option selected");
+
+                        bool isCorrect = option.IsCorrect;
+                        if (isCorrect)
+                            score++;
+
+                        var result = new Result
+                        {
+                            ExamId = exam.ExamId,
+                            QuestionId = answer.QuestionId,
+                            SelectedOptionId = answer.SelectedOptionId,
+                            IsCorrect = isCorrect
+                        };
+
+                        _resultRepository.Add(result);
+                    }
+                }
+
+                var level = exam.Level;
+                var user = exam.User;
+                var tech = _techRepository.GetById(exam.TechId);
+
+                bool isPassed = !isTimeUp && score >= level.PassMarks;
+
+                // ===== Update exam record =====
+                exam.Score = score;
+                exam.Status = isPassed;
+                exam.CompletedAt = isTimeUp
+                    ? exam.StartedAt.AddMinutes(allowedTimeMinutes)  // strict time limit
+                    : DateTime.Now;
+
+                _examRepository.Update(exam);
+                _resultRepository.SaveChanges();
+                _examRepository.SaveChanges();
+
+                // ===== Response =====
+                return Ok(new ApiResponse<object>
+                {
+                    Success = !isTimeUp,
+                    Message = isTimeUp
+                        ? "Time is up! Exam automatically submitted as failed."
+                        : "Exam submitted successfully",
+                    Data = new
+                    {
+                        UserName = user.FullName,
+                        Technology = tech?.Name ?? "Unknown",
+                        Level = level.LevelName,
+                        Score = score,
+                        TimeTakenMinutes = (int)Math.Min(elapsedTime.TotalMinutes, allowedTimeMinutes),
+                        Result = isPassed ? "Pass" : "Fail"
+                    }
+                });
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(
+                    new Exception("Error while submitting exam: " + ex.Message));
+            }
+        }
+
+
+        // Result Endpoint
+
+        [HttpGet]
+        [Route("{examId}/result")]
+        public IHttpActionResult GetExamResult(int examId, int userId)
+        {
+            try
+            {
+                var exam = _examRepository.GetById(examId);
+
+                if (exam == null)
+                    return BadRequest("Exam not found");
+
+                if (exam.UserId != userId)
+                    return BadRequest("Unauthorized access");
+
+                if (exam.CompletedAt == null)
+                    return BadRequest("Exam not yet completed");
+
+                var tech = _techRepository.GetById(exam.TechId);
+                var results = _resultRepository.GetByExamId(examId);
+
+                var response = new ExamResultDTO
+                {
+                    ExamId = exam.ExamId,
+                    UserName = exam.User.FullName,
+                    Technology = tech?.Name ?? "Unknown",
+                    Level = exam.Level.LevelName,
+                    Score = exam.Score,
+                    PassMarks = exam.Level.PassMarks,
+                    Result = exam.Status ? "Pass" : "Fail",
+                    StartedAt = exam.StartedAt,
+                    CompletedAt = exam.CompletedAt,
+                    Questions = results.Select(r => new QuestionResultDTO
+                    {
+                        QuestionId = r.QuestionId,
+                        QuestionText = r.Question.QuestionText,
+                        SelectedOption = r.Option.OptionText,
+                        CorrectOption = r.Question.Options
+                                            .First(o => o.IsCorrect)
+                                            .OptionText,
+                        IsCorrect = r.IsCorrect
+                    }).ToList()
+                };
+
+                return Ok(new ApiResponse<ExamResultDTO>
+                {
+                    Success = true,
+                    Message = "Exam result fetched successfully",
+                    Data = response
+                });
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(
+                    new Exception("Error while fetching exam result: " + ex.Message));
+            }
+        }
+
     }
 }

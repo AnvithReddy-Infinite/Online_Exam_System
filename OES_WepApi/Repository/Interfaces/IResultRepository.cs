@@ -8,9 +8,10 @@ using System.Threading.Tasks;
 
 namespace FinalProject.Repositories.Interfaces
 {
-    public interface IOptionRepository
+    internal interface IResultRepository
     {
-        List<Option> GetByQuestionId(int questionId);
-        Option GetById(int optionId);
+        void Add(Result result);
+        List<Result> GetByExamId(int examId);
+        void SaveChanges();
     }
 }

@@ -31,6 +31,7 @@ namespace FinalProject.Repositories.Implementations
         {
             return _context.Users.FirstOrDefault(u => u.UserId == id);
         }
+
         public IEnumerable<User> GetAllUsers()
         {
             return _context.Users.ToList();
