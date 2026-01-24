@@ -1,4 +1,5 @@
-﻿using OES_WepApi.Repository;
+﻿using OES_WepApi.Helpers;
+using OES_WepApi.Repository;
 using OES_WepApi.Repository.Implementations;
 using OES_WepApi.Repository.Interfaces;
 using System;
@@ -39,9 +40,8 @@ namespace OES_WepApi.Controllers
         // ADD QUESTIONS (UPLOAD FILE)
         [HttpPost]
         [Route("upload-questions")]
-        public IHttpActionResult UploadQuestions(
-    [FromUri] int techId,
-    [FromUri] int levelId)
+        [SwaggerFileUpload]
+        public IHttpActionResult UploadQuestions([FromUri] int techId,[FromUri] int levelId)
         {
             try
             {
@@ -69,6 +69,7 @@ namespace OES_WepApi.Controllers
         // REMOVE QUESTIONS (DELETE FILE)
         [HttpPost]
         [Route("remove-questions-file")]
+        [SwaggerFileUpload]
         public IHttpActionResult RemoveQuestionsFile(int techId, int levelId)
         {
             try

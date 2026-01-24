@@ -11,6 +11,15 @@ namespace OES_WepApi.Helpers
     {
         public void Apply(Operation operation, SchemaRegistry schemaRegistry, ApiDescription apiDescription)
         {
+            // ✅ Apply ONLY to methods marked with [SwaggerFileUpload]
+            var hasFileUploadAttribute =
+                apiDescription.ActionDescriptor
+                    .GetCustomAttributes<SwaggerFileUploadAttribute>()
+                    .Any();
+
+            if (!hasFileUploadAttribute)
+                return;
+
             if (operation.parameters == null)
                 operation.parameters = new List<Parameter>();
 
@@ -39,6 +48,8 @@ namespace OES_WepApi.Helpers
                 required = true,
                 type = "integer"
             });
+
+            operation.consumes = new[] { "multipart/form-data" };
         }
     }
 }

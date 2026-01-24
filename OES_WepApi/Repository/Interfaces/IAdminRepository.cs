@@ -14,11 +14,7 @@ namespace OES_WepApi.Repository.Interfaces
         Admin Login(string email, string password);
 
         // Upload questions file (Add Questions)
-        string UploadQuestionsFile(
-        HttpPostedFile file,
-        int techId,
-        int levelId
-    );
+        string UploadQuestionsFile(HttpPostedFile file,int techId,int levelId);
 
         // Remove questions file
         string RemoveQuestionsByFile(HttpPostedFile file, int techId, int levelId);
