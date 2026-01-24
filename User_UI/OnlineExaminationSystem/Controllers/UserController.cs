@@ -35,6 +35,9 @@ namespace OnlineExaminationSystem.Controllers
         {
             return View();
         }
+
+
+
         [HttpPost]
         public ActionResult Login(UserModel model)
         {
@@ -44,6 +47,34 @@ namespace OnlineExaminationSystem.Controllers
             }
             return View(model);
         }
+
+        [HttpGet]
+        public ActionResult ForgotPassword()
+        {
+            return View();
+        }
+       
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult ForgotPassword(ForgotPasswordViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                // Validation failed
+                return View(model);
+            }
+            // 🔹 Example check (replace with DB check)
+            bool emailExists = model.Email == "test@gmail.com"; // demo only
+            if (!emailExists)
+            {
+                ModelState.AddModelError("Email", "Email not found");
+                return View(model);
+            }
+            // 🔹 Success message (later you can send email)
+            TempData["SuccessMessage"] = "Password reset link sent to your email";
+            return RedirectToAction("Login");
+        }
+
         public ActionResult SelectExam()
         {
             return View();

@@ -135,6 +135,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ExamModel.cs" />
+    <Compile Include="Models\ForgotPasswordViewModel.cs" />
     <Compile Include="Models\ResultModel.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -213,11 +214,9 @@
     <Content Include="Views\AdminExam\Create.cshtml" />
     <Content Include="Views\AdminStudent\Index.cshtml" />
     <Content Include="Views\AdminResult\Index.cshtml" />
-<<<<<<< HEAD
     <Content Include="Views\User\Questions.cshtml" />
-=======
     <Content Include="Views\Welcome\Index.cshtml" />
->>>>>>> 6424d69aee290f6b409db9a243d5b7c793b50c27
+    <Content Include="Views\User\ForgotPassword.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

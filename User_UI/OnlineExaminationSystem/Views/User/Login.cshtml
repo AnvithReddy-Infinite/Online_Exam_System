@@ -1,21 +1,37 @@
 ﻿@model OnlineExaminationSystem.Models.UserModel
-<h3>Login</h3>
-@using (Html.BeginForm())
-{
-    <p>
-        Email-id:
-        @Html.TextBoxFor(m => m.Email)
-        @Html.ValidationMessageFor(m => m.Email)
-    </p>
-    <p>
-        Password:
-        @Html.PasswordFor(m => m.Password)
-        @Html.ValidationMessageFor(m => m.Password)
-    </p>
-    <input type="submit" value="Login" />
+@{
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
 }
-<p>
-    <a href="#">Forgot Password?</a><br />
-    Don’t have an account?
-    <a href="/User/Register">Register here</a>
-</p>
+
+<!-- 🔹 ADD THIS WRAPPER DIV -->
+<div class="login-container">
+    <h2 class="login-title">User Login</h2>
+    @using (Html.BeginForm("Login", "User", FormMethod.Post))
+    {
+        <!-- 🔹 OPTIONAL BUT RECOMMENDED -->
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <!-- 🔹 YOUR EXISTING EMAIL CODE (JUST ADD CLASS) -->
+        <div class="form-group">
+            <label>Email</label>
+            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+        </div>
+        <!-- 🔹 YOUR EXISTING PASSWORD CODE (JUST ADD CLASS) -->
+        <div class="form-group">
+            <label>Password</label>
+            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+        </div>
+        <!-- 🔹 YOUR EXISTING BUTTON (CLASS ADDED) -->
+        <input type="submit" value="Login" class="btn-login" />
+        <div class="login-extra-links">
+            <a href="@Url.Action("ForgotPassword", "User")" class="forgot-link">
+                Forgot Password?
+            </a>
+            <div class="register-text">
+                Don’t have an account?
+                <a href="@Url.Action("Register", "User")">Register here</a>
+            </div>
+        </div>
+    }
+</div>
