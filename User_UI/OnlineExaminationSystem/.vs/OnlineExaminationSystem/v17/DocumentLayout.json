@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\poojati\\FinalProject\\Online_Exam_System\\User_UI\\OnlineExaminationSystem\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3B2A8AEF-CE60-4EF7-9E01-57DC9B9BB166}|OnlineExaminationSystem.csproj|C:\\Users\\poojati\\FinalProject\\Online_Exam_System\\User_UI\\OnlineExaminationSystem\\Views\\User\\Login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{3B2A8AEF-CE60-4EF7-9E01-57DC9B9BB166}|OnlineExaminationSystem.csproj|solutionrelative:Views\\User\\Login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{3B2A8AEF-CE60-4EF7-9E01-57DC9B9BB166}|OnlineExaminationSystem.csproj|c:\\users\\poojati\\finalproject\\online_exam_system\\user_ui\\onlineexaminationsystem\\views\\user\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3B2A8AEF-CE60-4EF7-9E01-57DC9B9BB166}|OnlineExaminationSystem.csproj|solutionrelative:views\\user\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3B2A8AEF-CE60-4EF7-9E01-57DC9B9BB166}|OnlineExaminationSystem.csproj|C:\\Users\\poojati\\FinalProject\\Online_Exam_System\\User_UI\\OnlineExaminationSystem\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B2A8AEF-CE60-4EF7-9E01-57DC9B9BB166}|OnlineExaminationSystem.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3B2A8AEF-CE60-4EF7-9E01-57DC9B9BB166}|OnlineExaminationSystem.csproj|C:\\Users\\poojati\\FinalProject\\Online_Exam_System\\User_UI\\OnlineExaminationSystem\\Views\\User\\Home.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -23,7 +27,7 @@
       "RelativeMoniker": "D:0:0:{3B2A8AEF-CE60-4EF7-9E01-57DC9B9BB166}|OnlineExaminationSystem.csproj|solutionrelative:Content\\User.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3B2A8AEF-CE60-4EF7-9E01-57DC9B9BB166}|OnlineExaminationSystem.csproj|c:\\users\\poojati\\finalproject\\online_exam_system\\user_ui\\onlineexaminationsystem\\views\\user\\forgotpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{3B2A8AEF-CE60-4EF7-9E01-57DC9B9BB166}|OnlineExaminationSystem.csproj|C:\\Users\\poojati\\FinalProject\\Online_Exam_System\\User_UI\\OnlineExaminationSystem\\views\\user\\forgotpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{3B2A8AEF-CE60-4EF7-9E01-57DC9B9BB166}|OnlineExaminationSystem.csproj|solutionrelative:views\\user\\forgotpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
@@ -39,16 +43,12 @@
       "RelativeMoniker": "D:0:0:{3B2A8AEF-CE60-4EF7-9E01-57DC9B9BB166}|OnlineExaminationSystem.csproj|solutionrelative:Views\\User\\SelectExam.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3B2A8AEF-CE60-4EF7-9E01-57DC9B9BB166}|OnlineExaminationSystem.csproj|c:\\users\\poojati\\finalproject\\online_exam_system\\user_ui\\onlineexaminationsystem\\models\\forgotpasswordviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3B2A8AEF-CE60-4EF7-9E01-57DC9B9BB166}|OnlineExaminationSystem.csproj|C:\\Users\\poojati\\FinalProject\\Online_Exam_System\\User_UI\\OnlineExaminationSystem\\models\\forgotpasswordviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3B2A8AEF-CE60-4EF7-9E01-57DC9B9BB166}|OnlineExaminationSystem.csproj|solutionrelative:models\\forgotpasswordviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3B2A8AEF-CE60-4EF7-9E01-57DC9B9BB166}|OnlineExaminationSystem.csproj|C:\\Users\\poojati\\FinalProject\\Online_Exam_System\\User_UI\\OnlineExaminationSystem\\Views\\User\\Questions.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{3B2A8AEF-CE60-4EF7-9E01-57DC9B9BB166}|OnlineExaminationSystem.csproj|solutionrelative:Views\\User\\Questions.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B2A8AEF-CE60-4EF7-9E01-57DC9B9BB166}|OnlineExaminationSystem.csproj|c:\\users\\poojati\\finalproject\\online_exam_system\\user_ui\\onlineexaminationsystem\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B2A8AEF-CE60-4EF7-9E01-57DC9B9BB166}|OnlineExaminationSystem.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3B2A8AEF-CE60-4EF7-9E01-57DC9B9BB166}|OnlineExaminationSystem.csproj|C:\\Users\\poojati\\FinalProject\\Online_Exam_System\\User_UI\\OnlineExaminationSystem\\Content\\Site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
@@ -98,7 +98,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\poojati\\FinalProject\\Online_Exam_System\\User_UI\\OnlineExaminationSystem\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
@@ -106,12 +106,11 @@
               "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-01-23T04:37:39.321Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-23T04:37:39.321Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "_UserLayout.cshtml",
               "DocumentMoniker": "C:\\Users\\poojati\\FinalProject\\Online_Exam_System\\User_UI\\OnlineExaminationSystem\\Views\\Shared\\_UserLayout.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\_UserLayout.cshtml",
@@ -119,8 +118,7 @@
               "RelativeToolTip": "Views\\Shared\\_UserLayout.cshtml",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAAwAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-01-23T04:37:39.315Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-23T04:37:39.315Z"
             },
             {
               "$type": "Document",
@@ -137,7 +135,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "ForgotPassword.cshtml",
               "DocumentMoniker": "C:\\Users\\poojati\\FinalProject\\Online_Exam_System\\User_UI\\OnlineExaminationSystem\\Views\\User\\ForgotPassword.cshtml",
               "RelativeDocumentMoniker": "Views\\User\\ForgotPassword.cshtml",
@@ -145,12 +143,11 @@
               "RelativeToolTip": "Views\\User\\ForgotPassword.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAEcAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-01-24T13:00:37.953Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-24T13:00:37.953Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "SelectExam.cshtml",
               "DocumentMoniker": "C:\\Users\\poojati\\FinalProject\\Online_Exam_System\\User_UI\\OnlineExaminationSystem\\Views\\User\\SelectExam.cshtml",
               "RelativeDocumentMoniker": "Views\\User\\SelectExam.cshtml",
@@ -158,12 +155,11 @@
               "RelativeToolTip": "Views\\User\\SelectExam.cshtml",
               "ViewState": "AgIAABsAAAAAAAAAAAAAACYAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-01-23T04:37:39.293Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-23T04:37:39.293Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "Report.cshtml",
               "DocumentMoniker": "C:\\Users\\poojati\\FinalProject\\Online_Exam_System\\User_UI\\OnlineExaminationSystem\\Views\\User\\Report.cshtml",
               "RelativeDocumentMoniker": "Views\\User\\Report.cshtml",
@@ -171,12 +167,11 @@
               "RelativeToolTip": "Views\\User\\Report.cshtml",
               "ViewState": "AgIAADwAAAAAAAAAAAAAAE0AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-01-23T04:37:39.284Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-23T04:37:39.284Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "User.css",
               "DocumentMoniker": "C:\\Users\\poojati\\FinalProject\\Online_Exam_System\\User_UI\\OnlineExaminationSystem\\Content\\User.css",
               "RelativeDocumentMoniker": "Content\\User.css",
@@ -184,12 +179,11 @@
               "RelativeToolTip": "Content\\User.css",
               "ViewState": "AgIAAIYAAAAAAAAAAAAAAJIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2026-01-23T04:37:39.304Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-23T04:37:39.304Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Home.cshtml",
               "DocumentMoniker": "C:\\Users\\poojati\\FinalProject\\Online_Exam_System\\User_UI\\OnlineExaminationSystem\\Views\\User\\Home.cshtml",
               "RelativeDocumentMoniker": "Views\\User\\Home.cshtml",
@@ -197,12 +191,24 @@
               "RelativeToolTip": "Views\\User\\Home.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-01-23T04:37:39.111Z",
+              "WhenOpened": "2026-01-23T04:37:39.111Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\poojati\\FinalProject\\Online_Exam_System\\User_UI\\OnlineExaminationSystem\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\poojati\\FinalProject\\Online_Exam_System\\User_UI\\OnlineExaminationSystem\\Controllers\\UserController.cs*",
+              "RelativeToolTip": "Controllers\\UserController.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-23T04:37:39.338Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "ForgotPasswordViewModel.cs",
               "DocumentMoniker": "C:\\Users\\poojati\\FinalProject\\Online_Exam_System\\User_UI\\OnlineExaminationSystem\\Models\\ForgotPasswordViewModel.cs",
               "RelativeDocumentMoniker": "Models\\ForgotPasswordViewModel.cs",
@@ -210,12 +216,11 @@
               "RelativeToolTip": "Models\\ForgotPasswordViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-24T13:05:46.596Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-24T13:05:46.596Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "Instructions.cshtml",
               "DocumentMoniker": "C:\\Users\\poojati\\FinalProject\\Online_Exam_System\\User_UI\\OnlineExaminationSystem\\Views\\User\\Instructions.cshtml",
               "RelativeDocumentMoniker": "Views\\User\\Instructions.cshtml",
@@ -223,12 +228,11 @@
               "RelativeToolTip": "Views\\User\\Instructions.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-01-23T04:37:39.263Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-23T04:37:39.263Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "Questions.cshtml",
               "DocumentMoniker": "C:\\Users\\poojati\\FinalProject\\Online_Exam_System\\User_UI\\OnlineExaminationSystem\\Views\\User\\Questions.cshtml",
               "RelativeDocumentMoniker": "Views\\User\\Questions.cshtml",
@@ -236,21 +240,7 @@
               "RelativeToolTip": "Views\\User\\Questions.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAD0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-01-23T06:50:41.516Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\Users\\poojati\\FinalProject\\Online_Exam_System\\User_UI\\OnlineExaminationSystem\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "Controllers\\UserController.cs",
-              "ToolTip": "C:\\Users\\poojati\\FinalProject\\Online_Exam_System\\User_UI\\OnlineExaminationSystem\\Controllers\\UserController.cs",
-              "RelativeToolTip": "Controllers\\UserController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADQAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-23T04:37:39.338Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-23T06:50:41.516Z"
             },
             {
               "$type": "Document",

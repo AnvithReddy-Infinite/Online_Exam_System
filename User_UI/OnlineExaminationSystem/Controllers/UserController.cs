@@ -14,7 +14,6 @@ namespace OnlineExaminationSystem.Controllers
         {
             return View();
         }
-        // REGISTER
         [HttpGet]
         public ActionResult Register()
         {
@@ -60,17 +59,14 @@ namespace OnlineExaminationSystem.Controllers
         {
             if (!ModelState.IsValid)
             {
-                // Validation failed
                 return View(model);
             }
-            // 🔹 Example check (replace with DB check)
-            bool emailExists = model.Email == "test@gmail.com"; // demo only
+            bool emailExists = model.Email == "test@gmail.com"; 
             if (!emailExists)
             {
                 ModelState.AddModelError("Email", "Email not found");
                 return View(model);
             }
-            // 🔹 Success message (later you can send email)
             TempData["SuccessMessage"] = "Password reset link sent to your email";
             return RedirectToAction("Login");
         }

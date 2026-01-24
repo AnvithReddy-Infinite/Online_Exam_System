@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\poojati\\FinalProject\\Online_Exam_System\\User_UI\\OnlineExaminationSystem\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3B2A8AEF-CE60-4EF7-9E01-57DC9B9BB166}|OnlineExaminationSystem.csproj|C:\\Users\\poojati\\FinalProject\\Online_Exam_System\\User_UI\\OnlineExaminationSystem\\Views\\User\\Login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{3B2A8AEF-CE60-4EF7-9E01-57DC9B9BB166}|OnlineExaminationSystem.csproj|solutionrelative:Views\\User\\Login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{3B2A8AEF-CE60-4EF7-9E01-57DC9B9BB166}|OnlineExaminationSystem.csproj|c:\\users\\poojati\\finalproject\\online_exam_system\\user_ui\\onlineexaminationsystem\\views\\user\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3B2A8AEF-CE60-4EF7-9E01-57DC9B9BB166}|OnlineExaminationSystem.csproj|solutionrelative:views\\user\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3B2A8AEF-CE60-4EF7-9E01-57DC9B9BB166}|OnlineExaminationSystem.csproj|C:\\Users\\poojati\\FinalProject\\Online_Exam_System\\User_UI\\OnlineExaminationSystem\\Views\\User\\Home.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -23,7 +23,7 @@
       "RelativeMoniker": "D:0:0:{3B2A8AEF-CE60-4EF7-9E01-57DC9B9BB166}|OnlineExaminationSystem.csproj|solutionrelative:Content\\User.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3B2A8AEF-CE60-4EF7-9E01-57DC9B9BB166}|OnlineExaminationSystem.csproj|c:\\users\\poojati\\finalproject\\online_exam_system\\user_ui\\onlineexaminationsystem\\views\\user\\forgotpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{3B2A8AEF-CE60-4EF7-9E01-57DC9B9BB166}|OnlineExaminationSystem.csproj|C:\\Users\\poojati\\FinalProject\\Online_Exam_System\\User_UI\\OnlineExaminationSystem\\views\\user\\forgotpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{3B2A8AEF-CE60-4EF7-9E01-57DC9B9BB166}|OnlineExaminationSystem.csproj|solutionrelative:views\\user\\forgotpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
@@ -39,7 +39,7 @@
       "RelativeMoniker": "D:0:0:{3B2A8AEF-CE60-4EF7-9E01-57DC9B9BB166}|OnlineExaminationSystem.csproj|solutionrelative:Views\\User\\SelectExam.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3B2A8AEF-CE60-4EF7-9E01-57DC9B9BB166}|OnlineExaminationSystem.csproj|c:\\users\\poojati\\finalproject\\online_exam_system\\user_ui\\onlineexaminationsystem\\models\\forgotpasswordviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3B2A8AEF-CE60-4EF7-9E01-57DC9B9BB166}|OnlineExaminationSystem.csproj|C:\\Users\\poojati\\FinalProject\\Online_Exam_System\\User_UI\\OnlineExaminationSystem\\models\\forgotpasswordviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3B2A8AEF-CE60-4EF7-9E01-57DC9B9BB166}|OnlineExaminationSystem.csproj|solutionrelative:models\\forgotpasswordviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -47,7 +47,7 @@
       "RelativeMoniker": "D:0:0:{3B2A8AEF-CE60-4EF7-9E01-57DC9B9BB166}|OnlineExaminationSystem.csproj|solutionrelative:Views\\User\\Questions.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3B2A8AEF-CE60-4EF7-9E01-57DC9B9BB166}|OnlineExaminationSystem.csproj|c:\\users\\poojati\\finalproject\\online_exam_system\\user_ui\\onlineexaminationsystem\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3B2A8AEF-CE60-4EF7-9E01-57DC9B9BB166}|OnlineExaminationSystem.csproj|C:\\Users\\poojati\\FinalProject\\Online_Exam_System\\User_UI\\OnlineExaminationSystem\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3B2A8AEF-CE60-4EF7-9E01-57DC9B9BB166}|OnlineExaminationSystem.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -106,8 +106,7 @@
               "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-01-23T04:37:39.321Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-23T04:37:39.321Z"
             },
             {
               "$type": "Document",
@@ -119,8 +118,7 @@
               "RelativeToolTip": "Views\\Shared\\_UserLayout.cshtml",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAAwAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-01-23T04:37:39.315Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-23T04:37:39.315Z"
             },
             {
               "$type": "Document",
@@ -145,8 +143,7 @@
               "RelativeToolTip": "Views\\User\\ForgotPassword.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAEcAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-01-24T13:00:37.953Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-24T13:00:37.953Z"
             },
             {
               "$type": "Document",
@@ -158,8 +155,7 @@
               "RelativeToolTip": "Views\\User\\SelectExam.cshtml",
               "ViewState": "AgIAABsAAAAAAAAAAAAAACYAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-01-23T04:37:39.293Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-23T04:37:39.293Z"
             },
             {
               "$type": "Document",
@@ -171,8 +167,7 @@
               "RelativeToolTip": "Views\\User\\Report.cshtml",
               "ViewState": "AgIAADwAAAAAAAAAAAAAAE0AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-01-23T04:37:39.284Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-23T04:37:39.284Z"
             },
             {
               "$type": "Document",
@@ -184,8 +179,7 @@
               "RelativeToolTip": "Content\\User.css",
               "ViewState": "AgIAAIYAAAAAAAAAAAAAAJIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2026-01-23T04:37:39.304Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-23T04:37:39.304Z"
             },
             {
               "$type": "Document",
@@ -197,8 +191,7 @@
               "RelativeToolTip": "Views\\User\\Home.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-01-23T04:37:39.111Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-23T04:37:39.111Z"
             },
             {
               "$type": "Document",
@@ -210,8 +203,7 @@
               "RelativeToolTip": "Models\\ForgotPasswordViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-24T13:05:46.596Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-24T13:05:46.596Z"
             },
             {
               "$type": "Document",
@@ -223,8 +215,7 @@
               "RelativeToolTip": "Views\\User\\Instructions.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-01-23T04:37:39.263Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-23T04:37:39.263Z"
             },
             {
               "$type": "Document",
@@ -236,8 +227,7 @@
               "RelativeToolTip": "Views\\User\\Questions.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAD0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-01-23T06:50:41.516Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-23T06:50:41.516Z"
             },
             {
               "$type": "Document",
@@ -249,8 +239,7 @@
               "RelativeToolTip": "Controllers\\UserController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADQAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-23T04:37:39.338Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-23T04:37:39.338Z"
             },
             {
               "$type": "Document",
