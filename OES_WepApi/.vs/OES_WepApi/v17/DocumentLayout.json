@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\humeras\\Project\\Online_Exam_System\\OES_WepApi\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{B8AB8DB2-1A5B-4296-899A-A94FF7ABF146}|OES_WepApi.csproj|c:\\users\\humeras\\project\\online_exam_system\\oes_wepapi\\repository\\implementations\\adminrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B8AB8DB2-1A5B-4296-899A-A94FF7ABF146}|OES_WepApi.csproj|solutionrelative:repository\\implementations\\adminrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B8AB8DB2-1A5B-4296-899A-A94FF7ABF146}|OES_WepApi.csproj|c:\\users\\humeras\\project\\online_exam_system\\oes_wepapi\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{B8AB8DB2-1A5B-4296-899A-A94FF7ABF146}|OES_WepApi.csproj|solutionrelative:web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
@@ -11,12 +15,16 @@
       "RelativeMoniker": "D:0:0:{B8AB8DB2-1A5B-4296-899A-A94FF7ABF146}|OES_WepApi.csproj|solutionrelative:controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B8AB8DB2-1A5B-4296-899A-A94FF7ABF146}|OES_WepApi.csproj|c:\\users\\humeras\\project\\online_exam_system\\oes_wepapi\\helpers\\swaggerfileuploadhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B8AB8DB2-1A5B-4296-899A-A94FF7ABF146}|OES_WepApi.csproj|solutionrelative:helpers\\swaggerfileuploadhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B8AB8DB2-1A5B-4296-899A-A94FF7ABF146}|OES_WepApi.csproj|c:\\users\\humeras\\project\\online_exam_system\\oes_wepapi\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B8AB8DB2-1A5B-4296-899A-A94FF7ABF146}|OES_WepApi.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B8AB8DB2-1A5B-4296-899A-A94FF7ABF146}|OES_WepApi.csproj|c:\\users\\humeras\\project\\online_exam_system\\oes_wepapi\\helpers\\swaggerfileuploadattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B8AB8DB2-1A5B-4296-899A-A94FF7ABF146}|OES_WepApi.csproj|solutionrelative:helpers\\swaggerfileuploadattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B8AB8DB2-1A5B-4296-899A-A94FF7ABF146}|OES_WepApi.csproj|c:\\users\\humeras\\project\\online_exam_system\\oes_wepapi\\repository\\interfaces\\iadminrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B8AB8DB2-1A5B-4296-899A-A94FF7ABF146}|OES_WepApi.csproj|solutionrelative:repository\\interfaces\\iadminrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8AB8DB2-1A5B-4296-899A-A94FF7ABF146}|OES_WepApi.csproj|c:\\users\\humeras\\project\\online_exam_system\\oes_wepapi\\models\\dtos\\studentsearchresultdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B8AB8DB2-1A5B-4296-899A-A94FF7ABF146}|OES_WepApi.csproj|solutionrelative:models\\dtos\\studentsearchresultdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,21 +34,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 9,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Web.config",
-              "DocumentMoniker": "C:\\Users\\humeras\\Project\\Online_Exam_System\\OES_WepApi\\Web.config",
-              "RelativeDocumentMoniker": "Web.config",
-              "ToolTip": "C:\\Users\\humeras\\Project\\Online_Exam_System\\OES_WepApi\\Web.config",
-              "RelativeToolTip": "Web.config",
-              "ViewState": "AgIAAEsAAAAAAAAAAAAAAFcAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2026-01-24T09:49:17.553Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
@@ -54,42 +49,85 @@
               "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AdminController.cs",
-              "DocumentMoniker": "C:\\Users\\humeras\\Project\\Online_Exam_System\\OES_WepApi\\Controllers\\AdminController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AdminController.cs",
-              "ToolTip": "C:\\Users\\humeras\\Project\\Online_Exam_System\\OES_WepApi\\Controllers\\AdminController.cs",
-              "RelativeToolTip": "Controllers\\AdminController.cs",
-              "ViewState": "AgIAAD8AAAAAAAAAAAAgwEcAAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-24T09:44:52.067Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "SwaggerFileUploadHelper.cs",
-              "DocumentMoniker": "C:\\Users\\humeras\\Project\\Online_Exam_System\\OES_WepApi\\Helpers\\SwaggerFileUploadHelper.cs",
-              "RelativeDocumentMoniker": "Helpers\\SwaggerFileUploadHelper.cs",
-              "ToolTip": "C:\\Users\\humeras\\Project\\Online_Exam_System\\OES_WepApi\\Helpers\\SwaggerFileUploadHelper.cs",
-              "RelativeToolTip": "Helpers\\SwaggerFileUploadHelper.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAQwDQAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-24T09:43:22.87Z",
+              "DocumentIndex": 1,
+              "Title": "Web.config",
+              "DocumentMoniker": "C:\\Users\\humeras\\Project\\Online_Exam_System\\OES_WepApi\\Web.config",
+              "RelativeDocumentMoniker": "Web.config",
+              "ToolTip": "C:\\Users\\humeras\\Project\\Online_Exam_System\\OES_WepApi\\Web.config",
+              "RelativeToolTip": "Web.config",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAAAFcAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2026-01-25T16:00:43.915Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "SwaggerFileUploadAttribute.cs",
-              "DocumentMoniker": "C:\\Users\\humeras\\Project\\Online_Exam_System\\OES_WepApi\\Helpers\\SwaggerFileUploadAttribute.cs",
-              "RelativeDocumentMoniker": "Helpers\\SwaggerFileUploadAttribute.cs",
-              "ToolTip": "C:\\Users\\humeras\\Project\\Online_Exam_System\\OES_WepApi\\Helpers\\SwaggerFileUploadAttribute.cs",
-              "RelativeToolTip": "Helpers\\SwaggerFileUploadAttribute.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\humeras\\Project\\Online_Exam_System\\OES_WepApi\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\humeras\\Project\\Online_Exam_System\\OES_WepApi\\Controllers\\UserController.cs",
+              "RelativeToolTip": "Controllers\\UserController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-24T09:42:35.43Z",
+              "WhenOpened": "2026-01-25T14:09:13.688Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IAdminRepository.cs",
+              "DocumentMoniker": "C:\\Users\\humeras\\Project\\Online_Exam_System\\OES_WepApi\\Repository\\Interfaces\\IAdminRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\Interfaces\\IAdminRepository.cs",
+              "ToolTip": "C:\\Users\\humeras\\Project\\Online_Exam_System\\OES_WepApi\\Repository\\Interfaces\\IAdminRepository.cs",
+              "RelativeToolTip": "Repository\\Interfaces\\IAdminRepository.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAwBYAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-25T13:59:50.911Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "StudentSearchResultDTO.cs",
+              "DocumentMoniker": "C:\\Users\\humeras\\Project\\Online_Exam_System\\OES_WepApi\\Models\\DTOs\\StudentSearchResultDTO.cs",
+              "RelativeDocumentMoniker": "Models\\DTOs\\StudentSearchResultDTO.cs",
+              "ToolTip": "C:\\Users\\humeras\\Project\\Online_Exam_System\\OES_WepApi\\Models\\DTOs\\StudentSearchResultDTO.cs",
+              "RelativeToolTip": "Models\\DTOs\\StudentSearchResultDTO.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAswBEAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-25T13:54:20.669Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\humeras\\Project\\Online_Exam_System\\OES_WepApi\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AdminController.cs",
+              "ToolTip": "C:\\Users\\humeras\\Project\\Online_Exam_System\\OES_WepApi\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "Controllers\\AdminController.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-25T13:46:33.684Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AdminRepository.cs",
+              "DocumentMoniker": "C:\\Users\\humeras\\Project\\Online_Exam_System\\OES_WepApi\\Repository\\Implementations\\AdminRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\Implementations\\AdminRepository.cs",
+              "ToolTip": "C:\\Users\\humeras\\Project\\Online_Exam_System\\OES_WepApi\\Repository\\Implementations\\AdminRepository.cs",
+              "RelativeToolTip": "Repository\\Implementations\\AdminRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAALIAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-25T13:45:10.719Z",
               "EditorCaption": ""
             }
           ]

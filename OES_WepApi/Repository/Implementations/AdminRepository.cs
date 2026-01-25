@@ -1,14 +1,15 @@
 ﻿using ExcelDataReader;
 using Microsoft.Ajax.Utilities;
+using Microsoft.VisualBasic.FileIO;
 using OES_WepApi.Helpers;
 using OES_WepApi.Models;
+using OES_WepApi.Models.DTOs;
 using OES_WepApi.Repository.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Web;
-using Microsoft.VisualBasic.FileIO;
 
 namespace OES_WepApi.Repository.Implementations
 {
@@ -63,7 +64,8 @@ namespace OES_WepApi.Repository.Implementations
                         {
                             QuestionText = fields[0],
                             TechId = techId,
-                            LevelId = levelId
+                            LevelId = levelId,
+                            CreatedAt = DateTime.Now
                         };
 
                         _context.Questions.Add(question);
@@ -157,37 +159,45 @@ namespace OES_WepApi.Repository.Implementations
             }
         }
 
-        public List<User> SearchStudents(int? techId, int? levelId, string state, string city, int? minMarks)
+        public List<StudentSearchResultDTO> SearchStudents(int? techId, int? levelId, string state, string city, int? minMarks)
         {
             try
             {
-                var query = from u in _context.Users
-                            join e in _context.Exams on u.UserId equals e.UserId
-                            select new { u, e };
+                var query =
+                from u in _context.Users
+                join e in _context.Exams on u.UserId equals e.UserId
+                select new StudentSearchResultDTO
+                {
+                    UserId = u.UserId,
+                    FullName = u.FullName,
+                    Email = u.Email,
+                    City = u.City,
+                    State = u.State,
+                    TechId = e.TechId,
+                    LevelId = e.LevelId,
+                    Score = e.Score
+                };
 
                 if (techId.HasValue)
-                    query = query.Where(x => x.e.TechId == techId.Value);
+                    query = query.Where(x => x.TechId == techId.Value);
 
                 if (levelId.HasValue)
-                    query = query.Where(x => x.e.LevelId == levelId.Value);
+                    query = query.Where(x => x.LevelId == levelId.Value);
 
                 if (!string.IsNullOrEmpty(state))
-                    query = query.Where(x => x.u.State == state);
+                    query = query.Where(x => x.State == state);
 
                 if (!string.IsNullOrEmpty(city))
-                    query = query.Where(x => x.u.City == city);
+                    query = query.Where(x => x.City == city);
 
                 if (minMarks.HasValue)
-                    query = query.Where(x => x.e.Score >= minMarks.Value);
+                    query = query.Where(x => x.Score >= minMarks.Value);
 
-                return query
-                    .Select(x => x.u)
-                    .Distinct()
-                    .ToList();
+                return query.ToList();
             }
             catch
             {
-                return new List<User>();
+                return new List<StudentSearchResultDTO>();
             }
         }
     }

@@ -77,22 +77,22 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.IO.Compression" />
-    <Reference Include="System.Memory, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.Memory.4.6.3\lib\net462\System.Memory.dll</HintPath>
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
     </Reference>
     <Reference Include="System.Numerics" />
     <Reference Include="System.Numerics.Vectors, Version=4.1.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\System.Numerics.Vectors.4.6.1\lib\net462\System.Numerics.Vectors.dll</HintPath>
     </Reference>
-    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.6.1.2\lib\net462\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="System.Security" />
     <Reference Include="System.Security.Cryptography.Xml, Version=8.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Security.Cryptography.Xml.8.0.2\lib\net462\System.Security.Cryptography.Xml.dll</HintPath>
     </Reference>
-    <Reference Include="System.Text.Encoding.CodePages, Version=10.0.0.2, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\System.Text.Encoding.CodePages.10.0.2\lib\net462\System.Text.Encoding.CodePages.dll</HintPath>
+    <Reference Include="System.Text.Encoding.CodePages, Version=9.0.0.12, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Text.Encoding.CodePages.9.0.12\lib\net462\System.Text.Encoding.CodePages.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -220,13 +220,18 @@
     <Compile Include="Models\Admin.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\DTOs\AnswerDTO.cs" />
+    <Compile Include="Models\DTOs\ExamResultDTO.cs" />
     <Compile Include="Models\DTOs\LoginUserDTO.cs" />
     <Compile Include="Models\DTOs\OptionDTO.cs" />
     <Compile Include="Models\DTOs\QuestionDTO.cs" />
+    <Compile Include="Models\DTOs\QuestionResultDTO.cs" />
     <Compile Include="Models\DTOs\RegisterUserDTO.cs" />
     <Compile Include="Models\DTOs\ResetPasswordDTO.cs" />
     <Compile Include="Models\DTOs\StartExamDTO.cs" />
     <Compile Include="Models\DTOs\StartExamResponseDTO.cs" />
+    <Compile Include="Models\DTOs\StudentSearchResultDTO.cs" />
+    <Compile Include="Models\DTOs\SubmitExamDTO.cs" />
     <Compile Include="Models\Exam.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -264,18 +269,19 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repository\ExamRepository.cs" />
-    <Compile Include="Repository\IExamRepository.cs" />
     <Compile Include="Repository\Implementations\ExamRepository.cs" />
     <Compile Include="Repository\Implementations\OptionRepository.cs" />
     <Compile Include="Repository\Implementations\QuestionRepository.cs" />
+    <Compile Include="Repository\Implementations\ResultRepository.cs" />
+    <Compile Include="Repository\Implementations\TechRepository.cs" />
     <Compile Include="Repository\Implementations\UserRepository.cs" />
     <Compile Include="Repository\Interfaces\IExamRepository.cs" />
     <Compile Include="Repository\Interfaces\IOptionRepository.cs" />
     <Compile Include="Repository\Interfaces\IQuestionRepository.cs" />
     <Compile Include="Repository\Implementations\AdminRepository.cs" />
-    <Compile Include="Repository\Implementations\UserRepository.cs" />
     <Compile Include="Repository\Interfaces\IAdminRepository.cs" />
+    <Compile Include="Repository\Interfaces\IResultRepository.cs" />
+    <Compile Include="Repository\Interfaces\ITechRepository.cs" />
     <Compile Include="Repository\Interfaces\IUserRepository.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,4 +1,5 @@
 ﻿using OES_WepApi.Models;
+using OES_WepApi.Models.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,6 @@ namespace OES_WepApi.Repository.Interfaces
         // Remove questions file
         string RemoveQuestionsByFile(HttpPostedFile file, int techId, int levelId);
 
-        List<User> SearchStudents(int? techId, int? levelId, string state, string city, int? minMarks);
+        List<StudentSearchResultDTO> SearchStudents(int? techId, int? levelId, string state, string city, int? minMarks);
     }
 }
