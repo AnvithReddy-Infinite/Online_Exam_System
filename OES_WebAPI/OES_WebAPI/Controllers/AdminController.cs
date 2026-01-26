@@ -1,4 +1,5 @@
-﻿using OES_WepApi.Helpers;
+﻿using FinalProject.Models.DTOs;
+using OES_WepApi.Helpers;
 using OES_WepApi.Repository;
 using OES_WepApi.Repository.Implementations;
 using OES_WepApi.Repository.Interfaces;
@@ -109,5 +110,27 @@ namespace OES_WepApi.Controllers
 
             return Ok(students);
         }
+
+        [HttpPost]
+        [Route("admin-reset-password")]
+        public IHttpActionResult ResetPassword([FromBody] ResetPasswordDTO model)
+        {
+            if (model == null ||
+                string.IsNullOrEmpty(model.Email) ||
+                string.IsNullOrEmpty(model.NewPassword))
+            {
+                return BadRequest("Email and new password are required");
+            }
+
+            var admin = repo.GetByEmail(model.Email);
+
+            if (admin == null)
+                return BadRequest("Admin not found");
+
+            repo.UpdatePassword(admin, model.NewPassword);
+
+            return Ok("Admin password reset successfully");
+        }
+
     }
 }

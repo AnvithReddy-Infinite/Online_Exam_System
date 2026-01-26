@@ -22,5 +22,7 @@ namespace OES_WepApi.Repository.Interfaces
         string RemoveQuestionsByFile(HttpPostedFile file, int techId, int levelId);
 
         List<StudentSearchResultDTO> SearchStudents(int? techId, int? levelId, string state, string city, int? minMarks);
+        Admin GetByEmail(string email);
+        void UpdatePassword(Admin admin, string newPassword);
     }
 }
