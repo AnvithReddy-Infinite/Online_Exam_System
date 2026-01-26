@@ -25,14 +25,24 @@ namespace OES_WepApi.Repository.Implementations
 
         public Admin Login(string email, string password)
         {
-            var admin = _context.Admins.FirstOrDefault(a => a.Email == email);
+            try
+            {
+                var admin = _context.Admins.FirstOrDefault(a => a.Email == email);
 
-            if (admin == null)
+                if (admin == null)
+                    return null;
+
+                if (string.IsNullOrEmpty(admin.PasswordHash))
+                    return null;
+
+                bool isValid = BCrypt.Net.BCrypt.Verify(password, admin.PasswordHash);
+
+                return isValid ? admin : null;
+            }
+            catch (Exception)
+            {
                 return null;
-
-            bool isValid = BCrypt.Net.BCrypt.Verify(password, admin.PasswordHash);
-
-            return isValid ? admin : null;
+            }
         }
 
         // ADD QUESTIONS (UPLOAD FILE)
@@ -178,6 +188,7 @@ namespace OES_WepApi.Repository.Implementations
                     UserId = u.UserId,
                     FullName = u.FullName,
                     Email = u.Email,
+                    Mobile = u.Mobile,
                     City = u.City,
                     State = u.State,
                     TechId = e.TechId,

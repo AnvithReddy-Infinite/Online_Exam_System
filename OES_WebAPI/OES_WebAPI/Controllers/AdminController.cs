@@ -27,15 +27,22 @@ namespace OES_WepApi.Controllers
         [Route("admin-login")]
         public IHttpActionResult Login(string email, string password)
         {
-            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
-                return BadRequest("Email and Password are required");
+            try
+            {
+                if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
+                    return BadRequest("Email and Password are required");
 
-            var admin = repo.Login(email, password);
+                var admin = repo.Login(email, password);
 
-            if (admin == null)
-                return Ok("Invalid email or password");
+                if (admin == null)
+                    return Ok("Invalid email or password");
 
-            return Ok(admin);
+                return Ok(admin);
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(new Exception("Error while logging in: " + ex.Message));
+            }
         }
 
         // ADD QUESTIONS (UPLOAD FILE)
