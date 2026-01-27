@@ -1,5 +1,6 @@
 ﻿using FinalProject.Common;
 using FinalProject.Models.DTOs;
+using OES_WebAPI.Models.dtos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,5 +15,6 @@ namespace FinalProject.Services.Interfaces
         ApiResponse<List<QuestionDTO>> GetQuestions(int examId, int userId);
         ApiResponse<SubmitExamResponseDTO> SubmitExam(SubmitExamDTO dto);
         ApiResponse<ExamResultDTO> GetExamResult(int examId, int userId);
+        ApiResponse<List<UserExamReportDTO>> GetAllExamsForUser(int userId);
     }
 }

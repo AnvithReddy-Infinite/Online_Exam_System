@@ -17,7 +17,7 @@ namespace FinalProject.Repositories.Interfaces
         List<Exam> GetByUserTechLevel(int userId, int techId, int levelId);
 
         List<Exam> GetInProgressExams(int userId, int techId, int levelId);
-
+        List<Exam> GetByUser(int userId);
         void SaveChanges();
         void Update(Exam exam);
     }

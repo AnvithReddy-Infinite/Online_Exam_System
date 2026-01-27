@@ -108,6 +108,26 @@ namespace FinalProject.Controllers
             }
         }
 
+        // All results endpoint
+        [HttpGet]
+        [Route("user/{userId}/results")]
+        public IHttpActionResult GetAllExamsForUser(int userId)
+        {
+            try
+            {
+                var response = _examService.GetAllExamsForUser(userId);
+
+                if (!response.Success)
+                    return BadRequest(response.Message);
+
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(
+                    new Exception("Error while fetching user exam reports: " + ex.Message));
+            }
+        }
 
     }
 }

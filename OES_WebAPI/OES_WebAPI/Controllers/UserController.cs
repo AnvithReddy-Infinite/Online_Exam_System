@@ -48,7 +48,7 @@ namespace FinalProject.Controllers
             {
                 var response = _userService.LoginUser(model);
                 if (!response.Success)
-                    return Unauthorized(); // login fails
+                    return Ok(response); // login fails
 
                 return Ok(response);
             }

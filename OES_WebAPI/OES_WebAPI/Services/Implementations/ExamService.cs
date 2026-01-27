@@ -5,6 +5,7 @@ using FinalProject.Repositories.Implementations;
 using FinalProject.Repositories.Interfaces;
 using FinalProject.Services.Interfaces;
 using OES_WebAPI.Models;
+using OES_WebAPI.Models.dtos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -63,15 +64,21 @@ namespace FinalProject.Services.Implementations
             }
 
             // Check in-progress exam
-            var inProgress = _examRepository
-                .GetInProgressExams(dto.UserId, dto.TechId, dto.LevelId);
+            var inProgress = _examRepository.GetInProgressExams(dto.UserId, dto.TechId, dto.LevelId);
 
             if (inProgress.Any())
             {
+                // Instead of returning an error, return the existing exam
+                var existingExam = inProgress.First();
                 return new ApiResponse<StartExamResponseDTO>
                 {
-                    Success = false,
-                    Message = "You already have an in-progress exam for this level"
+                    Success = true,
+                    Message = "Resuming your in-progress exam",
+                    Data = new StartExamResponseDTO
+                    {
+                        ExamId = existingExam.ExamId,
+                        UserId = existingExam.UserId
+                    }
                 };
             }
 
@@ -350,6 +357,59 @@ namespace FinalProject.Services.Implementations
                 };
             }
         }
+
+        public ApiResponse<List<UserExamReportDTO>> GetAllExamsForUser(int userId)
+        {
+            try
+            {
+                // Get all exams for this user
+                var exams = _examRepository.GetByUser(userId);
+
+                if (exams == null || !exams.Any())
+                    return new ApiResponse<List<UserExamReportDTO>>(true, "No exams taken yet", new List<UserExamReportDTO>());
+
+                var reportList = new List<UserExamReportDTO>();
+
+                foreach (var exam in exams)
+                {
+                    if (exam.CompletedAt == null)
+                        continue; // skip exams not completed
+
+                    var tech = _techRepository.GetById(exam.TechId);
+                    var results = _resultRepository.GetByExamId(exam.ExamId);
+
+                    var userExamReport = new UserExamReportDTO
+                    {
+                        ExamId = exam.ExamId,
+                        ExamName = exam.Level.LevelName + " - " + (tech?.Name ?? "Unknown"),
+                        Technology = tech?.Name ?? "Unknown",
+                        Level = exam.Level.LevelName,
+                        DateTaken = exam.CompletedAt ?? exam.StartedAt,
+                        Score = exam.Score,
+                        TotalMarks = exam.Level.PassMarks,
+                        Result = exam.Status ? "Pass" : "Fail",
+                        Questions = results.Select(r => new QuestionResultDTO
+                        {
+                            QuestionId = r.QuestionId,
+                            QuestionText = r.Question.QuestionText,
+                            SelectedOption = r.Option?.OptionText ?? "Not answered",
+                            CorrectOption = r.Question.Options.FirstOrDefault(o => o.IsCorrect)?.OptionText ?? "N/A",
+                            IsCorrect = r.IsCorrect
+                        }).ToList()
+                    };
+
+                    reportList.Add(userExamReport);
+                }
+
+                return new ApiResponse<List<UserExamReportDTO>>(true, "User exams fetched successfully", reportList);
+            }
+            catch (Exception ex)
+            {
+                return new ApiResponse<List<UserExamReportDTO>>(false, "Error fetching reports: " + ex.Message, null);
+            }
+        }
+
+
 
 
     }

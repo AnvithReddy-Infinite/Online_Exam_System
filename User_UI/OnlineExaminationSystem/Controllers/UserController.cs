@@ -1,98 +1,242 @@
-﻿using OnlineExaminationSystem.Models;
+﻿using Newtonsoft.Json;
+using OnlineExaminationSystem.Common;
+using OnlineExaminationSystem.Models.User;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Web;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Text;
+using System.Threading.Tasks;
 using System.Web.Mvc;
 
 namespace OnlineExaminationSystem.Controllers
 {
     public class UserController : Controller
     {
+        private readonly string apiBaseUrl = "https://localhost:44384/api/user/";
+
+        // ---------- HOME ----------
         public ActionResult Home()
         {
-            return View();
-        }
-        [HttpGet]
-        public ActionResult Register()
-        {
-            return View();
-        }
-        [HttpPost]
-        public ActionResult Register(UserModel model)
-        {
-            if (ModelState.IsValid)
+            // Check login status
+            bool isLoggedIn = Session["UserId"] != null;
+
+            ViewBag.IsLoggedIn = isLoggedIn;
+
+            if (isLoggedIn)
             {
-                return RedirectToAction("Login");
+                ViewBag.FullName = Session["FullName"]?.ToString();
             }
-            return View(model);
+
+            return View();
         }
-        // LOGIN
+
+        // ---------- LOGIN ----------
+
         [HttpGet]
         public ActionResult Login()
         {
             return View();
         }
 
-
-
         [HttpPost]
-        public ActionResult Login(UserModel model)
-        {
-            if (ModelState.IsValid)
-            {
-                return RedirectToAction("Instructions");
-            }
-            return View(model);
-        }
-
-        [HttpGet]
-        public ActionResult ForgotPassword()
-        {
-            return View();
-        }
-       
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult ForgotPassword(ForgotPasswordViewModel model)
+        public async Task<ActionResult> Login(LoginUserDTO model)
         {
             if (!ModelState.IsValid)
-            {
                 return View(model);
-            }
-            bool emailExists = model.Email == "test@gmail.com"; 
-            if (!emailExists)
+
+            using (var client = new HttpClient())
             {
-                ModelState.AddModelError("Email", "Email not found");
-                return View(model);
+                client.BaseAddress = new Uri(apiBaseUrl);
+                client.DefaultRequestHeaders.Accept.Add(
+                    new MediaTypeWithQualityHeaderValue("application/json"));
+
+                HttpResponseMessage response;
+                try
+                {
+                    response = await client.PostAsJsonAsync("login", model);
+                }
+                catch
+                {
+                    ModelState.AddModelError("", "Unable to reach server.");
+                    return View(model);
+                }
+
+                string responseContent = await response.Content.ReadAsStringAsync();
+                ApiResponse<UserResponseDTO> apiResponse;
+
+                try
+                {
+                    apiResponse = JsonConvert.DeserializeObject<ApiResponse<UserResponseDTO>>(responseContent);
+                }
+                catch
+                {
+                    ModelState.AddModelError("", "Invalid response from server.");
+                    return View(model);
+                }
+
+                if (apiResponse == null)
+                {
+                    ModelState.AddModelError("", "Invalid response from server.");
+                    return View(model);
+                }
+
+                if (!apiResponse.Success)
+                {
+                    ModelState.AddModelError("", apiResponse.Message ?? "Invalid email or password.");
+                    return View(model);
+                }
+
+
+                Session["UserId"] = apiResponse.Data.UserId;
+                Session["FullName"] = apiResponse.Data.FullName;
+                Session["Email"] = apiResponse.Data.Email;
+
+                return RedirectToAction("StartExam", "Exam");
             }
-            TempData["SuccessMessage"] = "Password reset link sent to your email";
-            return RedirectToAction("Login");
         }
 
-        public ActionResult SelectExam()
+
+        // ---------- REGISTER ----------
+
+        [HttpGet]
+        public ActionResult Register()
         {
             return View();
         }
-        public ActionResult Instructions()
-        {
-            return View();
-        }
+
         [HttpPost]
-        public ActionResult Questions()
+        public async Task<ActionResult> Register(RegisterUserDTO model)
+        {
+            if (!ModelState.IsValid)
+                return View(model);
+
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(apiBaseUrl);
+                client.DefaultRequestHeaders.Accept.Add(
+                    new MediaTypeWithQualityHeaderValue("application/json"));
+
+                // CHANGE 1:
+                // Use PostAsJsonAsync instead of manual serialization
+                HttpResponseMessage response;
+                try
+                {
+                    response = await client.PostAsJsonAsync("register", model);
+                }
+                catch
+                {
+                    ModelState.AddModelError("", "Unable to reach server.");
+                    return View(model);
+                }
+
+                var responseJson = await response.Content.ReadAsStringAsync();
+
+                ApiResponse<object> apiResponse;
+
+                try
+                {
+                    // CHANGE 2:
+                    // Strongly typed deserialization instead of dynamic
+                    apiResponse = JsonConvert.DeserializeObject<ApiResponse<object>>(responseJson);
+                }
+                catch
+                {
+                    // CHANGE 3:
+                    // This will now ONLY trigger if JSON itself is invalid
+                    ModelState.AddModelError("", "Invalid response from server.");
+                    return View(model);
+                }
+
+                // CHANGE 4:
+                // Proper null safety
+                if (apiResponse == null)
+                {
+                    ModelState.AddModelError("", "Invalid response from server.");
+                    return View(model);
+                }
+
+                // CHANGE 5:
+                // Correct Success check (matches server ApiResponse<T>)
+                if (!apiResponse.Success)
+                {
+                    ModelState.AddModelError("", apiResponse.Message ?? "Registration failed.");
+                    return View(model);
+                }
+
+                // SUCCESS
+                return RedirectToAction("Login");
+            }
+        }
+
+
+        // ---------- RESET PASSWORD ----------
+
+        [HttpGet]
+        public ActionResult ResetPassword()
         {
             return View();
         }
 
-
-        public ActionResult Report()
+        [HttpPost]
+        public async Task<ActionResult> ResetPassword(ResetPasswordDTO model)
         {
-            return View();
+            if (!ModelState.IsValid)
+                return View(model);
+
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(apiBaseUrl);
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                HttpResponseMessage response;
+                try
+                {
+                    response = await client.PostAsJsonAsync("reset-password", model);
+                }
+                catch
+                {
+                    ModelState.AddModelError("", "Unable to reach server.");
+                    return View(model);
+                }
+
+                string responseContent = await response.Content.ReadAsStringAsync();
+                ApiResponse<object> apiResponse;
+
+                try
+                {
+                    apiResponse = JsonConvert.DeserializeObject<ApiResponse<object>>(responseContent);
+                }
+                catch
+                {
+                    ModelState.AddModelError("", "Invalid response from server.");
+                    return View(model);
+                }
+
+                if (apiResponse == null)
+                {
+                    ModelState.AddModelError("", "Invalid response from server.");
+                    return View(model);
+                }
+
+                if (!apiResponse.Success)
+                {
+                    ModelState.AddModelError("", apiResponse.Message ?? "Password reset failed.");
+                    return View(model);
+                }
+
+                TempData["SuccessMessage"] = apiResponse.Message ?? "Password reset successfully.";
+                return RedirectToAction("Login");
+            }
         }
+
+
+        // ---------- LOGOUT ----------
+
         public ActionResult Logout()
         {
-            return RedirectToAction("Home");
+            Session.Clear();
+            Session.Abandon();
+            return RedirectToAction("Login");
         }
     }
 }

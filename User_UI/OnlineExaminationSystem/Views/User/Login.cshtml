@@ -1,4 +1,4 @@
-﻿@model OnlineExaminationSystem.Models.UserModel
+﻿@model OnlineExaminationSystem.Models.User.LoginUserDTO
 @{
     Layout = "~/Views/Shared/_UserLayout.cshtml";
 }
@@ -10,22 +10,26 @@
     {
         <!-- 🔹 OPTIONAL BUT RECOMMENDED -->
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
         <!-- 🔹 YOUR EXISTING EMAIL CODE (JUST ADD CLASS) -->
         <div class="form-group">
             <label>Email</label>
             @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
             @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
         </div>
+
         <!-- 🔹 YOUR EXISTING PASSWORD CODE (JUST ADD CLASS) -->
         <div class="form-group">
             <label>Password</label>
             @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
             @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
         </div>
+
         <!-- 🔹 YOUR EXISTING BUTTON (CLASS ADDED) -->
         <input type="submit" value="Login" class="btn-login" />
+
         <div class="login-extra-links">
-            <a href="@Url.Action("ForgotPassword", "User")" class="forgot-link">
+            <a href="@Url.Action("ResetPassword", "User")" class="forgot-link">
                 Forgot Password?
             </a>
             <div class="register-text">

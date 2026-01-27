@@ -46,9 +46,31 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json.Bson, Version=1.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.Bson.1.0.2\lib\net45\Newtonsoft.Json.Bson.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebApi.Client.6.0.0\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -120,6 +142,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Common\ApiResponse.cs" />
     <Compile Include="Controllers\AdminDashboardController.cs" />
     <Compile Include="Controllers\AdminExamController.cs" />
     <Compile Include="Controllers\AdminLevelController.cs" />
@@ -128,6 +151,7 @@
     <Compile Include="Controllers\AdminResultController.cs" />
     <Compile Include="Controllers\AdminStudentController.cs" />
     <Compile Include="Controllers\AdminTechnologyController.cs" />
+    <Compile Include="Controllers\ExamController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\WelcomeController.cs" />
@@ -135,9 +159,24 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ExamModel.cs" />
+    <Compile Include="Models\Exam\AnswerDTO.cs" />
+    <Compile Include="Models\Exam\ExamResultDTO.cs" />
+    <Compile Include="Models\Exam\OptionDTO.cs" />
+    <Compile Include="Models\Exam\QuestionDTO.cs" />
+    <Compile Include="Models\Exam\QuestionListResponseDTO.cs" />
+    <Compile Include="Models\Exam\QuestionResultDTO.cs" />
+    <Compile Include="Models\Exam\StartExamDTO.cs" />
+    <Compile Include="Models\Exam\StartExamResponseDTO.cs" />
+    <Compile Include="Models\Exam\SubmitExamDTO.cs" />
+    <Compile Include="Models\Exam\SubmitExamResponseDTO.cs" />
+    <Compile Include="Models\Exam\UserExamReportDTO.cs" />
     <Compile Include="Models\ForgotPasswordViewModel.cs" />
     <Compile Include="Models\ResultModel.cs" />
     <Compile Include="Models\UserModel.cs" />
+    <Compile Include="Models\User\LoginUserDTO.cs" />
+    <Compile Include="Models\User\RegisterUserDTO.cs" />
+    <Compile Include="Models\User\ResetPasswordDTO.cs" />
+    <Compile Include="Models\User\UserResponseDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -198,7 +237,6 @@
     <Content Include="Views\User\Register.cshtml" />
     <Content Include="Views\User\Login.cshtml" />
     <Content Include="Views\User\Instructions.cshtml" />
-    <Content Include="Views\User\SelectExam.cshtml" />
     <Content Include="Views\User\Report.cshtml" />
     <Content Include="Views\Shared\_UserLayout.cshtml" />
     <Content Include="Views\AdminLogin\Login.cshtml" />
@@ -214,9 +252,12 @@
     <Content Include="Views\AdminExam\Create.cshtml" />
     <Content Include="Views\AdminStudent\Index.cshtml" />
     <Content Include="Views\AdminResult\Index.cshtml" />
-    <Content Include="Views\User\Questions.cshtml" />
     <Content Include="Views\Welcome\Index.cshtml" />
-    <Content Include="Views\User\ForgotPassword.cshtml" />
+    <Content Include="Views\User\ResetPassword.cshtml" />
+    <Content Include="Views\Exam\StartExam.cshtml" />
+    <Content Include="Views\Exam\GetQuestions.cshtml" />
+    <Content Include="Views\Exam\ExamResult.cshtml" />
+    <Content Include="Views\Exam\Report.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

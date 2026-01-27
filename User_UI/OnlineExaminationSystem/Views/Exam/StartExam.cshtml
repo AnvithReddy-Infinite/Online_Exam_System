@@ -1,0 +1,147 @@
+﻿@model OnlineExaminationSystem.Models.Exam.StartExamDTO
+@{
+    ViewBag.Title = "Start Exam";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<div class="start-container">
+    <h2>Start Exam</h2>
+
+    @using (Html.BeginForm("StartExam", "Exam", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <label>Technology</label>
+        @Html.DropDownListFor(
+            m => m.TechId,
+            new SelectList(ViewBag.Techs ?? new List<object>(), "Id", "Name"),
+            "Select Technology",
+            new { @class = "input-field" })
+        @Html.ValidationMessageFor(m => m.TechId, "", new { @class = "text-danger" })
+
+        <label>Level</label>
+        @Html.DropDownListFor(
+            m => m.LevelId,
+            new SelectList(ViewBag.Levels ?? new List<object>(), "Id", "LevelName"),
+            "Select Level",
+            new { @class = "input-field" })
+        @Html.ValidationMessageFor(m => m.LevelId, "", new { @class = "text-danger" })
+
+        <button type="submit" class="start-btn">Start Exam</button>
+    }
+</div>
+
+<!-- 🔐 LOGIN REQUIRED MODAL -->
+@if (TempData["AuthRequired"] != null)
+{
+    <div class="modal-overlay">
+        <div class="modal-box">
+            <h3>Login Required</h3>
+            <p>You must login or register to take the exam.</p>
+
+            <div class="modal-actions">
+                <a href="/User/Login" class="btn-primary">Login</a>
+                <a href="/User/Register" class="btn-secondary">Register</a>
+            </div>
+        </div>
+    </div>
+}
+
+<style>
+    .start-container {
+        width: 360px;
+        margin: 100px auto;
+        padding: 30px;
+        background: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    label {
+        font-weight: bold;
+        display: block;
+        margin-top: 10px;
+    }
+
+    .input-field, select {
+        width: 100%;
+        padding: 10px;
+        margin-top: 6px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .start-btn {
+        width: 100%;
+        padding: 10px;
+        background-color: #264653;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 15px;
+        cursor: pointer;
+    }
+
+        .start-btn:hover {
+            background-color: #1b323c;
+        }
+
+    /* MODAL */
+    .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.6);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+    }
+
+    .modal-box {
+        background: white;
+        padding: 25px;
+        width: 320px;
+        border-radius: 8px;
+        text-align: center;
+    }
+
+    .modal-actions {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .btn-primary {
+        background: #264653;
+        color: white;
+        padding: 8px 14px;
+        border-radius: 4px;
+        text-decoration: none;
+    }
+
+    .btn-secondary {
+        background: #6c757d;
+        color: white;
+        padding: 8px 14px;
+        border-radius: 4px;
+        text-decoration: none;
+    }
+
+    .btn-primary:hover {
+        background: #1b323c;
+    }
+
+    .btn-secondary:hover {
+        background: #545b62;
+    }
+</style>

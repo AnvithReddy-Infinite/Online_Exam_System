@@ -7,19 +7,37 @@
 </head>
 <body>
     <div class="user-container">
+
         <div class="user-sidebar">
             <h3>User Panel</h3>
+
+            @if (Session["UserId"] != null)
+            {
+                <p style="margin:10px 0; font-weight:bold;">
+                    Welcome, @Session["FullName"]
+                </p>
+            }
+
             <ul>
-                <li><a href="/User/Login">User Login</a></li>
-                <li><a href="/User/Instructions">Instructions</a></li>
-                <li><a href="/User/SelectExam">New Exam</a></li>
-                <li><a href="/User/Report">Report</a></li>
-                <li><a href="/User/Logout">Logout</a></li>
+                @if (Session["UserId"] == null)
+                {
+                    <li><a href="/User/Login">Login</a></li>
+                    <li><a href="/User/Register">Register</a></li>
+                }
+                else
+                {
+                    <li><a href="/User/Home">Home</a></li>
+                    <li><a href="/Exam/StartExam">New Exam</a></li>
+                    <li><a href="/Exam/Report">Report</a></li>
+                    <li><a href="/User/Logout">Logout</a></li>
+                }
             </ul>
         </div>
+
         <div class="user-content">
             @RenderBody()
         </div>
+
     </div>
 </body>
 </html>

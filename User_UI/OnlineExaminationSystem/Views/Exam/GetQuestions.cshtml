@@ -1,0 +1,93 @@
+﻿@model OnlineExaminationSystem.Models.Exam.SubmitExamDTO
+@{
+    Layout = "~/Views/Shared/_UserLayout.cshtml"; // Use your site layout
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exam Questions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f4f7;
+        }
+
+        .exam-container {
+            width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+
+            .question p {
+                font-weight: bold;
+            }
+
+        .options label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #264653;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+            .submit-btn:hover {
+                background-color: #1b323c;
+            }
+    </style>
+</head>
+<body>
+    <div class="exam-container">
+        <h2>Exam Questions</h2>
+
+        @using (Html.BeginForm("SubmitExam", "Exam", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            @Html.HiddenFor(m => m.ExamId)
+            @Html.HiddenFor(m => m.UserId)
+
+            for (int i = 0; i < Model.Answers.Count; i++)
+            {
+                var answer = Model.Answers[i];
+                var question = ViewBag.Questions[i];
+
+                <div class="question">
+                    <p>@(i + 1). @question.QuestionText</p>
+                    <div class="options">
+                        @foreach (var opt in question.Options)
+                        {
+                            <label>
+                                <input type="radio" name="Answers[@i].SelectedOptionId" value="@opt.OptionId"
+                                       @(answer.SelectedOptionId == opt.OptionId ? "checked" : "") />
+                                @opt.OptionText
+                            </label>
+                        }
+                    </div>
+                    @Html.HiddenFor(m => m.Answers[i].QuestionId)
+                </div>
+            }
+
+            <button type="submit" class="submit-btn">Submit Exam</button>
+        }
+    </div>
+</body>
+</html>

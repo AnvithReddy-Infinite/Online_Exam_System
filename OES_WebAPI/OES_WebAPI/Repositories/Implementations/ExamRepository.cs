@@ -55,6 +55,15 @@ namespace FinalProject.Repositories.Implementations
                          && e.CompletedAt == null)
                 .ToList();
         }
+        // Get all exams of a user
+        public List<Exam> GetByUser(int userId)
+        {
+            return _context.Exams
+        .Include(e => e.Level)
+        .Where(e => e.UserId == userId)
+        .OrderByDescending(e => e.StartedAt)
+        .ToList();
+        }
 
         public void SaveChanges()
         {
