@@ -4,6 +4,8 @@ using FinalProject.Repositories.Interfaces;
 using FinalProject.Services.Implementations;
 using FinalProject.Services.Interfaces;
 using OES_WebAPI.Models;
+using OES_WebAPI.Repositories.Implementations;
+using OES_WebAPI.Repositories.Interfaces;
 using System;
 using System.Web.Http;
 using Unity;
@@ -30,6 +32,7 @@ namespace OES_WebAPI
             container.RegisterType<IUserRepository, UserRepository>();
             container.RegisterType<IResultRepository, ResultRepository>();
             container.RegisterType<ITechRepository, TechRepository>();
+            container.RegisterType<ILevelRepository, LevelRepository>();
             container.RegisterType<IExamService, ExamService>();
             container.RegisterType<IUserService, UserService>();
             GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
