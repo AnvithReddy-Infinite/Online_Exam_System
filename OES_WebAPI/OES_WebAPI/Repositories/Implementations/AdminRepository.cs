@@ -48,14 +48,13 @@ namespace OES_WepApi.Repository.Implementations
         // ADD QUESTIONS (UPLOAD FILE)
         public string UploadQuestionsFile(HttpPostedFile file, int techId, int levelId)
         {
+            if (file == null || file.ContentLength == 0)
+                return "Please upload a valid CSV file";
+
+            if (!file.FileName.EndsWith(".csv"))
+                return "Only CSV files are allowed";
             try
-            {
-                if (file == null || file.ContentLength == 0)
-                    return "Please upload a valid CSV file";
-
-                if (!file.FileName.EndsWith(".csv"))
-                    return "Only CSV files are allowed";
-
+            {              
                 using (var parser = new TextFieldParser(file.InputStream))
                 {
                     parser.TextFieldType = Microsoft.VisualBasic.FileIO.FieldType.Delimited;
@@ -66,7 +65,17 @@ namespace OES_WepApi.Repository.Implementations
 
                     while (!parser.EndOfData)
                     {
-                        string[] fields = parser.ReadFields();
+                        string[] fields;
+
+                        try
+                        {
+                            fields = parser.ReadFields();
+                        }
+                        catch
+                        {
+                            // CSV format issue
+                            return "Invalid CSV format. Please check the file structure.";
+                        }
 
                         if (isHeader)
                         {
@@ -74,8 +83,8 @@ namespace OES_WepApi.Repository.Implementations
                             continue;
                         }
 
-                        if (fields.Length < 6)
-                            continue;
+                        if (fields == null || fields.Length < 6)
+                            continue; // skip bad rows safely
 
                         var question = new Question
                         {
@@ -92,11 +101,11 @@ namespace OES_WepApi.Repository.Implementations
 
                         _context.Options.AddRange(new[]
                         {
-                    new Option { QuestionId = question.QuestionId, OptionText = fields[1], IsCorrect = correct == "A" },
-                    new Option { QuestionId = question.QuestionId, OptionText = fields[2], IsCorrect = correct == "B" },
-                    new Option { QuestionId = question.QuestionId, OptionText = fields[3], IsCorrect = correct == "C" },
-                    new Option { QuestionId = question.QuestionId, OptionText = fields[4], IsCorrect = correct == "D" }
-                });
+                            new Option { QuestionId = question.QuestionId, OptionText = fields[1], IsCorrect = correct == "A" },
+                            new Option { QuestionId = question.QuestionId, OptionText = fields[2], IsCorrect = correct == "B" },
+                            new Option { QuestionId = question.QuestionId, OptionText = fields[3], IsCorrect = correct == "C" },
+                            new Option { QuestionId = question.QuestionId, OptionText = fields[4], IsCorrect = correct == "D" }
+                        });
 
                         _context.SaveChanges();
                     }
@@ -138,6 +147,9 @@ namespace OES_WepApi.Repository.Implementations
                         // QuestionText,OptionA,OptionB,OptionC,OptionD,CorrectOption
                         var columns = line.Split(',');
 
+                        if (columns.Length < 1)
+                            continue; // row-level issue - skip row
+
                         var questionText = columns[0].Trim();
 
                         if (!string.IsNullOrEmpty(questionText))
@@ -170,9 +182,17 @@ namespace OES_WepApi.Repository.Implementations
 
                 return $"{questions.Count} questions removed successfully.";
             }
-            catch
+            catch (IOException ex)
             {
-                return "Error while removing questions from CSV file.";
+                return "File read error: " + ex.Message;
+            }
+            catch (System.Data.Entity.Infrastructure.DbUpdateException ex)
+            {
+                return "Database error while removing questions." + ex.Message;
+            }
+            catch (Exception ex)
+            {
+                return "Unexpected error: " + ex.Message;
             }
         }
 

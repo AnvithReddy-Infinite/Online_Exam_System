@@ -13,6 +13,7 @@ using System.Web.Http;
 
 namespace OES_WepApi.Controllers
 {
+    [RoutePrefix("api/admin")]
     public class AdminController : ApiController
     {
         private readonly IAdminRepository repo;
@@ -56,20 +57,31 @@ namespace OES_WepApi.Controllers
                 var httpRequest = HttpContext.Current.Request;
 
                 if (httpRequest.Files.Count == 0)
-                    return Ok("File is required");
+                    return BadRequest("CSV file is required");
 
                 var file = httpRequest.Files[0];
 
                 if (file == null || file.ContentLength == 0)
-                    return Ok("Uploaded file is empty");
+                    return BadRequest("Uploaded file is empty");
 
                 var result = repo.UploadQuestionsFile(file, techId, levelId);
 
                 return Ok(result);
             }
-            catch
+            catch (ArgumentException ex)
             {
-                return Ok("Something went wrong while uploading questions");
+                // CSV / validation related issues
+                return BadRequest(ex.Message);
+            }
+            catch (FormatException ex)
+            {
+                // CSV parsing issues
+                return BadRequest("Invalid CSV format: " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                // System-level failures
+                return InternalServerError(ex);
             }
         }
 
@@ -85,22 +97,28 @@ namespace OES_WepApi.Controllers
                 var request = HttpContext.Current.Request;
 
                 if (request.Files.Count == 0)
-                    return Ok("Please upload a CSV file.");
+                    return BadRequest("Please upload a CSV file.");
 
                 var file = request.Files[0];
 
                 if (file == null || file.ContentLength == 0)
-                    return Ok("Please upload a valid CSV file.");
+                    return BadRequest("Please upload a valid CSV file.");
 
                 if (!file.FileName.EndsWith(".csv"))
-                    return Ok("Only CSV files are allowed.");
+                    return BadRequest("Only CSV files are allowed.");
 
                 var result = repo.RemoveQuestionsByFile(file, techId, levelId);
                 return Ok(result);
             }
-            catch
+            catch (ArgumentException ex)
             {
-                return Ok("Error while processing remove questions CSV file.");
+                // Validation / input related issues
+                return BadRequest(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                // Unexpected system error
+                return InternalServerError(ex);
             }
         }
 
