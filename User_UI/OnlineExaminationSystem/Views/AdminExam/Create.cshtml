@@ -1,48 +1,50 @@
-﻿@{
+﻿@model OnlineExaminationSystem.Models.AdminExamViewModel
+
+@{
     ViewBag.Title = "Add Exam";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
 <h2>Add Exam</h2>
 
-<form>
+@using (Html.BeginForm("Create", "AdminExam", FormMethod.Post))
+{
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
     <div style="margin-bottom:15px;">
         <label>Exam Name</label><br />
-        <input type="text" placeholder="Enter exam name" />
+        @Html.TextBoxFor(m => m.ExamName, new { placeholder = "Enter exam name" })
+        @Html.ValidationMessageFor(m => m.ExamName, "", new { @class = "text-danger" })
     </div>
 
     <div style="margin-bottom:15px;">
         <label>Technology</label><br />
-        <select>
-            <option>-- Select Technology --</option>
-            <option>Java</option>
-            <option>Python</option>
-            <option>C#</option>
-        </select>
+        @Html.DropDownListFor(m => m.Technology,
+            new SelectList(new[] { "Java", "Python", "C#" }),
+            "-- Select Technology --")
+        @Html.ValidationMessageFor(m => m.Technology, "", new { @class = "text-danger" })
     </div>
 
     <div style="margin-bottom:15px;">
         <label>Level</label><br />
-        <select>
-            <option>-- Select Level --</option>
-            <option>Easy</option>
-            <option>Medium</option>
-            <option>Hard</option>
-        </select>
+        @Html.DropDownListFor(m => m.Level,
+            new SelectList(new[] { "Easy", "Medium", "Hard" }),
+            "-- Select Level --")
+        @Html.ValidationMessageFor(m => m.Level, "", new { @class = "text-danger" })
     </div>
 
     <div style="margin-bottom:15px;">
         <label>Number of Questions</label><br />
-        <input type="number" />
+        @Html.TextBoxFor(m => m.NumberOfQuestions, new { type = "number" })
+        @Html.ValidationMessageFor(m => m.NumberOfQuestions, "", new { @class = "text-danger" })
     </div>
 
     <div style="margin-bottom:15px;">
         <label>Duration (minutes)</label><br />
-        <input type="number" />
+        @Html.TextBoxFor(m => m.Duration, new { type = "number" })
+        @Html.ValidationMessageFor(m => m.Duration, "", new { @class = "text-danger" })
     </div>
 
     <button type="submit">Create Exam</button>
     <a href="/AdminExam/Index">Cancel</a>
-
-</form>
+}

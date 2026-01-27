@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using OnlineExaminationSystem.Models;
+
 
 namespace OnlineExaminationSystem.Controllers
 {
@@ -17,6 +19,18 @@ namespace OnlineExaminationSystem.Controllers
         public ActionResult Create()
         {
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult Create(AdminQuestionViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                // Later: save question to DB
+                return RedirectToAction("Index");
+            }
+
+            return View(model);
         }
     }
 }

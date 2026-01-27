@@ -199,3 +199,11 @@ table {
             color: white;
         }
 
+
+.text-danger {
+    color: white;
+    font-size: 13px;
+    margin-top: 4px;
+    display: block;
+}
+

@@ -1,16 +1,22 @@
-﻿@{
+﻿@model OnlineExaminationSystem.Models.AdminTechnologyViewModel
+
+@{
     ViewBag.Title = "Add Technology";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
 <h2>Add Technology</h2>
 
-<form>
+@using (Html.BeginForm("Create", "AdminTechnology", FormMethod.Post))
+{
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
     <div style="margin-bottom:15px;">
         <label>Technology Name</label><br />
-        <input type="text" placeholder="Enter technology name" />
+        @Html.TextBoxFor(m => m.TechnologyName, new { placeholder = "Enter technology name" })
+        @Html.ValidationMessageFor(m => m.TechnologyName, "", new { @class = "text-danger" })
     </div>
 
     <button type="submit">Save</button>
     <a href="/AdminTechnology/Index">Cancel</a>
-</form>
+}
