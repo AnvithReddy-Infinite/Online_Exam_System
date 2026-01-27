@@ -215,12 +215,12 @@ namespace FinalProject.Services.Implementations
 
 
                 TimeSpan elapsedTime = DateTime.UtcNow - exam.StartedAt;
-                bool isTimeUp = elapsedTime.TotalMinutes > allowedTimeMinutes;
+                bool isTimeUp = elapsedTime.TotalMinutes >= allowedTimeMinutes;
 
                 int score = 0;
 
                 // Process answers only if time is not fully expired
-                if (!isTimeUp && dto.Answers != null)
+                if (dto.Answers != null)
                 {
                     foreach (var answer in dto.Answers)
                     {
@@ -267,8 +267,8 @@ namespace FinalProject.Services.Implementations
                 // Response
                 return new ApiResponse<SubmitExamResponseDTO>
                 {
-                    Success = !isTimeUp,
-                    Message = isTimeUp? "Time is up! Exam automatically submitted as failed." : "Exam submitted successfully",
+                    Success = true,
+                    Message = isTimeUp ? "Time is up. Exam was automatically submitted." : "Exam submitted successfully.",
                     Data = new SubmitExamResponseDTO
                     {
                         UserName = exam.User.FullName,
