@@ -2,9 +2,9 @@ using OES_WebAPI;
 using OES_WepApi.Helpers;
 using Swashbuckle.Application;
 using System.Web.Http;
-using WebActivatorEx;
 
-[assembly: PreApplicationStartMethod(typeof(SwaggerConfig), "Register")]
+
+[assembly: System.Web.PreApplicationStartMethod(typeof(SwaggerConfig), "Register")]
 
 namespace OES_WebAPI
 {
