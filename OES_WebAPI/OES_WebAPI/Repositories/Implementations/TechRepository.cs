@@ -21,5 +21,10 @@ namespace FinalProject.Repositories.Implementations
         {
             return _context.Technologies.FirstOrDefault(t => t.TechId == id);
         }
+
+        public IEnumerable<Technology> GetAll()
+        {
+            return _context.Technologies.ToList();
+        }
     }
 }

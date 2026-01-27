@@ -16,5 +16,8 @@ namespace FinalProject.Services.Interfaces
         ApiResponse<SubmitExamResponseDTO> SubmitExam(SubmitExamDTO dto);
         ApiResponse<ExamResultDTO> GetExamResult(int examId, int userId);
         ApiResponse<List<UserExamReportDTO>> GetAllExamsForUser(int userId);
+        ApiResponse<List<TechnologyDTO>> GetAllTechnologies();
+
+        ApiResponse<List<LevelDTO>> GetAllLevels();
     }
 }

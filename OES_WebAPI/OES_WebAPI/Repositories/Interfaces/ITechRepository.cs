@@ -11,5 +11,6 @@ namespace FinalProject.Repositories.Interfaces
     public interface ITechRepository
     {
         Technology GetById(int id);
+        IEnumerable<Technology> GetAll();
     }
 }

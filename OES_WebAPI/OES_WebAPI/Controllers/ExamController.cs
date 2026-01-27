@@ -129,5 +129,48 @@ namespace FinalProject.Controllers
             }
         }
 
+        // Get all technologies
+        [HttpGet]
+        [Route("technologies")]
+        public IHttpActionResult GetAllTechnologies()
+        {
+            try
+            {
+                var response = _examService.GetAllTechnologies();
+
+                if (!response.Success)
+                    return BadRequest(response.Message);
+
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(
+                    new Exception("Error while fetching technologies: " + ex.Message));
+            }
+        }
+
+        // Get all levels
+        [HttpGet]
+        [Route("levels")]
+        public IHttpActionResult GetAllLevels()
+        {
+            try
+            {
+                var response = _examService.GetAllLevels();
+
+                if (!response.Success)
+                    return BadRequest(response.Message);
+
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(
+                    new Exception("Error while fetching levels: " + ex.Message));
+            }
+        }
+
+
     }
 }

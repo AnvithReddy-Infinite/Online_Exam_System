@@ -6,6 +6,7 @@ using FinalProject.Repositories.Interfaces;
 using FinalProject.Services.Interfaces;
 using OES_WebAPI.Models;
 using OES_WebAPI.Models.dtos;
+using OES_WebAPI.Repositories.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,9 +22,10 @@ namespace FinalProject.Services.Implementations
         private readonly IOptionRepository _optionRepository;
         private readonly IResultRepository _resultRepository;
         private readonly ITechRepository _techRepository;
+        private readonly ILevelRepository _levelRepository;
 
         public ExamService(IExamRepository examRepository, IUserRepository userRepository, IQuestionRepository questionRepository, 
-                           IOptionRepository optionRepository, IResultRepository resultRepository, ITechRepository techRepository)
+                           IOptionRepository optionRepository, IResultRepository resultRepository, ITechRepository techRepository, ILevelRepository levelRepository)
         {
             _examRepository = examRepository;
             _userRepository = userRepository;
@@ -31,6 +33,7 @@ namespace FinalProject.Services.Implementations
             _optionRepository = optionRepository;
             _resultRepository = resultRepository;
             _techRepository = techRepository;
+            _levelRepository = levelRepository;
         }
 
         // Exam Start Register Service
@@ -252,7 +255,7 @@ namespace FinalProject.Services.Implementations
                 var tech = _techRepository.GetById(exam.TechId);
 
                 // Finalize exam
-                bool isPassed = !isTimeUp && score >= exam.Level.PassMarks;
+                bool isPassed = score >= exam.Level.PassMarks;
 
                 exam.Score = score;
                 exam.Status = isPassed;
@@ -268,7 +271,7 @@ namespace FinalProject.Services.Implementations
                 return new ApiResponse<SubmitExamResponseDTO>
                 {
                     Success = true,
-                    Message = isTimeUp ? "Time is up. Exam was automatically submitted." : "Exam submitted successfully.",
+                    Message = isPassed ? "Time is up. Exam was automatically submitted." : "Exam submitted successfully.",
                     Data = new SubmitExamResponseDTO
                     {
                         UserName = exam.User.FullName,
@@ -411,6 +414,40 @@ namespace FinalProject.Services.Implementations
 
 
 
+        public ApiResponse<List<TechnologyDTO>> GetAllTechnologies()
+        {
+            var techs = _techRepository.GetAll()
+                .Select(t => new TechnologyDTO
+                {
+                    TechId = t.TechId,
+                    Name = t.Name
+                }).ToList();
+
+            return new ApiResponse<List<TechnologyDTO>>
+            {
+                Success = true,
+                Message = "Technologies fetched successfully",
+                Data = techs
+            };
+        }
+
+        public ApiResponse<List<LevelDTO>> GetAllLevels()
+        {
+            var levels = _levelRepository.GetAll()
+                .Select(l => new LevelDTO
+                {
+                    LevelId = l.LevelId,
+                    LevelName = l.LevelName,
+                    PassMarks = l.PassMarks
+                }).ToList();
+
+            return new ApiResponse<List<LevelDTO>>
+            {
+                Success = true,
+                Message = "Levels fetched successfully",
+                Data = levels
+            };
+        }
 
     }
 }
