@@ -25,8 +25,24 @@ namespace OES_WepApi.Repository.Implementations
 
         public Admin Login(string email, string password)
         {
-            return _context.Admins.FirstOrDefault(a =>
-                a.Email == email && a.PasswordHash == password);
+            try
+            {
+                var admin = _context.Admins.FirstOrDefault(a => a.Email == email);
+
+                if (admin == null)
+                    return null;
+
+                if (string.IsNullOrEmpty(admin.PasswordHash))
+                    return null;
+
+                bool isValid = BCrypt.Net.BCrypt.Verify(password, admin.PasswordHash);
+
+                return isValid ? admin : null;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
         }
 
         // ADD QUESTIONS (UPLOAD FILE)
@@ -172,6 +188,7 @@ namespace OES_WepApi.Repository.Implementations
                     UserId = u.UserId,
                     FullName = u.FullName,
                     Email = u.Email,
+                    Mobile = u.Mobile,
                     City = u.City,
                     State = u.State,
                     TechId = e.TechId,
@@ -201,5 +218,17 @@ namespace OES_WepApi.Repository.Implementations
                 return new List<StudentSearchResultDTO>();
             }
         }
+
+        public Admin GetByEmail(string email)
+        {
+            return _context.Admins.FirstOrDefault(a => a.Email == email);
+        }
+
+        public void UpdatePassword(Admin admin, string newPassword)
+        {
+            admin.PasswordHash = BCrypt.Net.BCrypt.HashPassword(newPassword);
+            _context.SaveChanges();
+        }
+
     }
 }

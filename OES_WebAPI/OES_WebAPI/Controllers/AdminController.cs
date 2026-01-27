@@ -1,4 +1,5 @@
-﻿using OES_WepApi.Helpers;
+﻿using FinalProject.Models.DTOs;
+using OES_WepApi.Helpers;
 using OES_WepApi.Repository;
 using OES_WepApi.Repository.Implementations;
 using OES_WepApi.Repository.Interfaces;
@@ -26,15 +27,22 @@ namespace OES_WepApi.Controllers
         [Route("admin-login")]
         public IHttpActionResult Login(string email, string password)
         {
-            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
-                return BadRequest("Email and Password are required");
+            try
+            {
+                if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
+                    return BadRequest("Email and Password are required");
 
-            var admin = repo.Login(email, password);
+                var admin = repo.Login(email, password);
 
-            if (admin == null)
-                return Ok("Invalid email or password");
+                if (admin == null)
+                    return Ok("Invalid email or password");
 
-            return Ok(admin);
+                return Ok(admin);
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(new Exception("Error while logging in: " + ex.Message));
+            }
         }
 
         // ADD QUESTIONS (UPLOAD FILE)
@@ -109,5 +117,27 @@ namespace OES_WepApi.Controllers
 
             return Ok(students);
         }
+
+        [HttpPost]
+        [Route("admin-reset-password")]
+        public IHttpActionResult ResetPassword([FromBody] ResetPasswordDTO model)
+        {
+            if (model == null ||
+                string.IsNullOrEmpty(model.Email) ||
+                string.IsNullOrEmpty(model.NewPassword))
+            {
+                return BadRequest("Email and new password are required");
+            }
+
+            var admin = repo.GetByEmail(model.Email);
+
+            if (admin == null)
+                return BadRequest("Admin not found");
+
+            repo.UpdatePassword(admin, model.NewPassword);
+
+            return Ok("Admin password reset successfully");
+        }
+
     }
 }
