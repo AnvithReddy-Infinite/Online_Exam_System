@@ -11,6 +11,10 @@ namespace OnlineExaminationSystem.Controllers
         // GET: AdminStudent
         public ActionResult Index()
         {
+            if (Session["AdminId"] == null)
+            {
+                return RedirectToAction("Login", "AdminLogin");
+            }
             return View();
         }
     }

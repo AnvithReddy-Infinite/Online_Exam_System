@@ -11,10 +11,18 @@ namespace OnlineExaminationSystem.Controllers
     public class AdminTechnologyController : Controller
     {
         // GET: AdminTechnology
-        public ActionResult Index()
-        {
-            return View();
-        }
+       
+            public ActionResult Index()
+            {
+                if (Session["AdminId"] == null)
+                {
+                    return RedirectToAction("Login", "AdminLogin");
+                }
+
+                return View();
+            }
+        
+
 
         // GET: AdminTechnology/Create
         public ActionResult Create()

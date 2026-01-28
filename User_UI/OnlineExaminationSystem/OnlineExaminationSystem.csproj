@@ -49,6 +49,9 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebApi.Client.5.2.9\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -119,7 +122,9 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="Common\ApiResponse.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminDashboardController.cs" />
     <Compile Include="Controllers\AdminExamController.cs" />
     <Compile Include="Controllers\AdminLevelController.cs" />
     <Compile Include="Controllers\AdminLoginController.cs" />
@@ -141,6 +146,21 @@
     <Compile Include="Models\ForgotPasswordViewModel.cs" />
     <Compile Include="Models\ResultModel.cs" />
     <Compile Include="Models\UserModel.cs" />
+    <Compile Include="Models\User\LoginUserDTO.cs" />
+    <Compile Include="Models\User\RegisterUserDTO.cs" />
+    <Compile Include="Models\User\ResetPasswordDTO.cs" />
+    <Compile Include="Models\User\UserResponseDTO.cs" />
+    <Compile Include="Models\Exam\AnswerDTO.cs" />
+    <Compile Include="Models\Exam\ExamResultDTO.cs" />
+    <Compile Include="Models\Exam\OptionDTO.cs" />
+    <Compile Include="Models\Exam\QuestionDTO.cs" />
+    <Compile Include="Models\Exam\QuestionListResponseDTO.cs" />
+    <Compile Include="Models\Exam\QuestionResultDTO.cs" />
+    <Compile Include="Models\Exam\StartExamDTO.cs" />
+    <Compile Include="Models\Exam\StartExamResponseDTO.cs" />
+    <Compile Include="Models\Exam\SubmitExamDTO.cs" />
+    <Compile Include="Models\Exam\SubmitExamResponseDTO.cs" />
+    <Compile Include="Models\Exam\UserExamReportDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -219,6 +239,7 @@
     <Content Include="Views\Welcome\Index.cshtml" />
     <Content Include="Views\User\ForgotPassword.cshtml" />
     <Content Include="Views\AdminLogin\ForgotPassword.cshtml" />
+    <Content Include="Views\AdminDashboard\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

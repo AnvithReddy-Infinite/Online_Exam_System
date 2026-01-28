@@ -6,17 +6,17 @@ using System.Web.Mvc;
 
 namespace OnlineExaminationSystem.Controllers
 {
-    public class AdminLevelController : Controller
+    public class AdminDashboardController : Controller
     {
-        // GET: AdminLevel
         public ActionResult Index()
         {
             if (Session["AdminId"] == null)
             {
                 return RedirectToAction("Login", "AdminLogin");
             }
+
             return View();
         }
-      
     }
+
 }
