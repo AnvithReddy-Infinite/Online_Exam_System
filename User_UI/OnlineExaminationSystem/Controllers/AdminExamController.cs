@@ -20,20 +20,6 @@ namespace OnlineExaminationSystem.Controllers
             return View();
         }
 
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public ActionResult Create(AdminExamViewModel model)
-        {
-            if (ModelState.IsValid)
-            {
-                return RedirectToAction("Index");
-            }
-
-            return View(model);
-        }
+       
     }
 }

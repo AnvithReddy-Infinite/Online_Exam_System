@@ -21,25 +21,6 @@ namespace OnlineExaminationSystem.Controllers
 
                 return View();
             }
-        
-
-
-        // GET: AdminTechnology/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public ActionResult Create(AdminTechnologyViewModel model)
-        {
-            if (ModelState.IsValid)
-            {
-                return RedirectToAction("Index");
-            }
-
-            return View(model);
-        }
 
     }
 }

@@ -144,7 +144,6 @@
     <Compile Include="Models\AdminQuestionViewModel.cs" />
     <Compile Include="Models\AdminReserPasswordViewModel.cs" />
     <Compile Include="Models\AdminStudentViewModel.cs" />
-    <Compile Include="Models\AdminTechnologyViewModel.cs" />
     <Compile Include="Models\ExamModel.cs" />
     <Compile Include="Models\Exam\LevelDTO.cs" />
     <Compile Include="Models\Exam\TechnologyDTO.cs" />
@@ -231,11 +230,9 @@
     <Content Include="Views\AdminLogin\Login.cshtml" />
     <Content Include="Views\Shared\_AdminLayout.cshtml" />
     <Content Include="Views\AdminTechnology\Index.cshtml" />
-    <Content Include="Views\AdminTechnology\Create.cshtml" />
     <Content Include="Views\AdminLevel\Index.cshtml" />
     <Content Include="Views\AdminQuestion\Index.cshtml" />
     <Content Include="Views\AdminExam\Index.cshtml" />
-    <Content Include="Views\AdminExam\Create.cshtml" />
     <Content Include="Views\AdminStudent\Index.cshtml" />
     <Content Include="Views\AdminResult\Index.cshtml" />
     <Content Include="Views\User\Questions.cshtml" />
