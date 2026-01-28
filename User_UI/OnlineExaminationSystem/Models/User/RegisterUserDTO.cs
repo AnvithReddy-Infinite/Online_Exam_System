@@ -22,7 +22,7 @@ namespace OnlineExaminationSystem.Models.User
         [DataType(DataType.Password)]
         public string Password { get; set; }
         [Required(ErrorMessage = "Mobile number is required")]
-        [RegularExpression(@"^[0-9]{10}$", ErrorMessage = "Enter valid 10 digit mobile number")]
+        //[RegularExpression(@"^[0-9]{10}$", ErrorMessage = "Enter valid 10 digit mobile number")]
 
 
         public string Mobile { get; set; }
