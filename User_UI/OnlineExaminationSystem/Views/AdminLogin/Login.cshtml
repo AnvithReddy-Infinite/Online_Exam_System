@@ -18,12 +18,12 @@
 {
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-<div style="margin-bottom:12px;">
-    <label>Email</label><br />
-    @Html.TextBoxFor(m => m.Email)
-    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+    <div style="margin-bottom:12px;">
+        <label>Email</label><br />
+        @Html.TextBoxFor(m => m.Email)
+        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
 
-</div>
+    </div>
 
     <div style="margin-bottom:12px;">
         <label>Password</label><br />
@@ -35,7 +35,9 @@
     <br />
     <br />
 
-    <a href="/AdminLogin/ForgotPassword">Forgot Password?</a>
+    <a href="/AdminLogin/ResetPassword">Forgot Password?</a>
+
+
 }
 
 

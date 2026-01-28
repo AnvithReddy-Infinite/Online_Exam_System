@@ -1,91 +1,120 @@
-﻿using OnlineExaminationSystem.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System;
 using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
-using System.Web;
 using System.Web.Mvc;
-
+using Newtonsoft.Json;
+using OnlineExaminationSystem.Models;
 
 namespace OnlineExaminationSystem.Controllers
 {
     public class AdminLoginController : Controller
     {
-        // GET: AdminLogin/Login
+        private readonly string apiBase = "https://localhost:44384/";
+
+        // =========================
+        // GET: Admin Login
+        // =========================
         public ActionResult Login()
         {
             return View();
         }
 
+        // =========================
+        // POST: Admin Login
+        // =========================
         [HttpPost]
         public async Task<ActionResult> Login(AdminLoginViewModel model)
         {
             if (!ModelState.IsValid)
                 return View(model);
 
-            string apiUrl = "https://localhost:44384/api/admin/admin-login";
-
             using (var client = new HttpClient())
             {
-                client.BaseAddress = new Uri("https://localhost:44384/");
-                client.DefaultRequestHeaders.Accept.Add(
-                    new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+                client.BaseAddress = new Uri(apiBase);
 
-                // API expects email & password as QUERY params
                 var response = await client.PostAsync(
                     $"api/admin/admin-login?email={model.Email}&password={model.Password}",
                     null
                 );
 
-                var result = await response.Content.ReadAsStringAsync();
-
-                // CASE 1: Invalid login
-                if (result.Contains("Invalid email or password"))
+                if (!response.IsSuccessStatusCode)
                 {
                     ViewBag.Error = "Invalid email or password";
                     return View(model);
                 }
 
-                // CASE 2: Valid login
-                var admin = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(result);
+                var result = await response.Content.ReadAsStringAsync();
 
+                if (result.Contains("Invalid"))
+                {
+                    ViewBag.Error = "Invalid email or password";
+                    return View(model);
+                }
+
+                // Login success
+                dynamic admin = JsonConvert.DeserializeObject(result);
                 Session["AdminId"] = admin.AdminId;
                 Session["AdminName"] = admin.FullName;
-                Session["AdminEmail"] = admin.Email;
 
                 return RedirectToAction("Index", "AdminDashboard");
-
             }
         }
 
-
-        public ActionResult ForgotPassword()
+        // =========================
+        // GET: Reset Password
+        // =========================
+        public ActionResult ResetPassword()
         {
             return View();
         }
 
+        // =========================
+        // POST: Reset Password
+        // =========================
         [HttpPost]
-        public ActionResult ForgotPassword(ForgotPasswordViewModel model)
+        public async Task<ActionResult> ResetPassword(AdminResetPasswordViewModel model)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
+                return View(model);
+
+            using (var client = new HttpClient())
             {
-                ViewBag.Message = "Reset link sent to your email";
+                client.BaseAddress = new Uri(apiBase);
+
+                var payload = new
+                {
+                    Email = model.Email,
+                    NewPassword = model.NewPassword
+                };
+
+                var json = JsonConvert.SerializeObject(payload);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+                var response = await client.PostAsync(
+                    "api/admin/admin-reset-password",
+                    content
+                );
+
+                if (!response.IsSuccessStatusCode)
+                {
+                    ModelState.AddModelError("", "Password reset failed");
+                    return View(model);
+                }
             }
 
-            return View(model);
+            TempData["Success"] = "Password reset successful. Please login.";
+            return RedirectToAction("Login");
         }
 
-
+        // =========================
+        // LOGOUT
+        // =========================
         public ActionResult Logout()
         {
             Session.Clear();
             Session.Abandon();
-            return RedirectToAction("Login", "AdminLogin");
+            return RedirectToAction("Login");
         }
-
-
-
-
     }
 }
