@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using OES_WebAPI.Models.dtos;
 using OnlineExaminationSystem.Common;
 using OnlineExaminationSystem.Models.Exam;
 using System;
@@ -14,16 +15,14 @@ namespace OnlineExaminationSystem.Controllers
     {
         private readonly string apiBaseUrl = "https://localhost:44384/api/exams/";
 
-        // ---------- START EXAM ----------
+        // START EXAM 
         [HttpGet]
-        public ActionResult StartExam()
+        public async Task<ActionResult> StartExam()
         {
             if (Session["UserId"] == null)
-            {
                 TempData["AuthRequired"] = true;
-            }
 
-            PopulateDropdowns();
+            await PopulateDropdownsAsync();
             return View(new StartExamDTO());
         }
 
@@ -33,13 +32,13 @@ namespace OnlineExaminationSystem.Controllers
             if (Session["UserId"] == null)
             {
                 TempData["AuthRequired"] = true;
-                PopulateDropdowns();
+                await PopulateDropdownsAsync();
                 return View(model);
             }
 
             if (!ModelState.IsValid)
             {
-                PopulateDropdowns();
+                await PopulateDropdownsAsync();
                 return View(model);
             }
 
@@ -58,36 +57,27 @@ namespace OnlineExaminationSystem.Controllers
                 catch
                 {
                     ModelState.AddModelError("", "Unable to reach server.");
-                    PopulateDropdowns();
+                    await PopulateDropdownsAsync();
                     return View(model);
                 }
 
                 var content = await response.Content.ReadAsStringAsync();
                 var apiResponse = JsonConvert.DeserializeObject<ApiResponse<StartExamResponseDTO>>(content);
 
-                if (apiResponse == null)
+                if (apiResponse == null || (!apiResponse.Success && apiResponse.Data == null))
                 {
-                    ModelState.AddModelError("", "Unable to start exam.");
-                    PopulateDropdowns();
+                    ModelState.AddModelError("", apiResponse?.Message ?? "Unable to start exam.");
+                    await PopulateDropdownsAsync();
                     return View(model);
                 }
 
-                // API may return a "resuming in-progress exam" message
-                // We treat both new and resumed exams the same
-                if (!apiResponse.Success && apiResponse.Data == null)
-                {
-                    ModelState.AddModelError("", apiResponse.Message ?? "Unable to start exam.");
-                    PopulateDropdowns();
-                    return View(model);
-                }
-
-                // Redirect to questions page for both new and resumed exams
                 return RedirectToAction("GetQuestions", new { examId = apiResponse.Data.ExamId });
             }
         }
 
 
-        // ---------- GET QUESTIONS ----------
+
+        // GET QUESTIONS
         [HttpGet]
         public async Task<ActionResult> GetQuestions(int examId)
         {
@@ -133,7 +123,7 @@ namespace OnlineExaminationSystem.Controllers
             }
         }
 
-        // ---------- SUBMIT EXAM ----------
+        // SUBMIT EXAM
         [HttpPost]
         public async Task<ActionResult> SubmitExam(SubmitExamDTO model)
         {
@@ -168,7 +158,7 @@ namespace OnlineExaminationSystem.Controllers
         }
 
 
-        // ---------- VIEW RESULT ----------
+        // VIEW RESULT
         [HttpGet]
         public async Task<ActionResult> ViewResult(int examId)
         {
@@ -203,21 +193,48 @@ namespace OnlineExaminationSystem.Controllers
             }
         }
 
-        // ---------- HELPER TO POPULATE DROPDOWNS ----------
-        private void PopulateDropdowns()
+        // HELPER TO POPULATE DROPDOWNS
+        private async Task PopulateDropdownsAsync()
         {
-            ViewBag.Techs = new List<dynamic> {
-                new { Id = 1, Name = "C#" },
-                new { Id = 2, Name = "Java" },
-                new { Id = 3, Name = "Python" }
-            };
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(apiBaseUrl);
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-            ViewBag.Levels = new List<dynamic> {
-                new { Id = 1, LevelName = "Beginner" },
-                new { Id = 2, LevelName = "Intermediate" },
-                new { Id = 3, LevelName = "Advanced" }
-            };
+                // Fetch Technologies
+                try
+                {
+                    var techResponse = await client.GetAsync("technologies");
+                    if (techResponse.IsSuccessStatusCode)
+                    {
+                        var techContent = await techResponse.Content.ReadAsStringAsync();
+                        var techApiResponse = JsonConvert.DeserializeObject<ApiResponse<List<TechnologyDTO>>>(techContent);
+                        ViewBag.Techs = techApiResponse?.Data ?? new List<TechnologyDTO>();
+                    }
+                }
+                catch
+                {
+                    ViewBag.Techs = new List<TechnologyDTO>();
+                }
+
+                // Fetch Levels
+                try
+                {
+                    var levelResponse = await client.GetAsync("levels");
+                    if (levelResponse.IsSuccessStatusCode)
+                    {
+                        var levelContent = await levelResponse.Content.ReadAsStringAsync();
+                        var levelApiResponse = JsonConvert.DeserializeObject<ApiResponse<List<LevelDTO>>>(levelContent);
+                        ViewBag.Levels = levelApiResponse?.Data ?? new List<LevelDTO>();
+                    }
+                }
+                catch
+                {
+                    ViewBag.Levels = new List<LevelDTO>();
+                }
+            }
         }
+
 
         public async Task<ActionResult> Report(int? userId)
         {

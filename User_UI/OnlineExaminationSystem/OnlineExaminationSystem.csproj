@@ -144,6 +144,8 @@
     <Compile Include="Models\AdminQuestionViewModel.cs" />
     <Compile Include="Models\AdminTechnologyViewModel.cs" />
     <Compile Include="Models\ExamModel.cs" />
+    <Compile Include="Models\Exam\LevelDTO.cs" />
+    <Compile Include="Models\Exam\TechnologyDTO.cs" />
     <Compile Include="Models\ForgotPasswordViewModel.cs" />
     <Compile Include="Models\ResultModel.cs" />
     <Compile Include="Models\UserModel.cs" />

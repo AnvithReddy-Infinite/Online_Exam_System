@@ -15,7 +15,7 @@
         <label>Technology</label>
         @Html.DropDownListFor(
             m => m.TechId,
-            new SelectList(ViewBag.Techs ?? new List<object>(), "Id", "Name"),
+            new SelectList(ViewBag.Techs ?? new List<object>(), "TechId", "Name"),
             "Select Technology",
             new { @class = "input-field" })
         @Html.ValidationMessageFor(m => m.TechId, "", new { @class = "text-danger" })
@@ -23,7 +23,7 @@
         <label>Level</label>
         @Html.DropDownListFor(
             m => m.LevelId,
-            new SelectList(ViewBag.Levels ?? new List<object>(), "Id", "LevelName"),
+            new SelectList(ViewBag.Levels ?? new List<object>(), "LevelId", "LevelName"),
             "Select Level",
             new { @class = "input-field" })
         @Html.ValidationMessageFor(m => m.LevelId, "", new { @class = "text-danger" })
@@ -32,7 +32,6 @@
     }
 </div>
 
-<!-- 🔐 LOGIN REQUIRED MODAL -->
 @if (TempData["AuthRequired"] != null)
 {
     <div class="modal-overlay">
@@ -138,10 +137,10 @@
     }
 
     .btn-primary:hover {
-        background: #1b323c;
+        background-color: #1b323c;
     }
 
     .btn-secondary:hover {
-        background: #545b62;
+        background-color: #545b62;
     }
 </style>
