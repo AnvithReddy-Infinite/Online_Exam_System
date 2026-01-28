@@ -132,6 +132,7 @@
     <Compile Include="Controllers\AdminResultController.cs" />
     <Compile Include="Controllers\AdminStudentController.cs" />
     <Compile Include="Controllers\AdminTechnologyController.cs" />
+    <Compile Include="Controllers\ExamController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\WelcomeController.cs" />
@@ -240,6 +241,10 @@
     <Content Include="Views\User\ForgotPassword.cshtml" />
     <Content Include="Views\AdminLogin\ForgotPassword.cshtml" />
     <Content Include="Views\AdminDashboard\Index.cshtml" />
+    <Content Include="Views\Exam\ExamResult.cshtml" />
+    <Content Include="Views\Exam\GetQuestions.cshtml" />
+    <Content Include="Views\Exam\Report.cshtml" />
+    <Content Include="Views\Exam\StartExam.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
