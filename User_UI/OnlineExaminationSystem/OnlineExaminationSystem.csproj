@@ -142,11 +142,12 @@
     <Compile Include="Models\AdminExamViewModel.cs" />
     <Compile Include="Models\AdminLoginViewModel.cs" />
     <Compile Include="Models\AdminQuestionViewModel.cs" />
+    <Compile Include="Models\AdminReserPasswordViewModel.cs" />
+    <Compile Include="Models\AdminStudentViewModel.cs" />
     <Compile Include="Models\AdminTechnologyViewModel.cs" />
     <Compile Include="Models\ExamModel.cs" />
     <Compile Include="Models\Exam\LevelDTO.cs" />
     <Compile Include="Models\Exam\TechnologyDTO.cs" />
-    <Compile Include="Models\ForgotPasswordViewModel.cs" />
     <Compile Include="Models\ResultModel.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Models\User\LoginUserDTO.cs" />
@@ -233,7 +234,6 @@
     <Content Include="Views\AdminTechnology\Create.cshtml" />
     <Content Include="Views\AdminLevel\Index.cshtml" />
     <Content Include="Views\AdminQuestion\Index.cshtml" />
-    <Content Include="Views\AdminQuestion\Create.cshtml" />
     <Content Include="Views\AdminExam\Index.cshtml" />
     <Content Include="Views\AdminExam\Create.cshtml" />
     <Content Include="Views\AdminStudent\Index.cshtml" />
@@ -241,12 +241,12 @@
     <Content Include="Views\User\Questions.cshtml" />
     <Content Include="Views\Welcome\Index.cshtml" />
     <Content Include="Views\User\ForgotPassword.cshtml" />
-    <Content Include="Views\AdminLogin\ForgotPassword.cshtml" />
     <Content Include="Views\AdminDashboard\Index.cshtml" />
     <Content Include="Views\Exam\ExamResult.cshtml" />
     <Content Include="Views\Exam\GetQuestions.cshtml" />
     <Content Include="Views\Exam\Report.cshtml" />
     <Content Include="Views\Exam\StartExam.cshtml" />
+    <Content Include="Views\AdminLogin\ResetPassword.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

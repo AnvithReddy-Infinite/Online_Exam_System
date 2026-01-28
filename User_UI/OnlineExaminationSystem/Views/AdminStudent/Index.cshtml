@@ -1,31 +1,93 @@
-﻿@{
-    ViewBag.Title = "Students";
+﻿@model OnlineExaminationSystem.Models.AdminStudentViewModel
+
+@{
+    ViewBag.Title = "Search Students";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Students</h2>
+<h2>Search Students</h2>
 
-<table border="1" cellpadding="10" cellspacing="0">
+@using (Html.BeginForm("Index", "AdminStudent", FormMethod.Get))
+{
+    <label>Technology</label>
+    <br />
+    @Html.DropDownListFor(m => m.TechId, Model.Technologies, "-- Select Technology --")
+
+    <br />
+    <br />
+
+    <label>Level</label>
+    <br />
+    @Html.DropDownListFor(m => m.LevelId, Model.Levels, "-- Select Level --")
+
+    <br />
+    <br />
+
+    <label>State</label>
+    <br />
+    @Html.TextBoxFor(m => m.State)
+
+    <br />
+    <br />
+
+    <label>City</label>
+    <br />
+    @Html.TextBoxFor(m => m.City)
+
+    <br />
+    <br />
+
+    <label>Marks</label>
+    <br />
+    @Html.TextBoxFor(m => m.MinMarks)
+
+    <br />
+    <br />
+
+    <button type="submit">Search Students</button>
+}
+
+<hr />
+
+<h2>Students List</h2>
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
     <thead>
         <tr>
-            <th>Student ID</th>
+            <th>UserId</th>
             <th>Name</th>
             <th>Email</th>
-            <th>Registered On</th>
+            <th>Mobile</th>
+            <th>City</th>
+            <th>State</th>
+            <th>TechId</th>
+            <th>LevelId</th>
+            <th>Marks</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>1</td>
-            <td>Anvith Reddy</td>
-            <td>anvith@gmail.com</td>
-            <td>04-Jan-2026</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>Virat Kohli</td>
-            <td>vk18@gmail.com</td>
-            <td>15-Jan-2026</td>
-        </tr>
+        @if (Model.Students != null && Model.Students.Any())
+        {
+            foreach (var s in Model.Students)
+            {
+                <tr>
+                    <td>@s.UserId</td>
+                    <td>@s.FullName</td>
+                    <td>@s.Email</td>
+                    <td>@s.Mobile</td>
+                    <td>@s.City</td>
+                    <td>@s.State</td>
+                    <td>@s.TechId</td>
+                    <td>@s.LevelId</td>
+                    <td>@s.Score</td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="9">No students found</td>
+            </tr>
+        }
     </tbody>
 </table>

@@ -1,46 +1,77 @@
-﻿@{
-    ViewBag.Title = "Questions";
+﻿@model OnlineExaminationSystem.Models.AdminQuestionViewModel
+
+@{
+    ViewBag.Title = "Questions Management";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Questions</h2>
+<h2>Questions Management</h2>
 
-<div style="margin-bottom:20px;">
-    <a href="/AdminQuestion/Create">
-        <button>Add Question</button>
-    </a>
-</div>
+@if (TempData["Success"] != null)
+{
+    <p style="color:green">@TempData["Success"]</p>
+}
+@if (TempData["Error"] != null)
+{
+    <p style="color:red">@TempData["Error"]</p>
+}
 
-<table border="1" cellpadding="10" cellspacing="0">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Technology</th>
-            <th>Level</th>
-            <th>Question</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>1</td>
-            <td>Java</td>
-            <td>Easy</td>
-            <td>What is JVM?</td>
-            <td>
-                <button>Edit</button>
-                <button>Delete</button>
-            </td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>Python</td>
-            <td>Medium</td>
-            <td>What is list comprehension?</td>
-            <td>
-                <button>Edit</button>
-                <button>Delete</button>
-            </td>
-        </tr>
-    </tbody>
-</table>
+<!-- ADD QUESTIONS -->
+<h3>Add Questions</h3>
+
+@using (Html.BeginForm("AddQuestions", "AdminQuestion", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <label>Technology</label>
+    <br />
+    @Html.DropDownListFor(m => m.TechId, Model.Technologies, "-- Select Technology --", new { required = "required" })
+
+    <br />
+    <br />
+
+    <label>Level</label>
+    <br />
+    @Html.DropDownListFor(m => m.LevelId, Model.Levels, "-- Select Level --", new { required = "required" })
+
+    <br />
+    <br />
+
+    <label>Select CSV</label>
+    <br />
+    <input type="file" name="File" accept=".csv" required />
+
+    <br />
+    <br />
+
+    <button type="submit">Add Questions</button>
+}
+
+<hr />
+
+<!-- REMOVE QUESTIONS -->
+<h3>Remove Questions</h3>
+
+@using (Html.BeginForm("RemoveQuestions", "AdminQuestion", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <label>Technology</label>
+    <br />
+    @Html.DropDownListFor(m => m.TechId, Model.Technologies, "-- Select Technology --", new { required = "required" })
+
+    <br />
+    <br />
+
+    <label>Level</label>
+    <br />
+    @Html.DropDownListFor(m => m.LevelId, Model.Levels, "-- Select Level --", new { required = "required" })
+
+    <br />
+    <br />
+
+    <label>Select CSV</label>
+    <br />
+    <input type="file" name="File" accept=".csv" required />
+
+    <br />
+    <br />
+
+    <button type="submit">Remove Questions</button>
+}
