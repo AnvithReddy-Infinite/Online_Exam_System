@@ -1,60 +1,113 @@
 ﻿@model OnlineExaminationSystem.Models.User.RegisterUserDTO
-<h3>Register</h3>
 
-@using (Html.BeginForm("Register", "User", FormMethod.Post))
-{
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-    <p>
-        Full Name:
-        @Html.TextBoxFor(m => m.FullName)
-        @Html.ValidationMessageFor(m => m.FullName)
-    </p>
-    <p>
-        Email:
-        @Html.TextBoxFor(m => m.Email)
-        @Html.ValidationMessageFor(m => m.Email)
-    </p>
-    <p>
-        Password:
-        @Html.PasswordFor(m => m.Password)
-        @Html.ValidationMessageFor(m => m.Password)
-    </p>
-    <p>
-        Mobile:
-        @Html.TextBoxFor(m => m.Mobile)
-        @Html.ValidationMessageFor(m => m.Mobile)
-    </p>
-    <p>
-        City:
-        @Html.TextBoxFor(m => m.City)
-        @Html.ValidationMessageFor(m => m.City)
-    </p>
-    <p>
-        DOB:
-        @Html.TextBoxFor(m => m.DOB)
-        @Html.ValidationMessageFor(m => m.DOB)
-    </p>
-    <p>
-        State:
-        @Html.TextBoxFor(m => m.State)
-        @Html.ValidationMessageFor(m => m.State)
-    </p>
-    <p>
-        Qualification:
-        @Html.TextBoxFor(m => m.Qualification)
-        @Html.ValidationMessageFor(m => m.Qualification)
-    </p>
-    <p>
-        Year of completion:
-        @Html.TextBoxFor(m => m.YearOfCompletion)
-        @Html.ValidationMessageFor(m => m.YearOfCompletion)
-    </p>
-    <p>
-        Captcha:
-        <span id="captcha"></span>
-        <button type="button" onclick="refreshCaptcha()">&#8635;</button>
-        <input type="text" />
-    </p>
-    <input type="submit" value="Register" />
-}
+<!DOCTYPE html>
+<html>
+<head>
+    <h3>Register</h3>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- jQuery UI -->
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <link href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css" rel="stylesheet" />
+
+    <script type="text/javascript">
+        $(function () {
+            $("#DOB").datepicker({
+                dateFormat: "yy-mm-dd",
+                changeMonth: true,
+                changeYear: true,
+                yearRange: "1950:2026"
+            });
+        });
+    </script>
+</head>
+
+<body>
+    @using (Html.BeginForm("Register", "User", FormMethod.Post))
+    {
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <p>
+            Full Name:
+            @Html.TextBoxFor(m => m.FullName)
+            @Html.ValidationMessageFor(m => m.FullName)
+        </p>
+
+        <p>
+            Email:
+            @Html.TextBoxFor(m => m.Email)
+            @Html.ValidationMessageFor(m => m.Email)
+        </p>
+
+        <p>
+            Password:
+            @Html.PasswordFor(m => m.Password)
+            @Html.ValidationMessageFor(m => m.Password)
+        </p>
+
+        <p>
+            Mobile:
+            @Html.TextBoxFor(m => m.Mobile)
+            @Html.ValidationMessageFor(m => m.Mobile)
+        </p>
+
+        <p>
+            City:
+            @Html.TextBoxFor(m => m.City)
+            @Html.ValidationMessageFor(m => m.City)
+        </p>
+
+        <p>
+            DOB:
+            @Html.TextBoxFor(m => m.DOB)
+            @Html.ValidationMessageFor(m => m.DOB)
+        </p>
+
+        <p>
+            State:
+            @Html.TextBoxFor(m => m.State)
+            @Html.ValidationMessageFor(m => m.State)
+        </p>
+
+        <p>
+            Qualification:
+            @Html.TextBoxFor(m => m.Qualification)
+            @Html.ValidationMessageFor(m => m.Qualification)
+        </p>
+
+        <p>
+            Year of completion:
+            @Html.TextBoxFor(m => m.YearOfCompletion)
+            @Html.ValidationMessageFor(m => m.YearOfCompletion)
+        </p>
+
+        <!-- SMALL TEXT CAPTCHA -->
+        <p>
+            Captcha:
+            <span id="captchaText">@Session["TextCaptcha"]</span>
+            <button type="button" id="refreshCaptcha"
+                    style="border:none;background:none;cursor:pointer;">
+                ↻
+            </button>
+        </p>
+
+        <p>
+            <input type="text" name="CaptchaInput" />
+            <span style="color:red">@ViewBag.CaptchaError</span>
+        </p>
+
+        <input type="submit" value="Register" />
+    }
+</body>
+</html>
+
+<script>
+    $("#refreshCaptcha").click(function () {
+        $.get('/User/RefreshTextCaptcha', function (data) {
+            $("#captchaText").text(data);
+        });
+    });
+</script>

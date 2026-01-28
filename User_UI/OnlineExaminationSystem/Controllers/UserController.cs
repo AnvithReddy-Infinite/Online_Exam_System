@@ -2,12 +2,13 @@
 using OnlineExaminationSystem.Common;
 using OnlineExaminationSystem.Models.User;
 using System;
+using System.Linq;
 using System.Net.Http;
+using System.Net.Http.Formatting;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
-using System.Net.Http.Formatting;
 
 
 namespace OnlineExaminationSystem.Controllers
@@ -100,75 +101,45 @@ namespace OnlineExaminationSystem.Controllers
 
         // ---------- REGISTER ----------
 
-        [HttpGet]
         public ActionResult Register()
         {
+            GenerateTextCaptcha();
             return View();
         }
 
         [HttpPost]
-        public async Task<ActionResult> Register(RegisterUserDTO model)
+        public ActionResult Register(RegisterUserDTO model, string CaptchaInput)
         {
-            if (!ModelState.IsValid)
-                return View(model);
-
-            using (var client = new HttpClient())
+            if (Session["TextCaptcha"] == null ||
+                CaptchaInput != Session["TextCaptcha"].ToString())
             {
-                client.BaseAddress = new Uri(apiBaseUrl);
-                client.DefaultRequestHeaders.Accept.Add(
-                    new MediaTypeWithQualityHeaderValue("application/json"));
-
-                // CHANGE 1:
-                // Use PostAsJsonAsync instead of manual serialization
-                HttpResponseMessage response;
-                try
-                {
-                    response = await client.PostAsJsonAsync("register", model);
-                }
-                catch
-                {
-                    ModelState.AddModelError("", "Unable to reach server.");
-                    return View(model);
-                }
-
-                var responseJson = await response.Content.ReadAsStringAsync();
-
-                ApiResponse<object> apiResponse;
-
-                try
-                {
-                    // CHANGE 2:
-                    // Strongly typed deserialization instead of dynamic
-                    apiResponse = JsonConvert.DeserializeObject<ApiResponse<object>>(responseJson);
-                }
-                catch
-                {
-                    // CHANGE 3:
-                    // This will now ONLY trigger if JSON itself is invalid
-                    ModelState.AddModelError("", "Invalid response from server.");
-                    return View(model);
-                }
-
-                // CHANGE 4:
-                // Proper null safety
-                if (apiResponse == null)
-                {
-                    ModelState.AddModelError("", "Invalid response from server.");
-                    return View(model);
-                }
-
-                // CHANGE 5:
-                // Correct Success check (matches server ApiResponse<T>)
-                if (!apiResponse.Success)
-                {
-                    ModelState.AddModelError("", apiResponse.Message ?? "Registration failed.");
-                    return View(model);
-                }
-
-                // SUCCESS
-                return RedirectToAction("Login");
+                ViewBag.CaptchaError = "Invalid captcha";
+                GenerateTextCaptcha();
+                return View(model);
             }
+
+            // Your registration logic here
+
+            return RedirectToAction("Login");
         }
+
+        public JsonResult RefreshTextCaptcha()
+        {
+            GenerateTextCaptcha();
+            return Json(Session["TextCaptcha"], JsonRequestBehavior.AllowGet);
+        }
+
+        private void GenerateTextCaptcha()
+        {
+            const string chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+            Random rnd = new Random();
+
+            Session["TextCaptcha"] = new string(
+                Enumerable.Range(0, 5)
+                .Select(x => chars[rnd.Next(chars.Length)])
+                .ToArray());
+        }
+
 
 
         // ---------- RESET PASSWORD ----------

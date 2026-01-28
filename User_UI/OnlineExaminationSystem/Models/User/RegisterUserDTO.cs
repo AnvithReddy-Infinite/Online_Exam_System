@@ -33,6 +33,8 @@ namespace OnlineExaminationSystem.Models.User
 
         public string State { get; set; }
         [DataType(DataType.Date)]
+        [Required(ErrorMessage = "DOB is required")]
+
         public DateTime? DOB { get; set; }
         [Required(ErrorMessage = "Qualification is required")]
 

@@ -18,20 +18,23 @@
                 </p>
             }
 
-            <ul>
-                @if (Session["UserId"] == null)
-                {
-                    <li><a href="/User/Login">Login</a></li>
-                    <li><a href="/User/Register">Register</a></li>
-                }
-                else
-                {
-                    <li><a href="/User/Home">Home</a></li>
-                    <li><a href="/Exam/StartExam">New Exam</a></li>
-                    <li><a href="/Exam/Report">Report</a></li>
-                    <li><a href="/User/Logout">Logout</a></li>
-                }
-            </ul>
+        <ul>
+            @if (Session["UserId"] == null)
+            {
+                <li><a href="/User/Home">Home</a></li>
+
+                <li><a href="/User/Login">Login</a></li>
+                <li><a href="/User/Register">Register</a></li>
+
+            }
+            else
+            {
+                <li><a href="/User/Home">Home</a></li>
+                <li><a href="/Exam/StartExam">New Exam</a></li>
+                <li><a href="/Exam/Report">Report</a></li>
+                <li><a href="/User/Logout">Logout</a></li>
+            }
+        </ul>
         </div>
 
         <div class="user-content">
