@@ -119,9 +119,21 @@ namespace OnlineExaminationSystem.Controllers
                     model.Answers.Add(new AnswerDTO { QuestionId = q.QuestionId });
 
                 ViewBag.Questions = apiResponse.Data;
+
+                // ------------------- ADD TIMER LOGIC HERE -------------------
+                // Start timer only if not already started
+                if (Session["ExamStartTime"] == null)
+                    Session["ExamStartTime"] = DateTime.UtcNow;
+
+                // Pass values to view
+                ViewBag.ExamStartTime = ((DateTime)Session["ExamStartTime"]).ToString("o");
+                ViewBag.ExamDurationMinutes = apiResponse.Data.Count; // 1 minute per question
+                                                                      // ------------------------------------------------------------
+
                 return View(model);
             }
         }
+
 
         // SUBMIT EXAM
         [HttpPost]

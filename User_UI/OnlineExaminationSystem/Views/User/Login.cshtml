@@ -2,36 +2,37 @@
 @{
     Layout = "~/Views/Shared/_UserLayout.cshtml";
 }
-
-<!-- 🔹 ADD THIS WRAPPER DIV -->
 <div class="login-container">
     <h2 class="login-title">User Login</h2>
     @using (Html.BeginForm("Login", "User", FormMethod.Post))
     {
-        <!-- 🔹 OPTIONAL BUT RECOMMENDED -->
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-
-        <!-- 🔹 YOUR EXISTING EMAIL CODE (JUST ADD CLASS) -->
+        <!-- Email -->
         <div class="form-group">
             <label>Email</label>
             @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
             @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
         </div>
-
-        <!-- 🔹 YOUR EXISTING PASSWORD CODE (JUST ADD CLASS) -->
+        <!-- Password -->
         <div class="form-group">
             <label>Password</label>
             @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
             @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
         </div>
-
-        <!-- 🔹 YOUR EXISTING BUTTON (CLASS ADDED) -->
+        <!-- spacing between password and login -->
+        <br />
+        <!-- Login Button -->
         <input type="submit" value="Login" class="btn-login" />
-
+        <!-- spacing between login and forgot -->
+        <br />
+        <br />
+        <!-- Links -->
         <div class="login-extra-links">
             <a href="@Url.Action("ResetPassword", "User")" class="forgot-link">
                 Forgot Password?
             </a>
+            <!-- spacing between forgot and register -->
+            <br />
             <div class="register-text">
                 Don’t have an account?
                 <a href="@Url.Action("Register", "User")">Register here</a>

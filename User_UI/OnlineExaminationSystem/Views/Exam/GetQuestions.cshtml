@@ -61,10 +61,16 @@
 
         @using (Html.BeginForm("SubmitExam", "Exam", FormMethod.Post))
         {
+            <!-- TIMER DISPLAY -->
+            <div class="timer-box" style="font-weight:bold; font-size:18px; margin-bottom:15px;">
+                ⏱ Time Remaining: <span id="timer">--:--</span>
+            </div>
+
             @Html.AntiForgeryToken()
             @Html.HiddenFor(m => m.ExamId)
             @Html.HiddenFor(m => m.UserId)
 
+            <!-- QUESTIONS -->
             for (int i = 0; i < Model.Answers.Count; i++)
             {
                 var answer = Model.Answers[i];
@@ -89,5 +95,36 @@
             <button type="submit" class="submit-btn">Submit Exam</button>
         }
     </div>
+
+    <!-- TIMER SCRIPT -->
+    <script>
+        // Get start time and duration from ViewBag
+        const examStartTime = new Date("@ViewBag.ExamStartTime");
+        const durationMinutes = @ViewBag.ExamDurationMinutes;
+
+        const examDuration = durationMinutes * 60 * 1000; // convert minutes to milliseconds
+        const timerEl = document.getElementById("timer");
+        const form = document.querySelector("form");
+
+        const interval = setInterval(() => {
+            const now = new Date();
+            const elapsed = now - examStartTime;
+            const remaining = examDuration - elapsed;
+
+            if (remaining <= 0) {
+                clearInterval(interval);
+                timerEl.textContent = "00:00";
+                alert("Time is up! Exam will be submitted automatically.");
+                form.submit();
+                return;
+            }
+
+            const minutes = Math.floor((remaining / 1000) / 60);
+            const seconds = Math.floor((remaining / 1000) % 60);
+
+            timerEl.textContent =
+                `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }, 1000);
+    </script>
 </body>
 </html>

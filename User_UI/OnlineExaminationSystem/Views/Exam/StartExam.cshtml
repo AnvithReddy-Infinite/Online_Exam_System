@@ -12,21 +12,27 @@
         @Html.AntiForgeryToken()
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-        <label>Technology</label>
-        @Html.DropDownListFor(
-            m => m.TechId,
-            new SelectList(ViewBag.Techs ?? new List<object>(), "TechId", "Name"),
-            "Select Technology",
-            new { @class = "input-field" })
-        @Html.ValidationMessageFor(m => m.TechId, "", new { @class = "text-danger" })
+        <!-- Technology Dropdown -->
+        <div class="form-group">
+            <label>Technology</label>
+            @Html.DropDownListFor(
+                m => m.TechId,  
+                new SelectList(ViewBag.Techs ?? new List<object>(), "TechId", "Name"),
+                "Select Technology",
+                new { @class = "input-field" })
+            @Html.ValidationMessageFor(m => m.TechId, "", new { @class = "text-danger" })
+        </div>
 
-        <label>Level</label>
-        @Html.DropDownListFor(
-            m => m.LevelId,
-            new SelectList(ViewBag.Levels ?? new List<object>(), "LevelId", "LevelName"),
-            "Select Level",
-            new { @class = "input-field" })
-        @Html.ValidationMessageFor(m => m.LevelId, "", new { @class = "text-danger" })
+        <!-- Level Dropdown -->
+        <div class="form-group">
+            <label>Level</label>
+            @Html.DropDownListFor(
+                m => m.LevelId,
+                new SelectList(ViewBag.Levels ?? new List<object>(), "LevelId", "LevelName"),
+                "Select Level",
+                new { @class = "input-field" })
+            @Html.ValidationMessageFor(m => m.LevelId, "", new { @class = "text-danger" })
+        </div>
 
         <button type="submit" class="start-btn">Start Exam</button>
     }

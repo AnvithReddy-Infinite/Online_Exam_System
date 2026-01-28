@@ -27,11 +27,19 @@ namespace OnlineExaminationSystem.Models
 
        
         public string Mobile { get; set; }
+        [Required(ErrorMessage = "City is required")]
+
         public string City { get; set; }
+        [Required(ErrorMessage = "City is required")]
+
         public string State { get; set; }
         [DataType(DataType.Date)]
         public DateTime? DOB { get; set; }
+        [Required(ErrorMessage = "Qualification is required")]
+
         public string Qualification { get; set; }
+        [Required(ErrorMessage = "YearOfCompletion is required")]
+
         public int? YearOfCompletion { get; set; }
         public DateTime CreatedAt { get; set; }
  
