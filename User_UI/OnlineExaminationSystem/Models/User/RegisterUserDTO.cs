@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using OnlineExaminationSystem.Models.Validations;
+
 
 namespace OnlineExaminationSystem.Models.User
 {
@@ -32,16 +34,23 @@ namespace OnlineExaminationSystem.Models.User
         [Required(ErrorMessage = "City is required")]
 
         public string State { get; set; }
-        [DataType(DataType.Date)]
-        [Required(ErrorMessage = "DOB is required")]
 
+
+        [Required(ErrorMessage = "DOB is required")]
+        [DataType(DataType.Date)]
+        [MinimumAge(18)]
         public DateTime? DOB { get; set; }
+
+
         [Required(ErrorMessage = "Qualification is required")]
 
         public string Qualification { get; set; }
-        [Required(ErrorMessage = "YearOfCompletion is required")]
 
+        [Required(ErrorMessage = "Year of Completion is required")]
+        [Range(1950, 2100, ErrorMessage = "Invalid Year")]
         public int? YearOfCompletion { get; set; }
+
+
         public DateTime CreatedAt { get; set; }
 
         public string Captcha { get; set; }

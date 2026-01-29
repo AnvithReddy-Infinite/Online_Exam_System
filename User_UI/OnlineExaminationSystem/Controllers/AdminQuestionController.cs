@@ -62,92 +62,121 @@ namespace OnlineExaminationSystem.Controllers
             return View(model);
         }
 
-        // =========================
-        // ADD QUESTIONS
-        // =========================
+        
         [HttpPost]
-        public async Task<ActionResult> AddQuestions(AdminQuestionViewModel model)
+        public async Task<ActionResult> AddQuestions(int TechId, int LevelId)
         {
-            if (Session["AdminId"] == null)
-                return RedirectToAction("Login", "AdminLogin");
-
-            if (model.File == null || model.File.ContentLength == 0)
+            try
             {
-                TempData["Error"] = "Please upload a CSV file.";
+                if (Session["AdminId"] == null)
+                    return RedirectToAction("Login", "AdminLogin");
+
+                if (Request.Files.Count == 0)
+                {
+                    TempData["Error"] = "Please select a CSV file.";
+                    return RedirectToAction("Index");
+                }
+
+                var file = Request.Files[0];
+
+                if (file == null || file.ContentLength == 0)
+                {
+                    TempData["Error"] = "Uploaded file is empty.";
+                    return RedirectToAction("Index");
+                }
+
+                using (var client = new HttpClient())
+                {
+                    client.BaseAddress = new Uri(apiBase);
+
+                    var content = new MultipartFormDataContent();
+
+                    var fileContent = new StreamContent(file.InputStream);
+                    fileContent.Headers.ContentDisposition =
+                        new ContentDispositionHeaderValue("form-data")
+                        {
+                            Name = "file",
+                            FileName = file.FileName
+                        };
+
+                    content.Add(fileContent);
+
+                    var response = await client.PostAsync(
+                        $"api/admin/upload-questions?techId={TechId}&levelId={LevelId}",
+                        content
+                    );
+
+                    if (!response.IsSuccessStatusCode)
+                    {
+                        TempData["Error"] = "Failed to upload questions.";
+                        return RedirectToAction("Index");
+                    }
+                }
+
+                TempData["Success"] = "Questions uploaded successfully.";
                 return RedirectToAction("Index");
             }
-
-            using (var client = new HttpClient())
+            catch (Exception ex)
             {
-                client.BaseAddress = new Uri(apiBase);
-
-                var content = new MultipartFormDataContent();
-
-                var fileContent = new StreamContent(model.File.InputStream);
-                fileContent.Headers.ContentDisposition = new ContentDispositionHeaderValue("form-data")
-                {
-                    Name = "file",
-                    FileName = Path.GetFileName(model.File.FileName)
-                };
-
-                content.Add(fileContent);
-
-                var response = await client.PostAsync(
-                    $"api/admin/upload-questions?techId={model.TechId}&levelId={model.LevelId}",
-                    content
-                );
-
-                if (response.IsSuccessStatusCode)
-                    TempData["Success"] = "Questions uploaded successfully.";
-                else
-                    TempData["Error"] = "Failed to upload questions.";
-            }
-
-            return RedirectToAction("Index");
-        }
-
-        // =========================
-        // REMOVE QUESTIONS
-        // =========================
-        [HttpPost]
-        public async Task<ActionResult> RemoveQuestions(AdminQuestionViewModel model)
-        {
-            if (Session["AdminId"] == null)
-                return RedirectToAction("Login", "AdminLogin");
-
-            if (model.File == null || model.File.ContentLength == 0)
-            {
-                TempData["Error"] = "Please upload a CSV file.";
+                TempData["Error"] = "System error: " + ex.Message;
                 return RedirectToAction("Index");
             }
-
-            using (var client = new HttpClient())
-            {
-                client.BaseAddress = new Uri(apiBase);
-
-                var content = new MultipartFormDataContent();
-
-                var fileContent = new StreamContent(model.File.InputStream);
-                fileContent.Headers.ContentDisposition = new ContentDispositionHeaderValue("form-data")
-                {
-                    Name = "file",
-                    FileName = Path.GetFileName(model.File.FileName)
-                };
-
-                content.Add(fileContent);
-
-                var response = await client.PostAsync(
-                    $"api/admin/remove-questions-file?techId={model.TechId}&levelId={model.LevelId}",
-                    content
-                );
-
-                if (response.IsSuccessStatusCode)
-                    TempData["Success"] = "Questions removed successfully.";
-                else
-                    TempData["Error"] = "Failed to remove questions.";
-            }
-
-            return RedirectToAction("Index");
         }
+
+        
+        [HttpPost]
+        public async Task<ActionResult> RemoveQuestions(int TechId, int LevelId)
+        {
+            try
+            {
+                if (Session["AdminId"] == null)
+                    return RedirectToAction("Login", "AdminLogin");
+
+                if (Request.Files.Count == 0)
+                {
+                    TempData["Error"] = "Please select a CSV file.";
+                    return RedirectToAction("Index");
+                }
+
+                var file = Request.Files[0];
+
+                using (var client = new HttpClient())
+                {
+                    client.BaseAddress = new Uri(apiBase);
+
+                    var content = new MultipartFormDataContent();
+
+                    var fileContent = new StreamContent(file.InputStream);
+                    fileContent.Headers.ContentDisposition =
+                        new ContentDispositionHeaderValue("form-data")
+                        {
+                            Name = "file",
+                            FileName = file.FileName
+                        };
+
+                    content.Add(fileContent);
+
+                    var response = await client.PostAsync(
+                        $"api/admin/remove-questions-file?techId={TechId}&levelId={LevelId}",
+                        content
+                    );
+
+                    if (!response.IsSuccessStatusCode)
+                    {
+                        TempData["Error"] = "Failed to remove questions.";
+                        return RedirectToAction("Index");
+                    }
+                }
+
+                TempData["Success"] = "Questions removed successfully.";
+                return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+                TempData["Error"] = "System error: " + ex.Message;
+                return RedirectToAction("Index");
+            }
+        }
+
     }
 }

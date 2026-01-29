@@ -118,7 +118,20 @@ namespace OnlineExaminationSystem.Controllers
                 return View(model);
             }
 
-            // Your registration logic here
+            if (model.YearOfCompletion > DateTime.Now.Year)
+            {
+                ModelState.AddModelError("YearOfCompletion",
+                    "Year of completion cannot be greater than current year");
+            }
+
+            if (!ModelState.IsValid)
+            {
+                GenerateTextCaptcha();
+                return View(model);
+            }
+
+
+
 
             return RedirectToAction("Login");
         }

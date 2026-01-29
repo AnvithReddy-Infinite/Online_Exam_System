@@ -1,0 +1,162 @@
+﻿@{
+    ViewBag.Title = "Welcome";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<style>
+    .welcome-container {
+        max-width: 900px;
+        margin: 40px auto;
+        background: #ffffff;
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        font-family: Arial, sans-serif;
+    }
+
+    .welcome-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 25px;
+    }
+
+        .welcome-header h1 {
+            margin: 0;
+            font-size: 36px;
+            color: #2c3e50;
+        }
+
+        .welcome-header span {
+            font-size: 32px;
+        }
+
+    .welcome-text {
+        font-size: 18px;
+        color: #444;
+        margin-bottom: 30px;
+        line-height: 1.6;
+    }
+
+    .section-title {
+        font-size: 20px;
+        margin-bottom: 15px;
+        color: #264653;
+    }
+
+    .duties-list {
+        margin-bottom: 35px;
+        padding-left: 20px;
+    }
+
+        .duties-list li {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+    .quick-actions {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+    }
+
+    .action-card {
+        background: #f2f4f7;
+        padding: 20px;
+        border-radius: 8px;
+        text-align: center;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+        .action-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+        }
+
+        .action-card h3 {
+            margin-bottom: 10px;
+            color: #1abc9c;
+        }
+
+        .action-card p {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .action-card a {
+            text-decoration: none;
+            padding: 8px 16px;
+            background-color: #264653;
+            color: #fff;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+            .action-card a:hover {
+                background-color: #1b323c;
+            }
+</style>
+
+<div class="welcome-container">
+
+    <!-- HEADER -->
+    <div class="welcome-header">
+        <h1>Welcome Admin! 👋</h1>
+    </div>
+
+    <!-- INTRO -->
+    <p class="welcome-text">
+        You have successfully logged into the <strong>Online Examination System – Admin Panel</strong>.
+        From here, you can manage all core functionalities of the platform and ensure smooth operation
+        of exams and student evaluations.
+    </p>
+
+    <!-- DUTIES -->
+    <h2 class="section-title">Admin Responsibilities</h2>
+    <ul class="duties-list">
+        <li>Manage technologies and difficulty levels for exams</li>
+        <li>Add or remove questions using CSV upload</li>
+        <li>Search and monitor student performance</li>
+        <li>View exam results and evaluation reports</li>
+        <li>Ensure data accuracy and system integrity</li>
+    </ul>
+
+    <!-- QUICK ACTIONS -->
+    <h2 class="section-title">Quick Access</h2>
+
+    <div class="quick-actions">
+
+        <div class="action-card">
+            <h3>Technologies</h3>
+            <p>View and manage available exam technologies.</p>
+            <a href="/AdminTechnology/Index">Open</a>
+        </div>
+
+        <div class="action-card">
+            <h3>Levels</h3>
+            <p>Manage difficulty levels and pass criteria.</p>
+            <a href="/AdminLevel/Index">Open</a>
+        </div>
+
+        <div class="action-card">
+            <h3>Questions</h3>
+            <p>Add or remove exam questions via CSV files.</p>
+            <a href="/AdminQuestion/Index">Open</a>
+        </div>
+
+        <div class="action-card">
+            <h3>Students</h3>
+            <p>Search students and analyze their results.</p>
+            <a href="/AdminStudent/Index">Open</a>
+        </div>
+
+        <div class="action-card">
+            <h3>Results</h3>
+            <p>View exam results and performance reports.</p>
+            <a href="/AdminResult/Index">Open</a>
+        </div>
+
+    </div>
+
+</div>

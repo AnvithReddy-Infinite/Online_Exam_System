@@ -57,7 +57,7 @@ namespace OnlineExaminationSystem.Controllers
                 Session["AdminId"] = admin.AdminId;
                 Session["AdminName"] = admin.FullName;
 
-                return RedirectToAction("Index", "AdminDashboard");
+                return RedirectToAction("Index", "AdminWelcome");
             }
         }
 
@@ -107,14 +107,12 @@ namespace OnlineExaminationSystem.Controllers
             return RedirectToAction("Login");
         }
 
-        // =========================
-        // LOGOUT
-        // =========================
+        
         public ActionResult Logout()
         {
             Session.Clear();
             Session.Abandon();
-            return RedirectToAction("Login");
+            return RedirectToAction("Index", "Welcome");
         }
     }
 }

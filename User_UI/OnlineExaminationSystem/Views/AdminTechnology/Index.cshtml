@@ -1,11 +1,11 @@
-﻿@{
+﻿@model List<OnlineExaminationSystem.Models.AdminTechnologyViewModel>
+
+@{
     ViewBag.Title = "Technologies";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
 <h2>Technologies</h2>
-
-
 
 <table border="1" cellpadding="10" cellspacing="0">
     <thead>
@@ -15,21 +15,12 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>1</td>
-            <td>OOPS</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>Java</td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>Python</td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td>C#</td>
-        </tr>
+        @foreach (var tech in Model)
+        {
+            <tr>
+                <td>@tech.TechId</td>
+                <td>@tech.Name</td>
+            </tr>
+        }
     </tbody>
 </table>

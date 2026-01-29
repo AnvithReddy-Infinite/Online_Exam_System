@@ -1,29 +1,28 @@
-﻿@{
+﻿@model List<OnlineExaminationSystem.Models.AdminLevelViewModel>
+
+@{
     ViewBag.Title = "Levels";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
 <h2>Levels</h2>
 
-<table border="1" cellpadding="12" cellspacing="0" style="margin-top:20px; width:400px;">
+<table border="1" cellpadding="12" cellspacing="0" style="margin-top:20px; width:500px;">
     <thead>
         <tr>
             <th>Level ID</th>
             <th>Level Name</th>
+            <th>Pass Marks</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>1</td>
-            <td>Easy</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>Medium</td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>Hard</td>
-        </tr>
+        @foreach (var level in Model)
+        {
+            <tr>
+                <td>@level.LevelId</td>
+                <td>@level.LevelName</td>
+                <td>@level.PassMarks</td>
+            </tr>
+        }
     </tbody>
 </table>

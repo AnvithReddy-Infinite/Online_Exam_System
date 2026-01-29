@@ -124,14 +124,13 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="Common\ApiResponse.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\AdminDashboardController.cs" />
-    <Compile Include="Controllers\AdminExamController.cs" />
     <Compile Include="Controllers\AdminLevelController.cs" />
     <Compile Include="Controllers\AdminLoginController.cs" />
     <Compile Include="Controllers\AdminQuestionController.cs" />
     <Compile Include="Controllers\AdminResultController.cs" />
     <Compile Include="Controllers\AdminStudentController.cs" />
     <Compile Include="Controllers\AdminTechnologyController.cs" />
+    <Compile Include="Controllers\AdminWelcomeController.cs" />
     <Compile Include="Controllers\ExamController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -139,11 +138,14 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AdminExamResultViewModel.cs" />
     <Compile Include="Models\AdminExamViewModel.cs" />
+    <Compile Include="Models\AdminLevelViewModel.cs" />
     <Compile Include="Models\AdminLoginViewModel.cs" />
     <Compile Include="Models\AdminQuestionViewModel.cs" />
     <Compile Include="Models\AdminReserPasswordViewModel.cs" />
     <Compile Include="Models\AdminStudentViewModel.cs" />
+    <Compile Include="Models\AdminTechnologyViewModel.cs" />
     <Compile Include="Models\ExamModel.cs" />
     <Compile Include="Models\Exam\LevelDTO.cs" />
     <Compile Include="Models\Exam\TechnologyDTO.cs" />
@@ -164,6 +166,7 @@
     <Compile Include="Models\Exam\SubmitExamDTO.cs" />
     <Compile Include="Models\Exam\SubmitExamResponseDTO.cs" />
     <Compile Include="Models\Exam\UserExamReportDTO.cs" />
+    <Compile Include="Models\Validations\MinimumAgeAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -232,18 +235,17 @@
     <Content Include="Views\AdminTechnology\Index.cshtml" />
     <Content Include="Views\AdminLevel\Index.cshtml" />
     <Content Include="Views\AdminQuestion\Index.cshtml" />
-    <Content Include="Views\AdminExam\Index.cshtml" />
     <Content Include="Views\AdminStudent\Index.cshtml" />
     <Content Include="Views\AdminResult\Index.cshtml" />
     <Content Include="Views\User\Questions.cshtml" />
     <Content Include="Views\Welcome\Index.cshtml" />
     <Content Include="Views\User\ForgotPassword.cshtml" />
-    <Content Include="Views\AdminDashboard\Index.cshtml" />
     <Content Include="Views\Exam\ExamResult.cshtml" />
     <Content Include="Views\Exam\GetQuestions.cshtml" />
     <Content Include="Views\Exam\Report.cshtml" />
     <Content Include="Views\Exam\StartExam.cshtml" />
     <Content Include="Views\AdminLogin\ResetPassword.cshtml" />
+    <Content Include="Views\AdminWelcome\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
