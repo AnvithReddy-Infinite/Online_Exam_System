@@ -1,113 +1,115 @@
 ﻿@model OnlineExaminationSystem.Models.User.RegisterUserDTO
 
+<!-- Container to center everything -->
+<div class="register-page d-flex justify-content-center align-items-center min-vh-100" style="background-color: #f4f6f8;">
+    <div class="register-card p-4 shadow-sm rounded" style="max-width: 480px; width: 100%; background-color: #fff;">
 
-<!DOCTYPE html>
-<html>
-<head>
-    <h3>Register</h3>
+        <h3 class="text-center mb-4" style="color: #2c3e50;">Register</h3>
 
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        @using (Html.BeginForm("Register", "User", FormMethod.Post, new { @id = "registerForm", @class = "needs-validation" }))
+        {
+            @Html.ValidationSummary(true, "", new { @class = "text-danger mb-3" })
 
-    <!-- jQuery UI -->
-    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
-    <link href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css" rel="stylesheet" />
+            <div class="form-group mb-2">
+                @Html.LabelFor(m => m.FullName)
+                @Html.TextBoxFor(m => m.FullName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.FullName, "", new { @class = "text-danger" })
+            </div>
 
-    <script type="text/javascript">
-        $(function () {
-            $("#DOB").datepicker({
-                dateFormat: "yy-mm-dd",
-                changeMonth: true,
-                changeYear: true,
-                yearRange: "1950:2026"
-            });
-        });
-    </script>
-</head>
+            <div class="form-group mb-2">
+                @Html.LabelFor(m => m.Email)
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+            </div>
 
-<body>
-    @using (Html.BeginForm("Register", "User", FormMethod.Post))
-    {
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group mb-2">
+                @Html.LabelFor(m => m.Password)
+                @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+            </div>
 
-        <p>
-            Full Name:
-            @Html.TextBoxFor(m => m.FullName)
-            @Html.ValidationMessageFor(m => m.FullName)
-        </p>
+            <div class="form-group mb-2">
+                @Html.LabelFor(m => m.Mobile)
+                @Html.TextBoxFor(m => m.Mobile, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Mobile, "", new { @class = "text-danger" })
+            </div>
 
-        <p>
-            Email:
-            @Html.TextBoxFor(m => m.Email)
-            @Html.ValidationMessageFor(m => m.Email)
-        </p>
+            <div class="form-group mb-2">
+                @Html.LabelFor(m => m.City)
+                @Html.TextBoxFor(m => m.City, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.City, "", new { @class = "text-danger" })
+            </div>
 
-        <p>
-            Password:
-            @Html.PasswordFor(m => m.Password)
-            @Html.ValidationMessageFor(m => m.Password)
-        </p>
+            <div class="form-group mb-2">
+                @Html.LabelFor(m => m.State)
+                @Html.TextBoxFor(m => m.State, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.State, "", new { @class = "text-danger" })
+            </div>
 
-        <p>
-            Mobile:
-            @Html.TextBoxFor(m => m.Mobile)
-            @Html.ValidationMessageFor(m => m.Mobile)
-        </p>
+            <div class="form-group mb-2">
+                @Html.LabelFor(m => m.DOB)
+                @Html.TextBoxFor(m => m.DOB, "{0:yyyy-MM-dd}", new { @type = "date", @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.DOB, "", new { @class = "text-danger" })
+            </div>
 
-        <p>
-            City:
-            @Html.TextBoxFor(m => m.City)
-            @Html.ValidationMessageFor(m => m.City)
-        </p>
+            <div class="form-group mb-2">
+                @Html.LabelFor(m => m.Qualification)
+                @Html.TextBoxFor(m => m.Qualification, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Qualification, "", new { @class = "text-danger" })
+            </div>
 
-        <p>
-            DOB:
-            @Html.TextBoxFor(m => m.DOB)
-            @Html.ValidationMessageFor(m => m.DOB)
-        </p>
+            <div class="form-group mb-3">
+                @Html.LabelFor(m => m.YearOfCompletion)
+                @Html.TextBoxFor(m => m.YearOfCompletion, new { @class = "form-control", type = "number" })
+                @Html.ValidationMessageFor(m => m.YearOfCompletion, "", new { @class = "text-danger" })
+            </div>
 
-        <p>
-            State:
-            @Html.TextBoxFor(m => m.State)
-            @Html.ValidationMessageFor(m => m.State)
-        </p>
+            <!-- Captcha -->
+            <div class="form-group mb-3">
+                <label>Captcha:</label>
+                <div class="d-flex align-items-center mb-2">
+                    <span id="captcha" class="mr-2 px-3 py-2 rounded" style="background: #f0f0f0; font-weight: bold;">@Session["TextCaptcha"]</span>
+                    <button type="button" class="btn btn-outline-secondary btn-sm" onclick="refreshCaptcha()">&#8635;</button>
+                </div>
+                <input type="text" id="captchaInput" class="form-control" placeholder="Enter Captcha" />
+            </div>
 
-        <p>
-            Qualification:
-            @Html.TextBoxFor(m => m.Qualification)
-            @Html.ValidationMessageFor(m => m.Qualification)
-        </p>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block" style="background-color: #2c3e50; border-color: #2c3e50;">Register</button>
+            </div>
+        }
 
-        <p>
-            Year of completion:
-            @Html.TextBoxFor(m => m.YearOfCompletion)
-            @Html.ValidationMessageFor(m => m.YearOfCompletion)
-        </p>
+    </div>
+</div>
 
-        <!-- SMALL TEXT CAPTCHA -->
-        <p>
-            Captcha:
-            <span id="captchaText">@Session["TextCaptcha"]</span>
-            <button type="button" id="refreshCaptcha"
-                    style="border:none;background:none;cursor:pointer;">
-                ↻
-            </button>
-        </p>
-
-        <p>
-            <input type="text" name="CaptchaInput" />
-            <span style="color:red">@ViewBag.CaptchaError</span>
-        </p>
-
-        <input type="submit" value="Register" />
-    }
-</body>
-</html>
-
+<!-- jQuery for Captcha -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-    $("#refreshCaptcha").click(function () {
-        $.get('/User/RefreshTextCaptcha', function (data) {
-            $("#captchaText").text(data);
+    function refreshCaptcha() {
+        $.get('@Url.Action("RefreshTextCaptcha", "User")', function(data) {
+            $('#captcha').text(data);
+        });
+    }
+
+    $(function() {
+        $('#registerForm').submit(function(e) {
+            var entered = $('#captchaInput').val().trim();
+            var actual = $('#captcha').text().trim();
+
+            if (entered === '') {
+                alert('Please enter Captcha');
+                e.preventDefault();
+                return false;
+            }
+
+            if (entered !== actual) {
+                alert('Captcha is incorrect');
+                e.preventDefault();
+                return false;
+            }
         });
     });
 </script>
+
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />

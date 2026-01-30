@@ -99,41 +99,64 @@ namespace OnlineExaminationSystem.Controllers
         }
 
 
-        // ---------- REGISTER ----------
-
+        // ---------- REGISTER ---------
+        [HttpGet]
         public ActionResult Register()
         {
-            GenerateTextCaptcha();
             return View();
         }
 
         [HttpPost]
-        public ActionResult Register(RegisterUserDTO model, string CaptchaInput)
+        public async Task<ActionResult> Register(RegisterUserDTO model)
         {
-            if (Session["TextCaptcha"] == null ||
-                CaptchaInput != Session["TextCaptcha"].ToString())
-            {
-                ViewBag.CaptchaError = "Invalid captcha";
-                GenerateTextCaptcha();
-                return View(model);
-            }
-
-            if (model.YearOfCompletion > DateTime.Now.Year)
-            {
-                ModelState.AddModelError("YearOfCompletion",
-                    "Year of completion cannot be greater than current year");
-            }
-
             if (!ModelState.IsValid)
-            {
-                GenerateTextCaptcha();
                 return View(model);
+
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(apiBaseUrl);
+                client.DefaultRequestHeaders.Accept.Add(
+                    new MediaTypeWithQualityHeaderValue("application/json"));
+
+                HttpResponseMessage response;
+                try
+                {
+                    response = await client.PostAsJsonAsync("register", model);
+                }
+                catch
+                {
+                    ModelState.AddModelError("", "Unable to reach server.");
+                    return View(model);
+                }
+
+                var responseJson = await response.Content.ReadAsStringAsync();
+
+                ApiResponse<object> apiResponse;
+
+                try
+                {
+                    apiResponse = JsonConvert.DeserializeObject<ApiResponse<object>>(responseJson);
+                }
+                catch
+                {
+                    ModelState.AddModelError("", "Invalid response from server.");
+                    return View(model);
+                }
+                if (apiResponse == null)
+                {
+                    ModelState.AddModelError("", "Invalid response from server.");
+                    return View(model);
+                }
+
+                if (!apiResponse.Success)
+                {
+                    ModelState.AddModelError("", apiResponse.Message ?? "Registration failed.");
+                    return View(model);
+                }
+
+                // SUCCESS
+                return RedirectToAction("Login");
             }
-
-
-
-
-            return RedirectToAction("Login");
         }
 
         public JsonResult RefreshTextCaptcha()
@@ -222,7 +245,7 @@ namespace OnlineExaminationSystem.Controllers
         {
             Session.Clear();
             Session.Abandon();
-            return RedirectToAction("Login");
+            return RedirectToAction("Index", "Welcome");
         }
     }
 }
